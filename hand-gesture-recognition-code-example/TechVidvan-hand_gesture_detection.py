@@ -1,29 +1,27 @@
-# Obtained through Open Source TechVidvan hand Gesture Recognizer
+# TechVidvan hand Gesture Recognizer
+# This is an example open source code meant for reference into basic hand gesture recognition systems
 
+    
 # import necessary packages
 import cv2
 import numpy as np
 import mediapipe as mp
 import tensorflow as tf
-from tensorflow import keras
-from keras import models
-from models import load_model
+from tensorflow.keras.models import load_model
 
-
-# mphands is the machine learning algorithm
+# initialize mediapipe
 mpHands = mp.solutions.hands
 hands = mpHands.Hands(max_num_hands=1, min_detection_confidence=0.7)
 mpDraw = mp.solutions.drawing_utils
 
-# mp_hand_gesture is the hand gesture model we are using right now
-# load_model is a tensorflow method that is used to load models
-model = tf.keras.models.load_model('mp_hand_gesture')
-    
+# Load the gesture recognizer model
+model = load_model('mp_hand_gesture')
+
 # Load class names
 f = open('gesture.names', 'r')
 classNames = f.read().split('\n')
 f.close()
-print(classNames) # outputs ['okay', 'peace', 'thumbs up', 'thumbs down', 'call me', 'stop', 'rock', 'live long', 'fist', 'smile']
+print(classNames)
 
 
 # Initialize the webcam
