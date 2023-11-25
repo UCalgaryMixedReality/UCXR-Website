@@ -27,6 +27,8 @@ class HandDetector():
     
     def findPosition(self, img, handNo=0, draw=True):
         lmList = [] # List to store and return landmark positions
+        # You can iterate through lmList with [] to obtain the positions of certian landmarks
+        # For example lmList[4] returns the position of the tip of your thumb
 
 
         if self.results.multi_hand_landmarks:
@@ -36,7 +38,7 @@ class HandDetector():
                 cx, cy = int(lm.x * w), int(lm.y * h) # Calculate pixel coordinates of landmark
                 lmList.append([id, cx, cy])
                 if draw:
-                    cv2.circle(img, (cx, cy), 15, (255, 0, 255), cv2.FILLED) # Will draw a filled circle at each landmark so itll be easier to see them
+                    cv2.circle(img, (cx, cy), 7, (255, 0, 0), cv2.FILLED) # Will draw a filled circle at each landmark so itll be easier to see them
 
         return lmList
 
@@ -65,7 +67,8 @@ def main():
 
         # Use the HandDetector to find the position of the hands in the frame and send the coordinates to lmList
         lmList = detector.findPosition(img)
-        print(lmList) # we can index this variable to obtain the position of each joint/part of the hand
+        if lmList != []: # this is so it doesnt't flood our output with blank arrays
+            print(lmList) # we can index this variable to obtain the position of each joint/part of the hand, refer to landmark map in documentation
 
         # Calculate and display frames per second
         cTime = time.time()
@@ -83,4 +86,3 @@ def main():
 if __name__ == "__main__":
     # Run the main function if this script is executed directly
     main()
-
