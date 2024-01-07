@@ -16,7 +16,7 @@ class HandDetector():
 
     def findHands(self, img, draw=True):
         # Method to find hands in the input image and draw landmarks and connections if required
-        imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+        imgRGB = cv2.cvtColor(img, cv2.COLOR_RGB2BGR)
         self.results = self.hands.process(imgRGB)
 
         if self.results.multi_hand_landmarks:
@@ -47,7 +47,7 @@ def main():
     # Main function for running the hand tracking application
 
     # Open the video capture device (camera)
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1) # change to zero if error happens
 
     # Variables for tracking time and calculating frames per second (fps)
     pTime = 0
