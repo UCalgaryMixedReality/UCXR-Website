@@ -11,10 +11,10 @@ print("Libraries imported successfuly")
 
 cap = cv2.VideoCapture(0) # change to 0 or to 1 if u get an error, basically changes what camera to use. Built in cameras for laptops are usually defaulted by 0. External cameras are usually 1.
 
-detector = ht.HandDetector(detectionConfidence=0.7 ) # initialize object from HD class with higher than normal detection confidence
+detector = ht.HandDetector(detectionConfidence=0.7) # initialize object from HD class with higher than normal detection confidence
 
 pTime = 1 # set to 1 here to avoid float divsion by zero error, will display wrong fps for a ms or so
-
+ 
 while True:
     success, img = cap.read()
     img = detector.findHands(img)
@@ -51,7 +51,5 @@ while True:
     cv2.putText(img, f'FPS: {int(fps)}', (40, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 0), 3) # writes the fps to screen. putText takes in paramaters, what window (img in this case), what to write (fps in this case), location on window, font (can make it whatever you want), size, colour, thickness
     
     cv2.imshow("Img", img)
-
     cv2.waitKey(27)
 
-    
