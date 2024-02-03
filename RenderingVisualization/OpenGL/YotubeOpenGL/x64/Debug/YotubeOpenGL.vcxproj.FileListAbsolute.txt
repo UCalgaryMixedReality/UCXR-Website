@@ -1,0 +1,2 @@
+C:\Users\Owner\Desktop\YotubeOpenGL\x64\Debug\YotubeOpenGL.exe
+C:\Users\Owner\Desktop\YotubeOpenGL\x64\Debug\YoutubeOpenGL.exe
