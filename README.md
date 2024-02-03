@@ -6,6 +6,8 @@ This is the augmented reality for medicine's repository. Here, all of our code f
 
 We will create a branch for every single project. This means that a new branch will be needed for Gesture Recognition, GPU and Microdisplay code, tracking algorithms, data processing, and other components of this project. When starting your own project, please create a new branch and use a descriptive name.
 
+Also add the .gitignore file located in this branch to every new branch you create. This will prevent vscode/vs settings from being added to every single commit.
+
 
 ## Standards
 We will have a couple of coding standards to help keep our code readable and scalable.
