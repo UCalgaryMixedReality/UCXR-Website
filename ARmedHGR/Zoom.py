@@ -47,9 +47,10 @@ while True:
 
     fps = 1/(cTime-pTime) # calculate fps
     pTime = cTime # set pTime to cTime after fps is calcualated to avoid float division by zero error
-
+ 
     cv2.putText(img, f'FPS: {int(fps)}', (40, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 0), 3) # writes the fps to screen. putText takes in paramaters, what window (img in this case), what to write (fps in this case), location on window, font (can make it whatever you want), size, colour, thickness
     
     cv2.imshow("Img", img)
-    cv2.waitKey(27)
-
+    key = cv2.waitKey(1)
+    if key == 27:
+        break
