@@ -53,7 +53,7 @@ def main():
     use_brect = True
 
     # Camera preparation ###############################################################
-    cap = cv.VideoCapture(cap_device)
+    cap = cv.VideoCapture(1) # usually can add cap_device as the argument here, and it will auto it
     
     cap.set(cv.CAP_PROP_FRAME_WIDTH, cap_width)
     cap.set(cv.CAP_PROP_FRAME_HEIGHT, cap_height)
@@ -145,7 +145,7 @@ def main():
 
                 # Hand sign classification
                 hand_sign_id = keypoint_classifier(pre_processed_landmark_list)
-                if hand_sign_id == 2:  # Point gesture
+                if hand_sign_id == "Disabled by Aadi: To reinvoke it, just erase this string and type in 2":  # Point gesture
                     point_history.append(landmark_list[8])
                 else:
                     point_history.append([0, 0])

@@ -9,7 +9,7 @@ import numpy as np
 import math
 print("Libraries imported successfuly")
 
-cap = cv2.VideoCapture(0) # change to 0 or to 1 if u get an error, basically changes what camera to use. Built in cameras for laptops are usually defaulted by 0. External cameras are usually 1.
+cap = cv2.VideoCapture(1) # change to 0 or to 1 if u get an error, basically changes what camera to use. Built in cameras for laptops are usually defaulted by 0. External cameras are usually 1.
 
 detector = ht.HandDetector(detectionConfidence=0.7) # initialize object from HD class with higher than normal detection confidence
 
