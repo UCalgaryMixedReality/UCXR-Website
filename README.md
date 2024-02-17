@@ -19,10 +19,6 @@ The Gesture Recognition System is a technology-driven solution that interprets a
 In command prompt type in "curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py"
 After that type in "python get-pip.py"
 
-
-At this point in time only Mediapipe and OpenCv will need to be installed in order to run main.py
-
-
 - Install Mediapipe
 
 In command prompt type in "pip install mediapipe"
@@ -30,4 +26,9 @@ In command prompt type in "pip install mediapipe"
 - Install OpenCV
 
 In command prompt type in "pip install opencv-python"
+
+- Install Tensorflow
+
+In command prompt type in "pip install tensorflow"
+
 
