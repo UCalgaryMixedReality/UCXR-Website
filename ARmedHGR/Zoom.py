@@ -1,21 +1,24 @@
 # Developed for ARMed
-# Functionality is complete, just needs an output system. The output system will deliver information on the length of the distance between the tip of your index finger and the thumb.
-
+# Functionality is complete, just needs an output system.
 import HandTrack as ht
 import cv2
 import mediapipe as mp
 import time
 import numpy as np
 import math
+import time
 print("Libraries imported successfuly")
 
 cap = cv2.VideoCapture(1) # change to 0 or to 1 if u get an error, basically changes what camera to use. Built in cameras for laptops are usually defaulted by 0. External cameras are usually 1.
 
 detector = ht.HandDetector(detectionConfidence=0.7, maxHands=2) # initialize object from HD class with higher than normal detection confidence
 
-pTime = 1 # set to 1 here to avoid float divsion by zero error, will display wrong fps for a ms or so
- 
-while True:
+
+
+def zoom(cap, detector):
+
+
+    pTime = 1 # set to 1 here to avoid float divsion by zero error, will display wrong fps for a ms or so
     success, img = cap.read()
     img = detector.findHands(img)
 
@@ -50,10 +53,16 @@ while True:
 
     fps = 1/(cTime-pTime) # calculate fps
     pTime = cTime # set pTime to cTime after fps is calcualated to avoid float division by zero error
- 
+
     cv2.putText(img, f'FPS: {int(fps)}', (40, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 0), 3) # writes the fps to screen. putText takes in paramaters, what window (img in this case), what to write (fps in this case), location on window, font (can make it whatever you want), size, colour, thickness
     
     cv2.imshow("Img", img)
-    key = cv2.waitKey(1)
-    if key == 27:
-        break
+
+key = cv2.waitKey(1)
+
+if __name__ == "__main__":
+    # Run the main function if this script is executed directly
+    while True:
+        zoom(cap, detector)
+        if key == 27:
+            break
