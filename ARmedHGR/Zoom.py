@@ -30,7 +30,7 @@ def zoom():
             cx1, cy1 = (pointer_x1 + thumb_x1) // 2, (pointer_y1 + thumb_y1) // 2
             cx2, cy2 = (pointer_x2 + thumb_x2) // 2, (pointer_y2 + thumb_y2) // 2
 
-            cv2.line(img, (cx1, cy1), (cx2, cy2), (255, 0, 255))
+            cv2.line(img, (cx1, cy1), (cx2, cy2), (255, 255, 255))
 
             length = math.hypot(cx2 - cx1, cy2 - cy1)
             yield length
