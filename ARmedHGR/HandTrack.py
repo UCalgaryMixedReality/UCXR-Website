@@ -25,21 +25,31 @@ class HandDetector():
                     self.mpDraw.draw_landmarks(img, handLms, self.mphands.HAND_CONNECTIONS)
         return img
     
-    def findPosition(self, img, handNo=0, draw=True):
+    def findPosition(self, img, handNo, draw=True):
         lmList = [] # List to store and return landmark positions
         # You can iterate through lmList with [] to obtain the positions of certian landmarks
         # For example lmList[4] returns the position of the tip of your thumb
 
 
         if self.results.multi_hand_landmarks:
-            myHand = self.results.multi_hand_landmarks[handNo]
+
+            # In this if else conditional, we are handling the case where one hand is taken away from the frame. 
+            # The if statement works like this:
+            # self.results.multi_hand_landmarks is a list that has 0-2 elements depending on how many hands are visible.
+            # handNo is 0 indexed, so the len(self.results.multi_hand_landmarks) will always be more than handNo if it is working correctly.
+            # If an object calls upon this function with handNo=2, but a second hand is not visible in frame, instead of breaking the function will just return the last available landmark position of said hand and return an empty list from there on.
+            if len(self.results.multi_hand_landmarks) > handNo:
+                myHand = self.results.multi_hand_landmarks[handNo]
+            else:
+                myHand = None
+                return lmList
+            # myHand = self.results.multi_hand_landmarks[handNo]
             for id, lm in enumerate(myHand.landmark):
                 h, w, c = img.shape # Get height width and channel of image
                 cx, cy = int(lm.x * w), int(lm.y * h) # Calculate pixel coordinates of landmark
                 lmList.append([id, cx, cy])
                 if draw:
                     cv2.circle(img, (cx, cy), 7, (255, 0, 0), cv2.FILLED) # Will draw a filled circle at each landmark so itll be easier to see them
-
         return lmList
 
 
