@@ -9,13 +9,14 @@ def zoom():
     print("Libraries imported successfully")
 
     cap = cv2.VideoCapture(1)
+    
     detector = ht.HandDetector(detectionConfidence=0.7, maxHands=2)
     pTime = 1
 
     while True:
         success, img = cap.read()
         img = detector.findHands(img)
-
+        image = cv2.flip(image, 1)
         lmList0 = detector.findPosition(img, draw=False, handNo=0) 
         lmList1 = detector.findPosition(img, draw=False, handNo=1)
 
