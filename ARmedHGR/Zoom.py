@@ -16,7 +16,7 @@ def zoom():
     while True:
         success, img = cap.read()
         img = detector.findHands(img)
-        image = cv2.flip(image, 1)
+        # img = cv2.flip(img, 1) # UNCOMMENT THIS IF YOU GET ANNOYED BY THE FLIPPED VIDEO, WILL MESS UP THE DRAW LINE FEATURE THO
         lmList0 = detector.findPosition(img, draw=False, handNo=0) 
         lmList1 = detector.findPosition(img, draw=False, handNo=1)
 
