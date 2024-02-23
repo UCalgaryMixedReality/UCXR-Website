@@ -53,7 +53,7 @@ def main():
     use_brect = True
 
     # Camera preparation ###############################################################
-    cap = cv.VideoCapture(1) # usually can add cap_device as the argument here, and it will auto it
+    cap = cv.VideoCapture(0) # usually can add cap_device as the argument here, and it will auto it
     
     cap.set(cv.CAP_PROP_FRAME_WIDTH, cap_width)
     cap.set(cv.CAP_PROP_FRAME_HEIGHT, cap_height)
