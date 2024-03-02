@@ -1,14 +1,13 @@
-import HandTrack as ht
-import cv2
-import mediapipe as mp
-import time
-import numpy as np
-import math
-
 def zoom():
-    print("Libraries imported successfully")
+    from ARmedHGR import HandTrack as ht
+    # import HandTrack as ht
+    import cv2
+    import mediapipe as mp
+    import time
+    import numpy as np
+    import math
 
-    cap = cv2.VideoCapture(1) # change to 0 or to 1 if u get an error, basically changes what camera to use. Built in cameras for laptops are usually defaulted by 0. External cameras are usually 1.
+    cap = cv2.VideoCapture(1) # change integer if u get an error, basically changes what camera to use. Built in cameras for laptops are usually defaulted by 0. External cameras are usually 1.
     
     detector = ht.HandDetector(detectionConfidence=0.7, maxHands=2)
     pTime = 1
@@ -45,5 +44,5 @@ def zoom():
         if key == 27:
             break
 
-for length in zoom():
-    print(length)
+# for length in zoom():
+#     print(length)

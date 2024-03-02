@@ -93,6 +93,6 @@ def main():
         if cv2.waitKey(1) == 27:
             break
 
-if __name__ == "__main__":
-    # Run the main function if this script is executed directly
-    main()
+# if __name__ == "__main__":
+#     # Run the main function if this script is executed directly
+#     main()
