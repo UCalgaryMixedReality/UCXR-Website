@@ -21,7 +21,7 @@ while True:
     success, img = cap.read()
     img = detector.findHands(img)
 
-    lmList = detector.findPosition(img, draw=False)
+    lmList = detector.findPosition(img, draw=False, handNo = 1)
 
     if len(lmList) != 0: # This way it doesnt display empty lists
         
