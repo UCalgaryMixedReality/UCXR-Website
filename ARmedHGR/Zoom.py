@@ -8,7 +8,7 @@ import math
 def zoom():
     print("Libraries imported successfully")
 
-    cap = cv2.VideoCapture(1) # change to 0 or to 1 if u get an error, basically changes what camera to use. Built in cameras for laptops are usually defaulted by 0. External cameras are usually 1.
+    cap = cv2.VideoCapture(0) # change to 0 or to 1 if u get an error, basically changes what camera to use. Built in cameras for laptops are usually defaulted by 0. External cameras are usually 1.
     
     detector = ht.HandDetector(detectionConfidence=0.7, maxHands=2)
     pTime = 1
@@ -39,7 +39,7 @@ def zoom():
         fps = 1/(cTime-pTime)
         pTime = cTime
 
-        cv2.putText(img, f'FPS: {int(fps)}', (40, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 0), 3)
+        # cv2.putText(img, f'FPS: {int(fps)}', (40, 50), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 0, 0), 3)
         cv2.imshow("Img", img)
         key = cv2.waitKey(1)
         if key == 27:
