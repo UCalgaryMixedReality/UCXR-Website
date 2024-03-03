@@ -15,6 +15,8 @@ from utils import CvFpsCalc
 from model import KeyPointClassifier
 from model import PointHistoryClassifier
 
+from Zoom import zoom
+
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -81,6 +83,7 @@ def main():
         keypoint_classifier_labels = [
             row[0] for row in keypoint_classifier_labels
         ]
+
     with open(
             'model/point_history_classifier/point_history_classifier_label.csv',
             encoding='utf-8-sig') as f:
@@ -147,6 +150,17 @@ def main():
                 hand_sign_id = keypoint_classifier(pre_processed_landmark_list)
                 if hand_sign_id == "Disabled by Aadi: To reinvoke it, just erase this string and type in 2":  # Point gesture
                     point_history.append(landmark_list[8])
+
+                # Logic with Zoom and Point
+                if hand_sign_id == 2 or hand_sign_id == 3:  # Point gesture
+                    # point logic here
+                    print("Point Here")
+                    pass
+                
+                if hand_sign_id == 1:
+                    print("Zoom here")
+                    pass
+                
                 else:
                     point_history.append([0, 0])
 
@@ -172,15 +186,22 @@ def main():
                     keypoint_classifier_labels[hand_sign_id],
                     point_history_classifier_labels[most_common_fg_id[0][0]],
                 )
+
+
+
         else:
             point_history.append([0, 0])
 
         debug_image = draw_point_history(debug_image, point_history)
         debug_image = draw_info(debug_image, fps, mode, number)
 
+
         # Screen reflection #############################################################
         cv.imshow('Hand Gesture Recognition', debug_image)
 
+    
+
+    
     cap.release()
     cv.destroyAllWindows()
 
