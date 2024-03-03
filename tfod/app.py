@@ -16,7 +16,7 @@ from model import KeyPointClassifier
 from model import PointHistoryClassifier
 
 from Zoom import zoom
-
+import time
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -128,6 +128,9 @@ def main():
         results = hands.process(image)
         image.flags.writeable = True
 
+        lmList0 = []
+        lmList1 = []
+
         #  ####################################################################
         if results.multi_hand_landmarks is not None:
             for hand_landmarks, handedness in zip(results.multi_hand_landmarks,
@@ -136,6 +139,12 @@ def main():
                 brect = calc_bounding_rect(debug_image, hand_landmarks)
                 # Landmark calculation
                 landmark_list = calc_landmark_list(debug_image, hand_landmarks)
+                hand_index = int(handedness.classification[0].index)
+                landmark_list = calc_landmark_list(debug_image, hand_landmarks)
+                if hand_index == 0:
+                    lmList0.append(landmark_list)
+                elif hand_index == 1:
+                    lmList1.append(landmark_list)
 
                 # Conversion to relative coordinates / normalized coordinates
                 pre_processed_landmark_list = pre_process_landmark(
@@ -150,16 +159,6 @@ def main():
                 hand_sign_id = keypoint_classifier(pre_processed_landmark_list)
                 if hand_sign_id == "Disabled by Aadi: To reinvoke it, just erase this string and type in 2":  # Point gesture
                     point_history.append(landmark_list[8])
-
-                # Logic with Zoom and Point
-                if hand_sign_id == 2 or hand_sign_id == 3:  # Point gesture
-                    # point logic here
-                    print("Point Here")
-                    pass
-                
-                if hand_sign_id == 1:
-                    print("Zoom here")
-                    pass
                 
                 else:
                     point_history.append([0, 0])
@@ -188,12 +187,23 @@ def main():
                 )
 
 
+            # Logic with Zoom and Point
+            if hand_sign_id == 2 or hand_sign_id == 3:  # Point gesture
+                # point logic here
+                print("Point Here")
+                pass
+            
+            if hand_sign_id == 1:
+                for value in zoom(img=image, lmList0=lmList0, lmList1=lmList1):
+                    print(value)
+
 
         else:
             point_history.append([0, 0])
 
         debug_image = draw_point_history(debug_image, point_history)
         debug_image = draw_info(debug_image, fps, mode, number)
+
 
 
         # Screen reflection #############################################################
@@ -204,6 +214,9 @@ def main():
     
     cap.release()
     cv.destroyAllWindows()
+
+
+
 
 
 def select_mode(key, mode):
