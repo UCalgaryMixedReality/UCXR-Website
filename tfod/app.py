@@ -10,7 +10,7 @@ from collections import deque
 import cv2 as cv
 import numpy as np
 import mediapipe as mp
-
+ 
 from utils import CvFpsCalc
 from model import KeyPointClassifier
 from model import PointHistoryClassifier
@@ -56,11 +56,10 @@ def main():
 
     # Camera preparation ###############################################################
     cap = cv.VideoCapture(0) # usually can add cap_device as the argument here, and it will auto it
-    
+
     cap.set(cv.CAP_PROP_FRAME_WIDTH, cap_width)
     cap.set(cv.CAP_PROP_FRAME_HEIGHT, cap_height)
     print("Camera prep complete")
-
 
     # Model load #############################################################
     mp_hands = mp.solutions.hands
@@ -159,7 +158,7 @@ def main():
                 hand_sign_id = keypoint_classifier(pre_processed_landmark_list)
                 if hand_sign_id == "Disabled by Aadi: To reinvoke it, just erase this string and type in 2":  # Point gesture
                     point_history.append(landmark_list[8])
-                
+
                 else:
                     point_history.append([0, 0])
 
@@ -192,7 +191,7 @@ def main():
                 # point logic here
                 print("Point Here")
                 pass
-            
+
             if hand_sign_id == 1:
                 for value in zoom(img=image, lmList0=lmList0, lmList1=lmList1):
                     print(value)
@@ -209,9 +208,9 @@ def main():
         # Screen reflection #############################################################
         cv.imshow('Hand Gesture Recognition', debug_image)
 
-    
 
-    
+
+
     cap.release()
     cv.destroyAllWindows()
 
