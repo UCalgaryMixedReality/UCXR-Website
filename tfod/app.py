@@ -16,6 +16,7 @@ from model import KeyPointClassifier
 from model import PointHistoryClassifier
 
 from Zoom import zoom
+from point import point
 import time
 
 def get_args():
@@ -191,16 +192,14 @@ def main():
 
             # Logic with Zoom and Point
             if hand_sign_id == 2 or hand_sign_id == 3:  # Point gesture
-                
-                pass
+                for coord in point(img=image, lmList0=lmList0, lmList1=lmList1):
+                    print(coord)
 
-
-            elif hand_sign_id == 1:
+            elif hand_sign_id == 1: # also need to add check for double hands shown
                 # this is the format for generator functions
                 for value in zoom(img=image, lmList0=lmList0, lmList1=lmList1):
                     print(value) # we will need some way to store the value for export
                     # exported values will become important after we figure out IPC requirements and implementations
-
 
         else:
             point_history.append([0, 0])
