@@ -132,18 +132,21 @@ def main():
 
         #  ####################################################################
         if results.multi_hand_landmarks is not None:
-            for hand_landmarks, handedness in zip(results.multi_hand_landmarks,
-                                                  results.multi_handedness):
+            for hand_landmarks, handedness in zip(results.multi_hand_landmarks, results.multi_handedness):
                 # Bounding box calculation
                 brect = calc_bounding_rect(debug_image, hand_landmarks)
                 # Landmark calculation
                 landmark_list = calc_landmark_list(debug_image, hand_landmarks)
-                hand_index = int(handedness.classification[0].index)
-                landmark_list = calc_landmark_list(debug_image, hand_landmarks)
-                if hand_index == 0:
+
+                # Always append landmark_list to lmList0
+                # lmList0.append(landmark_list)
+
+                # Optionally, create separate lists for each hand based on handedness
+                if handedness.classification[0].index == 0:
                     lmList0.append(landmark_list)
-                elif hand_index == 1:
+                else:
                     lmList1.append(landmark_list)
+
 
                 # Conversion to relative coordinates / normalized coordinates
                 pre_processed_landmark_list = pre_process_landmark(
