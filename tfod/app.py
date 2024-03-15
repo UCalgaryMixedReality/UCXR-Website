@@ -191,13 +191,15 @@ def main():
 
             # Logic with Zoom and Point
             if hand_sign_id == 2 or hand_sign_id == 3:  # Point gesture
-                # point logic here
-                print("Point Here")
+                
                 pass
 
-            if hand_sign_id == 1:
+
+            elif hand_sign_id == 1:
+                # this is the format for generator functions
                 for value in zoom(img=image, lmList0=lmList0, lmList1=lmList1):
-                    print(value)
+                    print(value) # we will need some way to store the value for export
+                    # exported values will become important after we figure out IPC requirements and implementations
 
 
         else:
@@ -261,8 +263,6 @@ def calc_landmark_list(image, landmarks):
     for _, landmark in enumerate(landmarks.landmark):
         landmark_x = min(int(landmark.x * image_width), image_width - 1)
         landmark_y = min(int(landmark.y * image_height), image_height - 1)
-        # landmark_z = landmark.z
-
         landmark_point.append([landmark_x, landmark_y])
 
     return landmark_point

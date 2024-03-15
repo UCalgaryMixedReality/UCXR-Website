@@ -11,12 +11,16 @@ def zoom(img, lmList0, lmList1):
     print(lmList1)
 
     if len(lmList0) != 0 and len(lmList1) != 0:
-        try:
-            pointer_x1, pointer_y1 = lmList0[8][1], lmList0[8][2]
-            pointer_x2, pointer_y2 = lmList1[8][1], lmList1[8][2]
+        print("lmList is not empty")
 
-            thumb_x1, thumb_y1 = lmList0[4][1], lmList0[4][2]
-            thumb_x2, thumb_y2 = lmList1[4][1], lmList1[4][2]
+    if len(lmList0[0]) >= 8 and len(lmList1[0]) >= 8:
+        try:
+
+            # find coordinates of pointer and thumbs of each hand
+            pointer_x1, pointer_y1 = lmList0[0][8][0], lmList0[0][8][1]
+            pointer_x2, pointer_y2 = lmList1[0][8][0], lmList1[0][8][1]
+            thumb_x1, thumb_y1 = lmList0[0][4][0], lmList0[0][4][1]
+            thumb_x2, thumb_y2 = lmList1[0][4][0], lmList1[0][4][1]
 
             cx1, cy1 = (pointer_x1 + thumb_x1) // 2, (pointer_y1 + thumb_y1) // 2
             cx2, cy2 = (pointer_x2 + thumb_x2) // 2, (pointer_y2 + thumb_y2) // 2
@@ -28,3 +32,9 @@ def zoom(img, lmList0, lmList1):
 
         except IndexError:
             print("Index error here")
+
+    elif len(lmList0) != len(lmList1):
+        print("The lists are not equal in length")
+
+    else:
+        print("Unknown error")
