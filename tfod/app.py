@@ -10,13 +10,14 @@ from collections import deque
 import cv2 as cv
 import numpy as np
 import mediapipe as mp
-
+ 
 from utils import CvFpsCalc
 from model import KeyPointClassifier
 from model import PointHistoryClassifier
 
 from Zoom import zoom
-
+from point import point
+import time
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -56,11 +57,10 @@ def main():
 
     # Camera preparation ###############################################################
     cap = cv.VideoCapture(0) # usually can add cap_device as the argument here, and it will auto it
-    
+
     cap.set(cv.CAP_PROP_FRAME_WIDTH, cap_width)
     cap.set(cv.CAP_PROP_FRAME_HEIGHT, cap_height)
     print("Camera prep complete")
-
 
     # Model load #############################################################
     mp_hands = mp.solutions.hands
@@ -128,14 +128,26 @@ def main():
         results = hands.process(image)
         image.flags.writeable = True
 
+        lmList0 = []
+        lmList1 = []
+
         #  ####################################################################
         if results.multi_hand_landmarks is not None:
-            for hand_landmarks, handedness in zip(results.multi_hand_landmarks,
-                                                  results.multi_handedness):
+            for hand_landmarks, handedness in zip(results.multi_hand_landmarks, results.multi_handedness):
                 # Bounding box calculation
                 brect = calc_bounding_rect(debug_image, hand_landmarks)
                 # Landmark calculation
                 landmark_list = calc_landmark_list(debug_image, hand_landmarks)
+
+                # Always append landmark_list to lmList0
+                # lmList0.append(landmark_list)
+
+                # Optionally, create separate lists for each hand based on handedness
+                if handedness.classification[0].index == 0:
+                    lmList0.append(landmark_list)
+                else:
+                    lmList1.append(landmark_list)
+
 
                 # Conversion to relative coordinates / normalized coordinates
                 pre_processed_landmark_list = pre_process_landmark(
@@ -151,16 +163,6 @@ def main():
                 if hand_sign_id == "Disabled by Aadi: To reinvoke it, just erase this string and type in 2":  # Point gesture
                     point_history.append(landmark_list[8])
 
-                # Logic with Zoom and Point
-                if hand_sign_id == 2 or hand_sign_id == 3:  # Point gesture
-                    # point logic here
-                    print("Point Here")
-                    pass
-                
-                if hand_sign_id == 1:
-                    print("Zoom here")
-                    pass
-                
                 else:
                     point_history.append([0, 0])
 
@@ -188,6 +190,16 @@ def main():
                 )
 
 
+            # Logic with Zoom and Point
+            if hand_sign_id == 2 or hand_sign_id == 3:  # Point gesture
+                for coord in point(img=image, lmList0=lmList0, lmList1=lmList1):
+                    print(coord)
+
+            elif hand_sign_id == 1: # also need to add check for double hands shown
+                # this is the format for generator functions
+                for value in zoom(img=image, lmList0=lmList0, lmList1=lmList1):
+                    print(value) # we will need some way to store the value for export
+                    # exported values will become important after we figure out IPC requirements and implementations
 
         else:
             point_history.append([0, 0])
@@ -196,14 +208,18 @@ def main():
         debug_image = draw_info(debug_image, fps, mode, number)
 
 
+
         # Screen reflection #############################################################
         cv.imshow('Hand Gesture Recognition', debug_image)
 
-    
 
-    
+
+
     cap.release()
     cv.destroyAllWindows()
+
+
+
 
 
 def select_mode(key, mode):
@@ -246,8 +262,6 @@ def calc_landmark_list(image, landmarks):
     for _, landmark in enumerate(landmarks.landmark):
         landmark_x = min(int(landmark.x * image_width), image_width - 1)
         landmark_y = min(int(landmark.y * image_height), image_height - 1)
-        # landmark_z = landmark.z
-
         landmark_point.append([landmark_x, landmark_y])
 
     return landmark_point

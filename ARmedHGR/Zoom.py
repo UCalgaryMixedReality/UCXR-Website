@@ -23,7 +23,7 @@ def zoom():
             pointer_x1, pointer_y1 = lmList0[8][1], lmList0[8][2]
             pointer_x2, pointer_y2 = lmList1[8][1], lmList1[8][2]
 
-            thumb_x1, thumb_y1 = lmList0[4][1], lmList0[4][2]
+            thumb_x1, thumb_y1 = lmList0[4][1], lmList0[4][2] 
             thumb_x2, thumb_y2 = lmList1[4][1], lmList1[4][2]
 
             cx1, cy1 = (pointer_x1 + thumb_x1) // 2, (pointer_y1 + thumb_y1) // 2
