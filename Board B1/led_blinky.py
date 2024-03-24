@@ -2,7 +2,6 @@
 #Led2 is the built-in led of the Raspberry Pi Pico
 #Led1 should be connected to GPIO1 of the Pico and ground to the Pico.
 
-# Copyright (c) 2024 Toluwanimi Oladiti for Augmented Reality medicine.
 
 import machine
 import time
