@@ -206,14 +206,16 @@ def main():
             # Logic with Zoom and Point
             if hand_sign_id == 2 or hand_sign_id == 3:  # Point gesture
                 for coord in point(img=image, lmList0=lmList0, lmList1=lmList1):
-                    clientSocket.sendall(str(coord).encode())
-
+                    # clientSocket.sendall(str(coord).encode())
+                    pass
+                    # Future IPC stuff needed here
             elif hand_sign_id == 1: # also need to add check for double hands shown
                 # this is the format for generator functions
                 for value in zoom(img=image, lmList0=lmList0, lmList1=lmList1):
                     print(value) # we will need some way to store the value for export
                     # exported values will become important after we figure out IPC requirements and implementations
-                    clientSocket.sendall(str(value).encode())
+                    # clientSocket.sendall(str(value).encode())
+                    # Will need fixing here
 
 
         else:
