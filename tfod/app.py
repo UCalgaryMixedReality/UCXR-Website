@@ -19,6 +19,19 @@ from Zoom import zoom
 from point import point
 import time
 
+import socket
+
+
+# CONSTANTS
+HOST = '127.0.0.1' # Localhost IP Address, not to be confused with a public IP address!!!!!!!
+PORT = 12345 # Server side port number
+
+# Create a socket object
+clientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+# Connect to the server
+clientSocket.connect((HOST, PORT))
+
 def get_args():
     parser = argparse.ArgumentParser()
 
@@ -193,13 +206,15 @@ def main():
             # Logic with Zoom and Point
             if hand_sign_id == 2 or hand_sign_id == 3:  # Point gesture
                 for coord in point(img=image, lmList0=lmList0, lmList1=lmList1):
-                    print(coord)
+                    clientSocket.sendall(str(coord).encode())
 
             elif hand_sign_id == 1: # also need to add check for double hands shown
                 # this is the format for generator functions
                 for value in zoom(img=image, lmList0=lmList0, lmList1=lmList1):
                     print(value) # we will need some way to store the value for export
                     # exported values will become important after we figure out IPC requirements and implementations
+                    clientSocket.sendall(str(value).encode())
+
 
         else:
             point_history.append([0, 0])

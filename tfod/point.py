@@ -23,7 +23,7 @@ def point(img, lmList0, lmList1):
             x, y = lmList0[0][8][0], lmList0[0][8][1]
             yield [x, y]
 
-        elif  len(lmList1) >= 0:
+        elif  len(lmList1) > 0:
             x, y = lmList1[0][8][0], lmList1[0][8][1]
             yield [x, y]
 
