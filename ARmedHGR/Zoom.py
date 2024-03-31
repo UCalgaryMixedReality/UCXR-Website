@@ -1,5 +1,5 @@
 def zoom():
-    from ARmedHGR import HandTrack as ht
+    import HandTrack as ht
     # import HandTrack as ht
     import cv2
     import mediapipe as mp
