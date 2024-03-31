@@ -202,11 +202,11 @@ def main():
                     point_history_classifier_labels[most_common_fg_id[0][0]],
                 )
 
-            # Logic with Zoom and Point
+            ####  Logic with Zoom and Point ####
             if hand_sign_id == 2 or hand_sign_id == 3:  # Point gesture
                 for coord in point(img=image, lmList0=lmList0, lmList1=lmList1):
                     clientSocket.sendall(str(coord).encode())
-                    
+
                     # Future IPC stuff needed here
             elif hand_sign_id == 1: # We don't need to do any checking for both hand visible, because zoom.py handles that
                 # this is the format for generator functions
@@ -216,7 +216,6 @@ def main():
 
             else:
                 pass
-
 
         else:
             point_history.append([0, 0])
