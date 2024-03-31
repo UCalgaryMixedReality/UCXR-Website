@@ -208,13 +208,14 @@ def main():
                     clientSocket.sendall(str(coord).encode())
                     
                     # Future IPC stuff needed here
-            elif hand_sign_id == 1: # also need to add check for double hands shown
+            elif hand_sign_id == 1: # We don't need to do any checking for both hand visible, because zoom.py handles that
                 # this is the format for generator functions
                 for value in zoom(img=image, lmList0=lmList0, lmList1=lmList1):
-                    print(value) # we will need some way to store the value for export
-                    # exported values will become important after we figure out IPC requirements and implementations
-                    clientSocket.sendall(str(value).encode())
-                    # Will need fixing here
+                    clientSocket.sendall(str(value).encode()) # Encoded as string, C# scripting will have to parse the string
+                    # In the future, we can add a value to determine what type of data is being sent, making it easier on the c# end to read it
+
+            else:
+                pass
 
 
         else:
