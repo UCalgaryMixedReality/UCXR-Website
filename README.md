@@ -1,71 +1,56 @@
-# ARmed
+### Gesture Recognition System
 
-This is the augmented reality for medicine's repository. Here, all of our code for every sensor, GPU API, machine learning algorithm, etc. will be stored for version control.
+# Overview
 
-## Branches
+The Gesture Recognition System is a technology-driven solution that interprets and analyzes human gestures captured through cameras. Leveraging TensorFlow, MediaPipe, and OpenCV, this system enables accurate and real-time recognition of hand movements and poses.
 
-We will create a branch for every single project. This means that a new branch will be needed for Gesture Recognition, GPU and Microdisplay code, tracking algorithms, data processing, and other components of this project. When starting your own project, please create a new branch and use a descriptive name.
+# Technologies Used
 
-Also add the .gitignore file located in this branch to every new branch you create. This will prevent vscode/vs settings from being added to every single commit.
+- TensorFlow: Empowers the development of deep learning models for gesture classification.
 
+- MediaPipe: Facilitates precise hand tracking and pose estimation, enhancing spatial orientation understanding.
 
-## Standards
-We will have a couple of coding standards to help keep our code readable and scalable.
+- OpenCV: Performs image processing and computer vision tasks as well as some math required for certain gestures. Also responsible for image output.
 
-- Use Camel Case
-- Use as few lines as possible
-- Try and make functions as small as possible. Use multiple functions to carry out one big task, rather than one big function.
-- For all segments of code that are repeated, try and make a function to automate that task.
-- Avoid nesting your loops. The more nested loops you have in your code, the less efficient the code will be.
-- Capitalize all class names, and keep all variable and function names lowercase.
-- Comment on a lot of your code to help keep it readable. Create your comments so that they are helpful for debugging later down the line.
+# Usage
 
-```
-// Example:
+See ARmedHGR to learn in detail how each method works
 
-int myVariable1;
-char myVariable2;
+Otherwise, tfod contains all neccessary and important files, including many key functions, the machine learning framework, and the main file.
+App.py is the program that will be run on the glasses themselves. App.py uses every other file to:
 
-void doSomething(*a){
-  *a++;
-}
+1. Identify Gestures
 
-class School{
+The gestures app.py is able to recognize currently is:
 
-  private:
-    int studentNames;
-    int studentGrades;
+- Zoom
+- Left Hand and Right Hand Point
 
-  public:
-    int getStudentNames(){
-      return studentNames;
-    }
-    int getStudentGrades{
-      return studentGrades;
-    }
-    int studentCount;
+2. Calculate necessary values associated with the gestures
 
-};
+Right now the values app.py is calculating is:
 
-```
+- Distance between pinched hands - Zoom
+- Coordinate points for the tip of the index finger of both hands - Left Hand and Right Hand Point
 
+\
+To run the code, simply change directory to where app.py is located (i.e. C:/...../ARmedEngineering/tfod) and in your terminal type in "python app.py"
 
+# Installation
 
-## Contributing
+Install Mediapipe
 
-Before you merge your branch with any other branches, always get your code reviewed by a peer and a contributor of the branch you are trying to merge to. Get them to comment on your pull request, and then proceed to merge.
+- In command prompt type in "pip install mediapipe"
 
-Please make sure to test all of your code before merging.
+Install OpenCV
 
-## For more info:
-Website:
-[ARmed Website](https://ar-med.ca/)
+- In command prompt type in "pip install opencv-python"
 
-Linkedin:
-[ARmed Linkedin](https://www.linkedin.com/company/armeduofc/)
+Install Tensorflow
 
-Instagram:
-[ARmed Instagram](https://www.instagram.com/armeduofc/)
+- In command prompt type in "pip install tensorflow"
 
-Operated by the University of Calgary and the Schulich School of Engineering
+Install pip
 
+- In command prompt type in "curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py"
+After that type in "python get-pip.py"
