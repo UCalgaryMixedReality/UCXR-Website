@@ -34,9 +34,28 @@ Right now the values app.py is calculating is:
 - Coordinate points for the tip of the index finger of both hands - Left Hand and Right Hand Point
 
 \
-To run the code, simply change directory to where app.py is located (i.e. C:/...../ARmedEngineering/tfod) and in your terminal type in "python app.py"
+
+To start using the project:
+
+1. Run C Sharp Server
+
+Change directory to "C:\Users\Aadi\Desktop\ARmed\ARmedEngineering\TCP testing\TCP"
+In your terminal type in "dotnet run"
+When you see "Server listening on port 12345 Connection from 127.0.0.1", the server is running properly.
+
+2. Run main file
+
+Change directory to C:\Users\Aadi\Desktop\ARmed\ARmedEngineering\tfod"
+In your terminal type in "py app.py"
+A new window should open accessing your camera. From there you can start making gestures.
+
 
 # Installation
+
+Install pip
+
+- In command prompt type in "curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py"
+After that type in "python get-pip.py"
 
 Install Mediapipe
 
@@ -50,22 +69,4 @@ Install Tensorflow
 
 - In command prompt type in "pip install tensorflow"
 
-Install pip
 
-- In command prompt type in "curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py"
-After that type in "python get-pip.py"
-
-
-# Setup
-
-1. Run C Sharp Server
-
-Change directory to "C:\Users\Aadi\Desktop\ARmed\ARmedEngineering\TCP testing\TCP"
-In your terminal type in "dotnet run"
-When you see "Server listening on port 12345 Connection from 127.0.0.1", the server is running properly.
-
-2. Run main file
-
-Change directory to C:\Users\Aadi\Desktop\ARmed\ARmedEngineering\tfod"
-In your terminal type in "py app.py"
-A new window should open accessing your camera. From there you can start making gestures.
