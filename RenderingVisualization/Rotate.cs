@@ -51,7 +51,7 @@ public class Rotate : MonoBehaviour
     void ReadRotationFromFile()
     {
         string filePath = Application.dataPath + "/gestures.txt"; // Path to the .txt file
-	// File reads a (+) value if swiped left, and (+) value is swiped right
+	// File reads a (+) value if swiped left, and (-) value is swiped right
 
         // Check if the file exists
         if (File.Exists(filePath))
