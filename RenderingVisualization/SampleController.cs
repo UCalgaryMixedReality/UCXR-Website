@@ -4,6 +4,7 @@ using System.IO;
 public class Controller : MonoBehaviour
 {
     public Rotate rotateScript;
+    public Zoom zoomScript;
 
     // Initial gesture value
     public float gesture = 10;
@@ -16,18 +17,18 @@ public class Controller : MonoBehaviour
 
     void Update()
     {
-        if (gesture == 2)
+        if (gesture == 1)
         {
             // Activate rotation
             rotateScript.StartRotate();
 
             // Deactivate other functions
-            // xScript.DoNotx();
+            zoomScript.DoNotZoom();
         }
-        else if (gesture == 1)
+        else if (gesture == 2)
         {
             // Activate zoom
-            // x.Script.Startx()
+            zoomScript.StartZoom();
 
             // Deactivate other functions
             rotateScript.DoNotRotate();
