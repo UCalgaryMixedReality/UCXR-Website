@@ -1,13 +1,17 @@
 using UnityEngine;
 using System.IO;
+using System;
 
 public class Controller : MonoBehaviour
 {
     public Rotate rotateScript;
     public Zoom zoomScript;
+    public Drag dragScript;
 
-    // Initial gesture value
-    public float gesture = 10;
+    // Initial type value
+    public float typeis;
+    public float value1;
+    public float value2;
 
     private void Start()
     {
@@ -17,48 +21,104 @@ public class Controller : MonoBehaviour
 
     void Update()
     {
-        if (gesture == 1)
-        {
-            // Activate rotation
-            rotateScript.StartRotate();
+        Debug.Log("Current Gesture: " + typeis);
 
-            // Deactivate other functions
-            zoomScript.DoNotZoom();
-        }
-        else if (gesture == 2)
+        if (typeis == 1)
         {
             // Activate zoom
             zoomScript.StartZoom();
+            Debug.Log("Zoom script activated");
 
             // Deactivate other functions
             rotateScript.DoNotRotate();
+            dragScript.DoNotDrag();
+        }
+        else if (typeis == 2)
+        {
+            // Activate rotation
+            rotateScript.StartRotate();
+            Debug.Log("Rotate script activated");
+
+            // Deactivate other functions
+            zoomScript.DoNotZoom();
+            dragScript.DoNotDrag();
+        }
+        else if (typeis == 3)
+        {
+            // Activate drag
+            dragScript.StartDrag();
+            Debug.Log("Drag script activated");
+
+            // Deactivate other functions
+            rotateScript.DoNotRotate();
+            zoomScript.DoNotZoom();
+        }
+        else
+        {
+            Debug.LogWarning("Invalid gesture type: " + typeis);
         }
     }
+
     void ReadTypeFromFile()
     {
-        string filePath = Application.dataPath + "/type.txt"; // Path to the .txt file
+        string filePath = Path.Combine(Application.dataPath, "type.txt");
 
         // Check if the file exists
         if (File.Exists(filePath))
         {
-            // Read the contents of the file
-            string fileContent = File.ReadAllText(filePath);
+            // Read all lines from the file
+            string[] lines = File.ReadAllLines(filePath);
 
-            // Parse contents
-            if (float.TryParse(fileContent, out float parsedGesture))
+            foreach (string line in lines)
             {
-                // Assign the parsed value to direction
-                gesture = parsedGesture;
-                Debug.Log("Gesture read from file: " + gesture);
-            }
-            else
-            {
-                Debug.LogError("Failed to parse gesture type from file.");
+                string[] parts = line.Split(' ');
+
+                if (parts.Length >= 2) // Ensure there are at least two parts
+                {
+                    // Parse "gesture" value (first part)
+                    if (float.TryParse(parts[0], out float parsedTypeis))
+                    {
+                        typeis = parsedTypeis;
+                        Debug.Log($"Read Gesture: {typeis}");
+
+                        if (typeis == 1)
+                        {
+                            // Parse "type" value (second part)
+                            if (float.TryParse(parts[1], out float parsedValue1)) // Zoom
+                            {
+                                value1 = parsedValue1;
+                                Debug.Log($"Gesture: {typeis}, Value: {value1}");
+                            }
+                            else
+                            {
+                                Debug.LogWarning($"Failed to parse 1st value in line: {line}");
+                            }
+                        }
+
+                        // Increase in parts depending on gesture
+                        if (typeis > 1) // Rotate, select, drag
+                        {
+                            if (parts.Length > 2 && float.TryParse(parts[2], out float parsedValue2))
+                            {
+                                value2 = parsedValue2;
+                                Debug.Log($"Gesture: {typeis}, 2nd value: {value2}");
+                            }
+                            else
+                            {
+                                Debug.LogWarning($"Failed to parse 2nd value in line: {line}");
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning($"Invalid line format: {line}");
+                }
             }
         }
         else
         {
-            Debug.LogError("File not found.");
+            Debug.LogError($"File not found at path: {filePath}");
         }
     }
 }
