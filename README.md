@@ -1,69 +1,25 @@
-# ARmed
+### Rendering and Visualization
 
-This is the augmented reality for medicine's repository. Here, all of our code for every sensor, GPU API, machine learning algorithm, etc. will be stored for version control.
+This branch contains all code for Unity, rendering, and visualization of the ARmed glasses.
 
-## Branches
+# Overview
 
-We will create a branch for every single project. This means that a new branch will be needed for Gesture Recognition, GPU and Microdisplay code, tracking algorithms, data processing, and other components of this project. When starting your own project, please create a new branch and use a descriptive name.
+This project involves developing an Augmented Reality (AR) application using Unity to display different bones and skeletons. The goal is to create a comprehensive AR experience that allows users to interact with and learn about various anatomical structures in a highly immersive environment.
 
+# Features
 
-## Standards
-We will have a couple of coding standards to help keep our code readable and scalable.
+- 3D Models of Bones and Skeletons: Displays high-quality models representing different bones and skeletons.
+- AR Integration: Display models in an AR environment using Unity's native augmented reality support.
+- Interactive Elements: Rotate, zoom, and explore models in detail.
+- Educational Information: Display anatomical information about each bone and skeleton.
+- User Interface: Intuitive UI for easy navigation and interaction.
 
-- Use Camel Case
-- Use as few lines as possible
-- Try and make functions as small as possible. Use multiple functions to carry out one big task, rather than one big function.
-- For all segments of code that are repeated, try and make a function to automate that task.
-- Avoid nesting your loops. The more nested loops you have in your code, the less efficient the code will be.
-- Capitalize all class names, and keep all variable and function names lowercase.
-- Comment on a lot of your code to help keep it readable. Create your comments so that they are helpful for debugging later down the line.
+# Technologies Used
 
-```
-// Example:
+- TCP: Allows communication between the Hand-Gesture-Recognition system and the Rendering and Visualization system.
+- Unity: All models will be displayed and interacted with in Unity.
 
-int myVariable1;
-char myVariable2;
+# Usage
 
-void doSomething(*a){
-  *a++;
-}
-
-class School{
-
-  private:
-    int studentNames;
-    int studentGrades;
-
-  public:
-    int getStudentNames(){
-      return studentNames;
-    }
-    int getStudentGrades{
-      return studentGrades;
-    }
-    int studentCount;
-
-};
-
-```
-
-
-
-## Contributing
-
-Before you merge your branch with any other branches, always get your code reviewed by a peer and a contributor of the branch you are trying to merge to. Get them to comment on your pull request, and then proceed to merge.
-
-Please make sure to test all of your code before merging.
-
-## For more info:
-Website:
-[ARmed Website](https://ar-med.ca/)
-
-Linkedin:
-[ARmed Linkedin](https://www.linkedin.com/company/armeduofc/)
-
-Instagram:
-[ARmed Instagram](https://www.instagram.com/armeduofc/)
-
-Operated by the University of Calgary and the Schulich School of Engineering
+Each script contains C# code for a separate function. To use a script, simply attach the script to a game object in Unity. On game start, the script will automatically execute. For the TCP script, consider attaching it to an empty game object. 
 
