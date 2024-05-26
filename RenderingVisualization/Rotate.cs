@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.IO;
+using System;
+using UnityEditor.Experimental.GraphView;
 
 public class Rotate : MonoBehaviour
 {
@@ -7,7 +9,8 @@ public class Rotate : MonoBehaviour
     public float rotationSpeed = 30f;
 
     // Default direction
-    public float direction = 30;
+    public float directionLR;
+    public float directionUD;
 
     // Target rotation angle (in degrees)
     private float targetRotationAngle = 15f;
@@ -25,35 +28,46 @@ public class Rotate : MonoBehaviour
     {
         if (isRotating)
         {
-            // Check if going in clockwise (+) or counterclockwise (-) direction
-            Debug.Log(Mathf.Sign(direction));
-            float sign = Mathf.Sign(direction);
+            float rotationAngleLR = Mathf.Sign(directionLR) * targetRotationAngle;
+            float rotationAngleUD = Mathf.Sign(directionUD) * targetRotationAngle;
+            float rotationAmountLR = Mathf.Sign(directionLR) * rotationSpeed * Time.deltaTime;
+            float rotationAmountUD = Mathf.Sign(directionUD) * rotationSpeed * Time.deltaTime;
 
-            // Calculate rotation direction using default 15 degrees
-            float rotationAngle = sign * targetRotationAngle;
-
-            // Rotate the object around its Y-axis
-            float rotationAmount = sign * rotationSpeed * Time.deltaTime;
-            transform.Rotate(Vector3.up, rotationAmount);
-
-            // Check if the object has rotated enough to reach or exceed the target rotation angle
-            Quaternion targetRotation = Quaternion.Euler(0f, rotationAngle, 0f);
-            float angleDifference = Quaternion.Angle(transform.rotation, targetRotation);
-
-            // Debug logs to check angle difference and target rotation angle
-            Debug.Log("Angle Difference: " + angleDifference);
-            Debug.Log("Target Rotation Angle: " + rotationAngle);
-
-            // Check if the angle difference is within a small tolerance of the target rotation angle
-            if (angleDifference <= 1f)
+            if (directionLR != 0)
             {
-                // Stop rotating
-                enabled = false;
-                Debug.Log("Rotation complete. Object stopped rotating.");
-            }
-        } 
+                // Rotate the object around its Y-axis, aka left (+) or right (-)
+                transform.Rotate(Vector3.up, rotationAmountLR);
 
+                // Check if the object has rotated enough to reach or exceed the target rotation angle
+                Quaternion targetRotation = Quaternion.Euler(0f, rotationAngleLR, 0f);
+                float angleDifference = Quaternion.Angle(transform.rotation, targetRotation);
+
+                if (angleDifference <= 1.2f)
+                {
+                    // Stop rotating
+                    enabled = false;
+                    Debug.Log("Rotation complete. Object stopped rotating.");
+                }
+            }
+            else if (directionUD != 0)
+            {
+                // Rotate the object around its X-axis, aka up (+) or down (-)
+                transform.Rotate(Vector3.right, rotationAmountUD);
+
+                // Check if the object has rotated enough to reach or exceed the target rotation angle
+                Quaternion targetRotation = Quaternion.Euler(rotationAngleUD, 0f, 0f);
+                float angleDifference = Quaternion.Angle(transform.rotation, targetRotation);
+
+                if (angleDifference <= 1.2f)
+                {
+                    // Stop rotating
+                    enabled = false;
+                    Debug.Log("Rotation complete. Object stopped rotating.");
+                }
+            }
+        }
     }
+
     public void StartRotate()
     {
         isRotating = true;
@@ -65,30 +79,62 @@ public class Rotate : MonoBehaviour
     }
     void ReadRotationFromFile()
     {
-        string filePath = Application.dataPath + "/gestures.txt"; // Path to the .txt file
-                                                                  // File reads a (+) value if swiped left, and (-) value is swiped right
+        string filePath = Path.Combine(Application.dataPath, "type.txt");
 
         // Check if the file exists
         if (File.Exists(filePath))
         {
-            // Read the contents of the file
-            string fileContent = File.ReadAllText(filePath);
+            // Read all lines from the file
+            string[] lines = File.ReadAllLines(filePath);
 
-            // Parse contents
-            if (float.TryParse(fileContent, out float parsedDirection))
+            foreach (string line in lines)
             {
-                // Assign the parsed value to direction
-                direction = parsedDirection;
-                Debug.Log("Direction read from file: " + direction);
-            }
-            else
-            {
-                Debug.LogError("Failed to parse direction speed from file.");
+                string[] parts = line.Split(' ');
+
+                if (parts.Length >= 2) // Ensure there are at least two parts
+                {
+                    // Parse "gestureTrue" value (first part)
+                    if (float.TryParse(parts[0], out float gestureTrue))
+                    {
+                        // Parse "direction" value (second part)
+                        if (float.TryParse(parts[1], out float parsedDirectionLR))
+                        {
+                            if (parsedDirectionLR != 0)
+                            {
+                                // Now you have the parsed float values
+                                directionLR = parsedDirectionLR;
+                                
+                                Debug.Log($"Gesture: {gestureTrue}, Orientation: L/R, Direction: {directionLR}");
+                            }
+                            else
+                            {
+                                if (float.TryParse(parts[2], out float parsedDirectionUD))
+                                {
+                                    directionUD = parsedDirectionUD;
+                                    Debug.Log($"Gesture: {gestureTrue}, Orientation: U/D, Direction: {directionUD}");
+
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Debug.LogWarning($"Failed to parse 'direction' value in line: {line}");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"Failed to parse 'gesture' value in line: {line}");
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning($"Invalid line format: {line}");
+                }
             }
         }
         else
         {
-            Debug.LogError("File not found.");
+            Debug.LogError($"File not found at path: {filePath}");
         }
     }
 }
