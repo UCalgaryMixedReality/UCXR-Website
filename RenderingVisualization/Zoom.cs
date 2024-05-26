@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using static UnityEngine.UIElements.UxmlAttributeDescription;
+using System;
 
-public class Zooming4 : MonoBehaviour
+public class Zoom : MonoBehaviour
 {
     public GameObject myObject;
-    // public float targetScale = 2.0f;
     public float targetScale;
     public float zoomSpeed = 0.1f;
 
@@ -50,40 +50,69 @@ public class Zooming4 : MonoBehaviour
 
     }
 
+    public void StartZoom()
+    {
+        isZooming = true;
+    }
+
+    public void DoNotZoom()
+    {
+        isZooming = false;
+    }
+
     float SetZoomSpeed()
     {
         return 1.0f + zoomSpeed; // Increase scale by zoom speed
     }
 
-
     void ReadTargetScaleFromFile()
     {
-        string filePath = Application.dataPath + "/targetScale.txt"; // path to the .txt file
+        string filePath = Path.Combine(Application.dataPath, "type.txt");
 
-        // checking if file exists
+        // Check if the file exists
         if (File.Exists(filePath))
         {
-            // reading the contents of the file as a string
-            string fileContent = File.ReadAllText(filePath);
+            // Read all lines from the file
+            string[] lines = File.ReadAllLines(filePath);
 
-            // attempting to parse the content as a float
-            if (float.TryParse(fileContent, out float parsedTargetScale))
+            foreach (string line in lines)
             {
-                // assign the value from the .txt file to targetScale variable
-                targetScale = parsedTargetScale;
-                // print success message
-                Debug.Log("Target scale (read from file): " + targetScale);
-            }
-            else
-            {
-                // could not parse scaling factor as a float
-                Debug.LogError("Failed to parse target scale from file.");
+                string[] parts = line.Split(' ');
+
+                if (parts.Length >= 2) // Ensure there are at least two parts
+                {
+                    // Parse "gestureTrue" value (first part)
+                    if (float.TryParse(parts[0], out float gestureTrue))
+                    {
+                        // Parse "direction" value (second part)
+                        if (float.TryParse(parts[1], out float parsedTargetScale))
+                        {
+                            // Now you have the parsed float values
+                            targetScale = parsedTargetScale;
+
+
+                            Debug.Log($"Gesture: {gestureTrue}, Target Scale: {targetScale}");
+                        }
+                        else
+                        {
+                            Debug.LogWarning($"Failed to parse 'targetScale' value in line: {line}");
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"Failed to parse 'gesture' value in line: {line}");
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning($"Invalid line format: {line}");
+                }
             }
         }
         else
         {
-            // file not found error
-            Debug.LogError("targetScale.txt file not found.");
+            Debug.LogError($"File not found at path: {filePath}");
         }
     }
 }
+
