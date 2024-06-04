@@ -72,6 +72,7 @@ public class TC : MonoBehaviour
                     {
                         // If the message contains a ".", it's likely a decimal number (distance between hands)
                         double distance = double.Parse(message);
+                        Debug.Log("Current Gesture: Zoom");
                         Debug.Log("Distance between hands: " + distance);
                     }
                     else if (message.StartsWith("["))
@@ -85,11 +86,13 @@ public class TC : MonoBehaviour
                         if (parsedCoordinates.Length == 4)
                         {
                             // If there are 4 coordinates, it represents two pointer fingers
+                            Debug.Log("Current Gesture: Point");
                             Debug.Log("Coordinates of two pointer fingers: (" + parsedCoordinates[0] + ", " + parsedCoordinates[1] + "), (" + parsedCoordinates[2] + ", " + parsedCoordinates[3] + ")");
                         }
                         else if (parsedCoordinates.Length == 2)
                         {
                             // If there are 2 coordinates, it represents one pointer finger
+                            Debug.Log("Current Gesture: Point");
                             Debug.Log("Coordinates of one pointer finger: (" + parsedCoordinates[0] + ", " + parsedCoordinates[1] + ")");
                         }
                     }
