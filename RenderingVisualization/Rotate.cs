@@ -46,7 +46,7 @@ public class Rotate : MonoBehaviour
                 Quaternion targetRotation = Quaternion.Euler(0f, rotationAngleLR, 0f);
                 float angleDifference = Quaternion.Angle(transform.rotation, targetRotation);
 
-                if (angleDifference <= 5f)
+                if (angleDifference <= 10f)
                 {
                     // Stop rotating
                     enabled = false;
@@ -64,7 +64,7 @@ public class Rotate : MonoBehaviour
                 Quaternion targetRotation = Quaternion.Euler(rotationAngleUD, 0f, 0f);
                 float angleDifference = Quaternion.Angle(transform.rotation, targetRotation);
 
-                if (angleDifference <= 5f)
+                if (angleDifference <= 10f)
                 {
                     // Stop rotating
                     enabled = false;
