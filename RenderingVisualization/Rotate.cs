@@ -6,14 +6,14 @@ using UnityEditor.Experimental.GraphView;
 public class Rotate : MonoBehaviour
 {
     // Rotation speed in degrees per second
-    public float rotationSpeed = 30f;
+    public float rotationSpeed = 15f;
 
     // Default direction
     public float directionLR;
     public float directionUD;
 
     // Target rotation angle (in degrees)
-    private float targetRotationAngle = 15f;
+    private float defaultRotationAngle = 10f;
 
     // Initial start
     private bool isRotating = false;
@@ -28,13 +28,17 @@ public class Rotate : MonoBehaviour
     {
         if (isRotating)
         {
-            float rotationAngleLR = Mathf.Sign(directionLR) * targetRotationAngle;
-            float rotationAngleUD = Mathf.Sign(directionUD) * targetRotationAngle;
-            float rotationAmountLR = Mathf.Sign(directionLR) * rotationSpeed * Time.deltaTime;
-            float rotationAmountUD = Mathf.Sign(directionUD) * rotationSpeed * Time.deltaTime;
+            Debug.Log($"Direction LR = {directionLR}");
+            Debug.Log($"Direction UD = {directionUD}");
+
+            float rotationAngleLR = directionLR * defaultRotationAngle;
+            float rotationAngleUD = directionUD * defaultRotationAngle;
+            float rotationAmountLR = directionLR * rotationSpeed * Time.deltaTime;
+            float rotationAmountUD = directionUD * rotationSpeed * Time.deltaTime;
 
             if (directionLR != 0)
             {
+                
                 // Rotate the object around its Y-axis, aka left (+) or right (-)
                 transform.Rotate(Vector3.up, rotationAmountLR);
 
@@ -42,7 +46,7 @@ public class Rotate : MonoBehaviour
                 Quaternion targetRotation = Quaternion.Euler(0f, rotationAngleLR, 0f);
                 float angleDifference = Quaternion.Angle(transform.rotation, targetRotation);
 
-                if (angleDifference <= 1.2f)
+                if (angleDifference <= 10f)
                 {
                     // Stop rotating
                     enabled = false;
@@ -51,6 +55,8 @@ public class Rotate : MonoBehaviour
             }
             else if (directionUD != 0)
             {
+             
+
                 // Rotate the object around its X-axis, aka up (+) or down (-)
                 transform.Rotate(Vector3.right, rotationAmountUD);
 
@@ -58,7 +64,7 @@ public class Rotate : MonoBehaviour
                 Quaternion targetRotation = Quaternion.Euler(rotationAngleUD, 0f, 0f);
                 float angleDifference = Quaternion.Angle(transform.rotation, targetRotation);
 
-                if (angleDifference <= 1.2f)
+                if (angleDifference <= 10f)
                 {
                     // Stop rotating
                     enabled = false;
@@ -99,11 +105,11 @@ public class Rotate : MonoBehaviour
                         // Parse "direction" value (second part)
                         if (float.TryParse(parts[1], out float parsedDirectionLR))
                         {
-                            if (parsedDirectionLR != 0)
+                            if (parsedDirectionLR > 2)
                             {
                                 // Now you have the parsed float values
                                 directionLR = parsedDirectionLR;
-                                
+                               
                                 Debug.Log($"Gesture: {gestureTrue}, Orientation: L/R, Direction: {directionLR}");
                             }
                             else
@@ -111,6 +117,7 @@ public class Rotate : MonoBehaviour
                                 if (float.TryParse(parts[2], out float parsedDirectionUD))
                                 {
                                     directionUD = parsedDirectionUD;
+                                   
                                     Debug.Log($"Gesture: {gestureTrue}, Orientation: U/D, Direction: {directionUD}");
 
                                 }
