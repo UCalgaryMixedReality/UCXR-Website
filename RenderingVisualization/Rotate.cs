@@ -1,74 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using System;
-using UnityEditor.Experimental.GraphView;
 
 public class Rotate : MonoBehaviour
 {
-    // Rotation speed in degrees per second
     public float rotationSpeed = 15f;
-
-    // Default direction
-    public float directionLR;
-    public float directionUD;
-
-    // Target rotation angle (in degrees)
-    private float defaultRotationAngle = 10f;
-
-    // Initial start
+    private List<Vector3> rotationInstructions = new List<Vector3>(); // List to store rotation instructions
+    private int currentInstructionIndex = 0;
     private bool isRotating = false;
+    private float proximityThreshold = 5f; // Threshold to consider the rotation complete
+    private Quaternion targetRotation;
 
-    private void Start()
+    void Start()
     {
-        // Read rotation angle from file
         ReadRotationFromFile();
+        StartCoroutine(ProcessInstructions());
     }
 
     void Update()
     {
         if (isRotating)
         {
-            Debug.Log($"Direction LR = {directionLR}");
-            Debug.Log($"Direction UD = {directionUD}");
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
-            float rotationAngleLR = directionLR * defaultRotationAngle;
-            float rotationAngleUD = directionUD * defaultRotationAngle;
-            float rotationAmountLR = directionLR * rotationSpeed * Time.deltaTime;
-            float rotationAmountUD = directionUD * rotationSpeed * Time.deltaTime;
-
-            if (directionLR != 0)
+            // Check if the rotation is close enough to the target
+            if (Quaternion.Angle(transform.rotation, targetRotation) < proximityThreshold)
             {
-                
-                // Rotate the object around its Y-axis, aka left (+) or right (-)
-                transform.Rotate(Vector3.up, rotationAmountLR);
-
-                // Check if the object has rotated enough to reach or exceed the target rotation angle
-                Quaternion targetRotation = Quaternion.Euler(0f, rotationAngleLR, 0f);
-                float angleDifference = Quaternion.Angle(transform.rotation, targetRotation);
-
-                if (angleDifference <= 10f)
+                isRotating = false;
+                currentInstructionIndex++;
+                if (currentInstructionIndex < rotationInstructions.Count)
                 {
-                    // Stop rotating
-                    enabled = false;
-                    Debug.Log("Rotation complete. Object stopped rotating.");
+                    SetNextRotation();
                 }
-            }
-            else if (directionUD != 0)
-            {
-             
-
-                // Rotate the object around its X-axis, aka up (+) or down (-)
-                transform.Rotate(Vector3.right, rotationAmountUD);
-
-                // Check if the object has rotated enough to reach or exceed the target rotation angle
-                Quaternion targetRotation = Quaternion.Euler(rotationAngleUD, 0f, 0f);
-                float angleDifference = Quaternion.Angle(transform.rotation, targetRotation);
-
-                if (angleDifference <= 10f)
+                else
                 {
-                    // Stop rotating
-                    enabled = false;
-                    Debug.Log("Rotation complete. Object stopped rotating.");
+                    Debug.Log("All rotations completed.");
                 }
             }
         }
@@ -83,65 +50,85 @@ public class Rotate : MonoBehaviour
     {
         isRotating = false;
     }
+
     void ReadRotationFromFile()
     {
         string filePath = Path.Combine(Application.dataPath, "type.txt");
 
-        // Check if the file exists
-        if (File.Exists(filePath))
+        if (!File.Exists(filePath))
         {
-            // Read all lines from the file
-            string[] lines = File.ReadAllLines(filePath);
+            Debug.LogError("File not found at path: " + filePath);
+            return;
+        }
 
-            foreach (string line in lines)
+        string[] lines = File.ReadAllLines(filePath);
+        foreach (string line in lines)
+        {
+            string[] parts = line.Split(' ');
+            if (parts.Length >= 3)
             {
-                string[] parts = line.Split(' ');
-
-                if (parts.Length >= 2) // Ensure there are at least two parts
+                if (float.TryParse(parts[0], out float gestureTrue) &&
+                    float.TryParse(parts[1], out float parsedDirectionLR) &&
+                    float.TryParse(parts[2], out float parsedDirectionUD))
                 {
-                    // Parse "gestureTrue" value (first part)
-                    if (float.TryParse(parts[0], out float gestureTrue))
-                    {
-                        // Parse "direction" value (second part)
-                        if (float.TryParse(parts[1], out float parsedDirectionLR))
-                        {
-                            if (parsedDirectionLR > 2)
-                            {
-                                // Now you have the parsed float values
-                                directionLR = parsedDirectionLR;
-                               
-                                Debug.Log($"Gesture: {gestureTrue}, Orientation: L/R, Direction: {directionLR}");
-                            }
-                            else
-                            {
-                                if (float.TryParse(parts[2], out float parsedDirectionUD))
-                                {
-                                    directionUD = parsedDirectionUD;
-                                   
-                                    Debug.Log($"Gesture: {gestureTrue}, Orientation: U/D, Direction: {directionUD}");
-
-                                }
-                            }
-                        }
-                        else
-                        {
-                            Debug.LogWarning($"Failed to parse 'direction' value in line: {line}");
-                        }
-                    }
-                    else
-                    {
-                        Debug.LogWarning($"Failed to parse 'gesture' value in line: {line}");
-                    }
+                    rotationInstructions.Add(new Vector3(parsedDirectionLR, parsedDirectionUD, 0));
+                    Debug.Log($"Rotation instruction added: LR {parsedDirectionLR}, UD {parsedDirectionUD}");
                 }
                 else
                 {
-                    Debug.LogWarning($"Invalid line format: {line}");
+                    Debug.LogError("Failed to parse rotation instruction: " + line);
                 }
             }
+            else
+            {
+                Debug.LogWarning("Invalid line format: " + line);
+            }
         }
-        else
+    }
+
+    IEnumerator ProcessInstructions()
+    {
+        while (currentInstructionIndex < rotationInstructions.Count)
         {
-            Debug.LogError($"File not found at path: {filePath}");
+            SetNextRotation();
+            isRotating = true;
+            yield return new WaitUntil(() => !isRotating);
+        }
+    }
+
+    void SetNextRotation()
+    {
+        if (currentInstructionIndex < rotationInstructions.Count)
+        {
+            Vector3 instruction = rotationInstructions[currentInstructionIndex];
+            Vector3 currentEulerAngles = transform.rotation.eulerAngles;
+
+            float rotationAngleLR = instruction.x * 10f; // Default rotation angle multiplier
+            float rotationAngleUD = instruction.y * 10f;
+
+            if (instruction.x > 2)
+            {
+                targetRotation = Quaternion.Euler(currentEulerAngles.x, currentEulerAngles.y + rotationAngleLR, currentEulerAngles.z);
+            }
+            else if (instruction.y > 2)
+            {
+                targetRotation = Quaternion.Euler(currentEulerAngles.x + rotationAngleUD, currentEulerAngles.y, currentEulerAngles.z);
+            }
+            else if (instruction.x != 0)
+            {
+                targetRotation = Quaternion.Euler(currentEulerAngles.x, currentEulerAngles.y + rotationAngleLR, currentEulerAngles.z);
+            }
+            else if (instruction.y != 0)
+            {
+                targetRotation = Quaternion.Euler(currentEulerAngles.x + rotationAngleUD, currentEulerAngles.y, currentEulerAngles.z);
+            }
+            else
+            {
+                // If both directions are zero, don't change the target rotation
+                targetRotation = transform.rotation;
+            }
+
+            Debug.Log($"Setting next rotation: {targetRotation.eulerAngles}");
         }
     }
 }
