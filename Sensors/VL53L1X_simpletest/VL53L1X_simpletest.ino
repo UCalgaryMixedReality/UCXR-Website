@@ -1,7 +1,7 @@
 #include "Adafruit_VL53L1X.h"
 
-#define IRQ_PIN 2
-#define XSHUT_PIN 3
+#define IRQ_PIN 2 //D7
+#define XSHUT_PIN 3 //D8
 
 Adafruit_VL53L1X vl53 = Adafruit_VL53L1X(XSHUT_PIN, IRQ_PIN);
 
