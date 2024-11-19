@@ -1,30 +1,147 @@
 
-body{
-    background-color: black;
-    color: antiquewhite;
-   }
-   div {
-       
-   }
-   div ul { 
-       list-style-type: none;
-       display: flex;
-       
-     }
+
    
-    
-   div ul li a{
-       color: antiquewhite;
-       margin: 0 10px; 
-       padding: 100px;
-     
-   }  
-   
-   div.navigation {
-       margin-top: auto; /* Pushes the div to the bottom */
-       padding: 100px; /* Optional: Add padding */
-       background-color: #c6c6c6;/* Optional: Background color for contrast */
-       text-align: center;
-       border:70
-       width: 100%;
-   }
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  height: 400px;                /* Desired height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;    /* Optional background color for empty space */
+  overflow: hidden;
+
+  
+}
+
+/* Hide the images by default */
+.mySlides {
+  /*display: none;*/
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.mySlides img{
+  max-width: 100%;              /* Ensures the image fits container width */
+  max-height: 100%;             /* Ensures the image fits container height */
+  object-fit: contain;
+}
+.dot.active{
+  background-color: #717171;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 50%;
+  user-select: none;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;                   /* Adjust distance from the left edge */
+}
+/* Position the "next button" to the right */
+.next {
+  right: 10px;
+ 
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: static;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@media (max-width: 1024px) {
+  .slideshow-container {
+    height: 300px;                 /* Reduced height for medium screens */
+  }
+  .prev, .next {
+    top: 40%
+  
+  }
+}
+
+/* Small screens (landscape phones, small tablets) */
+@media (max-width: 768px) {
+  .slideshow-container {
+    height: 200px;                 /* Further reduced height for smaller screens */
+  }
+  .prev, .next {
+    top: 30%
+  
+  }
+  
+}
+
+/* Extra small screens (portrait phones) */
+@media (max-width: 480px) {
+  .slideshow-container {
+    height: 150px;                 /* Smallest height for phones */
+  }
+  .prev, .next {
+    top: 20%
+  
+  }
+}
