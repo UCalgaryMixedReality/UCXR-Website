@@ -19,7 +19,7 @@ void pwmSetup(void) {
         PGIOCONH*/
     
     //PGCONL Initialization 
-    PG1CONLbits.ON = 1; //enable module
+    PG1CONLbits.ON = 0; 
     PG1CONLbits.TRGCNT = 0X0; // PWM generator produces 1 clk cycle after triggered 
     PG1CONLbits.CLKSEL = 0x0;
     PG1CONLbits.MODSEL = 0x4; //Selects Center-Aligned PWM mode
@@ -59,8 +59,9 @@ void pwmSetup(void) {
     
     PG1PER = 1000;   // Set period for the PWM
     PG1DC = 500;     // Set 50% duty cycle
+    PG1LEBL = 0; // The minimum blanking period is eight clock periods, which occurs when LEB[15:3] = 0.
     
-    
+    PG1CONLbits.ON = 1; //enable module
             
     
     
@@ -74,6 +75,7 @@ void pwmSetup(void) {
 int main(void) {
     
     TRISAbits.TRISA1 = 0; //test output
+    TRISBbits.TRISB14 = 0; // Set RB14 (PWM1H) as output
     mainClk();   // runs the clock setup
     pwmSetup();  //run the PWM initialization function
     

@@ -36,7 +36,7 @@ void clk_setup(void)
 void __attribute__((__interrupt__, no_auto_psv))_T1Interrupt(void)
 {
     IFS0bits.T1IF   =   0;  // Clear the timer interrupt flag
-    LATDbits.LATD13 = !LATDbits.LATD13; // Toggle output on RB0 
+    LATBbits.LATB0 = !LATBbits.LATB0; // Toggle output on RB0 
 }
 
 
@@ -61,7 +61,7 @@ void timer_setup(void)
 int mainClk(void) {
     
     clk_setup();                           // Initialize the clock speed
-    TRISDbits.TRISD13 = 0;                  // Set RB0 as output (for toggling)
+    TRISBbits.TRISB0 = 0;                  // Set RB0 as output (for toggling)
     timer_setup();                         // Initialize the timer
     __builtin_enable_interrupts();         // Enable global interrupts
 
