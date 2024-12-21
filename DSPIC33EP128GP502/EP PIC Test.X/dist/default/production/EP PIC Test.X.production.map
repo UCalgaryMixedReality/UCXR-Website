@@ -69,10 +69,10 @@ Default Scalar Model: Small
 section                    address   length (PC units)   length (bytes) (dec)
 -------                    -------   -----------------   --------------------
 .text                        0x200               0x100           0x180  (384)
-.text                        0x300                0x1c            0x2a  (42)
-.init.delay32                0x31c                0x1c            0x2a  (42)
+.init.delay32                0x300                0x1c            0x2a  (42)
+.text                        0x31c                0x16            0x21  (33)
 
-                 Total "program" memory used (bytes):          0x1d4  (468) <1%
+                 Total "program" memory used (bytes):          0x1cb  (459) <1%
 
 
 "data" Memory  [Origin = 0x1000, Length = 0x4000]
@@ -102,20 +102,20 @@ External Symbols in Program Memory (by address):
                   0x000248                  __data_init_extended
                   0x000248                  __data_init
                   0x0002fa                  __DefaultInterrupt
-                  0x000300                  _delay_half_second
-                  0x00030c                  _main
-                  0x00031c                  ___delay32
+                  0x000300                  ___delay32
+                  0x00031c                  _delay_half_second
+                  0x000328                  _main
 
 External Symbols in Program Memory (by name):
 
                   0x0002fa                  __DefaultInterrupt
-                  0x00031c                  ___delay32
+                  0x000300                  ___delay32
                   0x000248                  __data_init
                   0x000248                  __data_init_extended
                   0x00023c                  __psv_init
                   0x000200                  __resetPRI
-                  0x000300                  _delay_half_second
-                  0x00030c                  _main
+                  0x00031c                  _delay_half_second
+                  0x000328                  _main
 
 Memory Configuration
 
@@ -234,9 +234,9 @@ __FUID3
  *(.debug_abbrev)
  .debug_abbrev    0x000000         0xa1 build/default/production/LED.o
 
-.debug_line       0x000000        0x119
+.debug_line       0x000000        0x116
  *(.debug_line)
- .debug_line      0x000000        0x119 build/default/production/LED.o
+ .debug_line      0x000000        0x116 build/default/production/LED.o
 
 .debug_frame      0x000000         0x48
  *(.debug_frame)
@@ -1386,11 +1386,11 @@ __c30_signature
  __c30_signature
                   0x000085          0x6 c:/program files/microchip/xc16/v1.70/bin/bin/../../lib\liblega-pic30-elf.a(delay32ep.Leo)
 
-.text             0x000300         0x1c
- .text            0x000300         0x1c build/default/production/LED.o
-                  0x000300                  _delay_half_second
-                  0x00030c                  _main
+.init.delay32     0x000300         0x1c
+ .init.delay32    0x000300         0x1c c:/program files/microchip/xc16/v1.70/bin/bin/../../lib\liblega-pic30-elf.a(delay32ep.Leo)
+                  0x000300                  ___delay32
 
-.init.delay32     0x00031c         0x1c
- .init.delay32    0x00031c         0x1c c:/program files/microchip/xc16/v1.70/bin/bin/../../lib\liblega-pic30-elf.a(delay32ep.Leo)
-                  0x00031c                  ___delay32
+.text             0x00031c         0x16
+ .text            0x00031c         0x16 build/default/production/LED.o
+                  0x00031c                  _delay_half_second
+                  0x000328                  _main

@@ -20,9 +20,9 @@ int main(void) {
 
     while (1) {
         LATAbits.LATA1 = 1;         // Turn ON LED
-        delay_half_second();        // Wait 0.5 second
-        LATAbits.LATA1 = 0;         // Turn OFF LED
-        delay_half_second();        // Wait 0.5 second
+//        delay_half_second();        // Wait 0.5 second
+//        LATAbits.LATA1 = 0;         // Turn OFF LED
+//        delay_half_second();        // Wait 0.5 second
     }
 
     return 0;
