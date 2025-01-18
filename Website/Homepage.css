@@ -104,12 +104,12 @@ body, html {
   text-align: center;
   background-color:#f1e3c5;
   padding: 60px;
-  height: 510px;
+  height: 250px;
   font-family: "Syne", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-size: 40px;
+  font-size: 23px;
 
 }
 
@@ -129,6 +129,8 @@ body, html {
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   font-style: italic;
+  font-size: 20px;
+  
 }
 
 
@@ -147,7 +149,41 @@ body, html {
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);  /* Optional: add shadow for readability */
   text-align: center;
   white-space: nowrap;
+  padding: 5px;
 }
+
+
+.Hometeam{
+  height: 396px;
+  background: #eebfe8;
+  padding: 10px;
+  font-size: 25px;
+ 
+}
+
+.joinimage {
+  display: flex; /* Ensures the image behaves like a block element */
+  justify-content: flex-end;
+  margin-left: auto; /* Pushes the image to the far right */
+  padding-right: 40px;
+}
+
+.image-right {
+  width: 300px; /* Adjusts the image size (width) */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 10px; /* Rounds the corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
+  object-fit: cover; /* Ensures the image scales nicely if it's cropped */
+}
+
+.join-button{
+  background: linear-gradient( #ff3b,rgb(225, 109, 128));
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
 
 /* Media Queries for responsiveness */
 @media (max-width: 2000px) {
