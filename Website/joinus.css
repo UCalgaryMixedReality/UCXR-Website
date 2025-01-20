@@ -15,7 +15,7 @@ body {
 }
 
 .team-section {
-    background: linear-gradient(135deg, #ffaef4, #ff3b); /* Gradient background */
+    background: linear-gradient(135deg, #ffaef4, #fff4b1); /* Gradient background */
     border-radius: 20px; /* Rounded corners */
     padding: 20px; /* Inner padding */
     flex: 1; /* Allow boxes to expand equally */
@@ -36,14 +36,12 @@ body {
 }
 
 .team-section h1 {
-    font-family: 'Libre Baskerville', serif;
     font-size: 1.5rem;
     text-transform: uppercase;
     margin-bottom: 10px;
 }
 
 .team-section p {
-    font-family: 'PT Serif', serif;
     font-size: 1rem;
 }
 
@@ -86,12 +84,5 @@ body {
     left: 50%; /* Center horizontally */
     transform: translate(-50%, -50%); /* Center the text */
     color: white; /* Text color */
-    font-size: 30px; /* Text size */
-    font-family: "Libre Baskerville", serif; /* Apply the font */
-    
-}
-
-.container{
-    background: linear-gradient( #ff3b, #ffaef4);
-
+    font-size: 30px; /* Text size */    
 }
