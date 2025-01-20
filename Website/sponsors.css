@@ -16,7 +16,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background: linear-gradient(to right, #ffaef3, #fff4b1)
+    background: linear-gradient(to top, #ffaef3, #fff4b1)
 }
 
 /* Section Styling */
@@ -127,12 +127,12 @@ section {
 
 /* Gold Tier Specific Styling */
 .sponsors-tier.gold-tier {
-    border: 3px solid #ffd700; /* Gold border for gold tier */
+    border: 5px solid #ffd700; /* Gold border for gold tier */
 }
 
 /* Bronze Tier Specific Styling */
 .sponsors-tier.bronze-tier {
-    border: 3px solid #cd7f32; /* Bronze border for bronze tier */
+    border: 5px solid #cd7f32; /* Bronze border for bronze tier */
 }
 
 .sponsors-tier h3 {
@@ -183,48 +183,6 @@ section {
 }
 
 
-/* Navbar Styling */
-nav.navbar {
-    background-color: #ffffff; /* White background for a clean look */
-    border-radius: 12px; /* Rounds the navbar edges */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    padding: 1px 2px;
-}
-
-/* Navbar Links */
-nav.navbar .navbar-nav .nav-item .nav-link {
-    color: #555; /* Neutral text color */
-    font-size: 1rem; /* Adjust text size */
-    font-weight: 500; /* Slightly bold for readability */
-    padding: 8px 15px; /* Space around links */
-    border-radius: 8px; /* Rounds link edges */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
-    text-transform: uppercase; /* Capitalize link text */
-}
-
-/* Navbar Links Hover Effect */
-nav.navbar .navbar-nav .nav-item .nav-link:hover {
-    background-color: #292929; /* Dark background on hover */
-    color: #ffffff; /* White text on hover */
-}
-
-/* Active Link Styling */
-nav.navbar .navbar-nav .nav-item .nav-link.active {
-    background-color: #555; /* Highlighted color for the active page */
-    color: #ffffff; /* White text for active page */
-    font-weight: 700; /* Bold active link */
-}
-
-/* Navbar Brand Styling */
-nav.navbar .navbar-brand img {
-    border-radius: 50%; /* Circular logo */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for the logo */
-    transition: transform 0.3s ease; /* Smooth animation */
-}
-
-nav.navbar .navbar-brand img:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
-}
 
 @media (max-width: 768px) {
     .gold-logo {
