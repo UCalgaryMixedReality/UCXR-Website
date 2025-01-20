@@ -1,3 +1,52 @@
+body {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text for readability */
+}
+
+.team-container {
+    display: flex; /* Display child elements in a row */
+    justify-content: space-around; /* Add space between team sections */
+    align-items: flex-start; /* Align items at the top */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add space between items */
+    margin: 20px auto; /* Center container */
+    padding: 20px;
+    max-width: 1200px; /* Restrict overall width */
+}
+
+.team-section {
+    background: linear-gradient(135deg, #ffaef4, #ff3b); /* Gradient background */
+    border-radius: 20px; /* Rounded corners */
+    padding: 20px; /* Inner padding */
+    flex: 1; /* Allow boxes to expand equally */
+    max-width: 30%; /* Restrict maximum width per box */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Subtle shadow */
+    text-align: center; /* Center content */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.team-section:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.team-section img {
+    width: 50px; /* Icon size */
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.team-section h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.team-section p {
+    font-family: 'PT Serif', serif;
+    font-size: 1rem;
+}
+
 /* Add this to joinus.css or any linked stylesheet */
 .image2 {
     display: flex; /* Centers content horizontally and vertically */
