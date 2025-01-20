@@ -21,27 +21,46 @@
     <!-- GSAP for animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
-    <script src="firebase-analytics.js"></script>
     <style>
         body {
             background-color: #000; /* Set background to black */
             color: #fff; /* Ensure text is readable on black background */
         }
 
+        .team-picture {
+            text-align: center;
+            margin: 30px auto;
+        }
+
+        .team-picture img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px; /* Optional: Rounded corners for the image */
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2); /* Subtle shadow for depth */
+        }
+
+        .team-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
         .team-section {
-            background: linear-gradient(135deg, #ffaef4, #fff4b1); /* Gradient background */
-            border-radius: 20px; /* Rounded corners */
-            padding: 20px; /* Padding inside the box */
-            margin: 20px auto; /* Spacing between sections */
-            max-width: 900px; /* Restrict width */
-            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Subtle shadow for depth */
+            flex: 1 1 calc(33.333% - 40px);
+            margin: 20px;
+            max-width: 350px;
+            text-align: center;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #ffaef4, #fff4b1);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
         }
 
         .team-section img {
-            width: 50px; /* Restrict icon size */
+            width: 50px;
             height: 50px;
             margin-bottom: 10px;
         }
@@ -58,7 +77,7 @@
 </head>
 
 <body>
-    <!-- This is for the nav bar -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
         <div class="container justify-content-center">
             <a class="navbar-brand" href="#">
@@ -89,8 +108,13 @@
         </div>
     </nav>
 
- </body>
+    <!-- Team Picture Section -->
+    <section class="team-picture">
+        <h3 class="mb-3">Meet Our Team</h3>
+        <img src="images/team.JPG" alt="Team Picture">
+    </section>
 
+    <!-- Our Teams Section -->
     <section>
         <h3 class="text-center mt-4">Our Teams</h3>
         <div class="team-container">
@@ -99,13 +123,13 @@
                 <h1>Engineering</h1>
                 <p>The Engineering Team is responsible for identifying, researching, procuring, and integrating all components of the AR glasses, including sensors, batteries, and electrical elements. Their technical expertise and attention to detail should be reflected in the performance and durability in every aspect of the AR glasses' design and construction.</p>
             </div>
-    
+
             <div class="team-section">
                 <img src="images/medical.png" alt="Medicine Icon">
                 <h1>Medicine</h1>
                 <p>The Medical Research and Modeling Team leverages a variety of software tools, including Unity, Vuforia, and Blender, to breathe life into their immersive 3D models. Additionally, the team diligently validates model accuracy by conducting in-depth research, studying relevant research papers to ensure precision and authenticity in their work.</p>
             </div>
-    
+
             <div class="team-section">
                 <img src="images/briefcase.png" alt="Business Icon">
                 <h1>Business</h1>
@@ -113,7 +137,6 @@
             </div>
         </div>
     </section>
-    
 
     <!-- Join Us Section -->
     <section class="text-center my-4">
