@@ -5,7 +5,7 @@
 body, html {
   margin: 0;
   height: 100%;
-  background-color: #000000;
+  
 }
 
 .slideshow-container {
@@ -14,16 +14,13 @@ body, html {
   display: flex;
   align-items: center;
   justify-content: center;
-
+  padding: 20px;
   overflow: hidden;
   position: relative;
   max-width: 100%;
+  background: #b8b5b7;
 }
 
-.mySlides {
-  width: 100%;
-  height: 100%;
-}
 
 .mySlides img {
   width: 100vw;  /* Take the full width of the viewport */
@@ -91,7 +88,7 @@ body, html {
 /* Fading animation */
 .fade {
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration:5s;
 }
 
 @keyframes fade {
@@ -99,76 +96,77 @@ body, html {
   to { opacity: 1 }
 }
 
-.homeText{
+/* Text for homepege ARmed description */
+.SmallerContainer{
   color:black;
   text-align: center;
-  background-color:#f1e3c5;
+  background-color:#ebede6;
   padding: 60px;
-  height: 250px;
+  height: 400px;
   font-family: "Syne", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   font-size: 23px;
+  border-radius: 20px;
+  border: 20px;
+  margin-bottom: 300px
 
+}
+
+.secondContainer{
+  text-align: center;
+  background-color:#ebede6;
+  padding: 60px;
+  height: 630px;
+  font-family: "Syne", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  border-radius: 20px;
+  position: relative;
 }
 
 .libre-baskerville-regular {
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   font-style: normal;
+  font-size: 27px;
 }
 
 .libre-baskerville-bold {
   font-family: "Libre Baskerville", serif;
   font-weight: 700;
   font-style: normal;
+  font-size: 40px;
 }
 
 .libre-baskerville-regular-italic {
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
   font-style: italic;
-  font-size: 20px;
+  font-size: 70px;
   
 }
 
-
-
-
-
-/* Overlay text on top of image */
-.text {
-  position: absolute;
-  top: 80%;  /* Center the text vertically */
-  left: 50%;  /* Center the text horizontally */
-  transform: translate(-50%, -50%); /* Adjust for exact centering */
-  color: white;
-  font-size: 90%;  /* Larger base font size */
-  font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);  /* Optional: add shadow for readability */
-  text-align: center;
-  white-space: nowrap;
-  padding: 5px;
-}
-
-
-.Hometeam{
-  height: 396px;
-  background: #eebfe8;
-  padding: 10px;
-  font-size: 25px;
- 
-}
-
-.joinimage {
-  display: flex; /* Ensures the image behaves like a block element */
+.HOMEContainer{
+  /* Ensures the image behaves like a block element */
   justify-content: flex-end;
-  margin-left: auto; /* Pushes the image to the far right */
-  padding-right: 40px;
+  padding: 40px;
+  background: linear-gradient(to top, #ffaef3, #fff4b1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+  height: 1800px;
 }
 
-.image-right {
+
+.ARimage {
+  padding: 7px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
+
+.image-centre {
   width: 300px; /* Adjusts the image size (width) */
   height: auto; /* Maintains aspect ratio */
   border-radius: 10px; /* Rounds the corners */
@@ -176,14 +174,38 @@ body, html {
   object-fit: cover; /* Ensures the image scales nicely if it's cropped */
 }
 
+
+.image-right {
+  display: block;
+  float: right;       /* Align image to the right */
+  width: 563px;       /* Increase size */
+  height: auto;       /* Maintain aspect ratio */
+  margin-left: 20px;
+  border-radius: 10px; 
+  margin-bottom: 20px; 
+  
+  
+}
+
+.shift-left {
+  display: block;          /* Ensures the text behaves as a block element */
+  text-align: left;        /* Aligns the text to the left */
+
+  width: 100%;             /* Makes the block span the full width */
+  /* Optional: Adds a background color for better visibility */
+  border-radius: 5px;      /* Optional: Rounds the block corners */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
+  width: 500px;
+}
+
 .join-button{
   background: linear-gradient( #ff3b,rgb(225, 109, 128));
   padding: 15px;
-  font-size: 18px;
+  font-size: 23px;
   border-radius: 10px;
-  margin-top: 20px;
+  margin: 10px;
+  
 }
-
 
 /* Media Queries for responsiveness */
 @media (max-width: 2000px) {
