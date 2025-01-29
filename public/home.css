@@ -1,0 +1,347 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  height: 100%;
+  
+}
+
+.slideshow-container {
+  width: 100vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+  max-width: 100%;
+  background: #b8b5b7;
+}
+
+
+.mySlides img {
+  width: 100vw;  /* Take the full width of the viewport */
+  height: auto;  /* Maintain aspect ratio */
+  object-fit: contain; /* Ensures the image is fully visible */
+  object-position: center; /* Keeps the image centered */
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 50%;
+  user-select: none;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Hover effect for prev/next buttons */
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration:5s;
+}
+
+@keyframes fade {
+  from { opacity: .4 }
+  to { opacity: 1 }
+}
+
+/* Text for homepege ARmed description */
+.SmallerContainer{
+  color:black;
+  text-align: center;
+  background-color:#ebede6;
+  padding: 60px;
+  height: 400px;
+  font-family: "Syne", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 23px;
+  border-radius: 20px;
+  border: 20px;
+  margin-bottom: 300px
+
+}
+
+.secondContainer{
+  text-align: center;
+  background-color:#ebede6;
+  padding: 60px;
+  height: 630px;
+  font-family: "Syne", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 30px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.libre-baskerville-regular {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 27px;
+}
+
+.libre-baskerville-bold {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 40px;
+}
+
+.libre-baskerville-regular-italic {
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 70px;
+  
+}
+
+.HOMEContainer{
+  /* Ensures the image behaves like a block element */
+  justify-content: flex-end;
+  padding: 40px;
+  background: linear-gradient(to top, #ffaef3, #fff4b1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+  height: 1800px;
+}
+
+
+.ARimage {
+  padding: 7px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for better visibility */
+}
+
+.image-centre {
+  width: 300px; /* Adjusts the image size (width) */
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 10px; /* Rounds the corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Adds a shadow */
+  object-fit: cover; /* Ensures the image scales nicely if it's cropped */
+}
+
+
+.image-right {
+  display: block;
+  float: right;       /* Align image to the right */
+  width: 563px;       /* Increase size */
+  height: auto;       /* Maintain aspect ratio */
+  margin-left: 20px;
+  border-radius: 10px; 
+  margin-bottom: 20px; 
+  
+  
+}
+
+.shift-left {
+  display: block;          /* Ensures the text behaves as a block element */
+  text-align: left;        /* Aligns the text to the left */
+
+  width: 100%;             /* Makes the block span the full width */
+  /* Optional: Adds a background color for better visibility */
+  border-radius: 5px;      /* Optional: Rounds the block corners */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Adds a shadow for depth */
+  width: 500px;
+}
+
+.join-button{
+  background: linear-gradient( #ff3b,rgb(225, 109, 128));
+  padding: 15px;
+  font-size: 23px;
+  border-radius: 10px;
+  margin: 10px;
+  
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 2000px) {
+  .slideshow-container {
+    height: 800px; /* Adjusted to fit image height */
+  }
+  .prev, .next {
+    top: 65%;
+  }
+  .text {
+    font-size: 300%; /* Much larger for desktop screens */
+  }
+}
+
+@media (max-width: 1024px) {
+  .slideshow-container {
+    height: 600px; /* Adjusted for tablet screens */
+  }
+  .prev, .next {
+    top: 45%;
+  }
+  .text {
+    font-size: 200%; /* Larger for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .slideshow-container {
+    height: 400px; /* Smaller height for small tablets and phones */
+  }
+  .prev, .next {
+    top: 40%;
+  }
+  .text {
+    font-size: 150%; /* Larger for small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .slideshow-container {
+    height: 300px; /* Reduced height for portrait phones */
+  }
+  .prev, .next {
+    top: 35%;
+  }
+  .text {
+    font-size: 160%; /* Max size for smallest screens */
+  }
+}
+
+/* Device-Specific Queries */
+@media (max-width: 2000px) {
+  .slideshow-container {
+    height: 800px; /* Adjusted for desktop screens */
+  }
+  .prev, .next {
+    top: 65%;
+  }
+  .text {
+    top: 90%;
+    font-size: 260%; /* Larger text for large desktop screens */
+  }
+}
+
+@media (max-width: 1280px) {
+  .slideshow-container {
+    height: 700px; /* Adjusted for smaller desktop screens */
+  }
+  .prev, .next {
+    top: 60%;
+  }
+  .text {
+    font-size: 200%; /* Large text for smaller desktops */
+  }
+}
+
+@media (max-width: 1024px) {
+  .slideshow-container {
+    height: 600px; /* Adjusted for tablet screens */
+  }
+  .prev, .next {
+    top: 55%;
+  }
+  .text {
+    font-size: 180%; /* Slightly smaller for tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .slideshow-container {
+    height: 500px; /* Adjusted for small tablets and large phones */
+  }
+  .prev, .next {
+    top: 50%;
+  }
+  .text {
+    font-size: 150%; /* Maintain readability for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .slideshow-container {
+    height: 350px; /* Reduced height for portrait phones */
+  }
+  .prev, .next {
+    top: 45%;
+  }
+  .text {
+    font-size: 120%; /* Optimal size for smaller phones */
+  }
+}
+
+/* Device-Specific Queries for Finer Adjustments */
+@media screen and (max-width: 360px) { /* Smallest devices (e.g., Galaxy A51) */
+  .slideshow-container {
+    height: 280px;
+  }
+  .text {
+    font-size: 140%; /* Ensure readability on small screens */
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) { /* iPads in landscape mode */
+  .text {
+    font-size: 200%; /* Slightly larger for tablets in landscape */
+  }
+}
+
+@media screen and (max-width: 390px) { /* iPhone 12 Pro */
+  .text {
+    font-size: 75px; /* Larger for small devices with higher resolutions */
+  }
+}
+
+@media screen and (max-width: 430px) { /* iPhone 14 Pro Max */
+  .text {
+    font-size: 180%; /* Keep slightly larger for larger phones */
+  }
+}

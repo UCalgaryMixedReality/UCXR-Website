@@ -1,0 +1,103 @@
+
+
+.team-container {
+    display: flex; /* Display child elements in a row */
+    justify-content: space-around; /* Add space between team sections */
+    align-items: flex-start; /* Align items at the top */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 20px; /* Add space between items */
+    margin: 20px auto; /* Center container */
+    padding: 20px;
+    max-width: 1200px; /* Restrict overall width */
+}
+
+.team-section {
+    background: linear-gradient(135deg, #ffaef4, #fff4b1); /* Gradient background */
+    color: black;
+    border-radius: 20px; /* Rounded corners */
+    padding: 20px; /* Inner padding */
+    flex: 1; /* Allow boxes to expand equally */
+    max-width: 30%; /* Restrict maximum width per box */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Subtle shadow */
+    text-align: center; /* Center content */
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.team-section:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.team-section img {
+    width: 50px; /* Icon size */
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.team-section h1 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.team-section p {
+    font-size: 1rem;
+}
+
+/* Add this to joinus.css or any linked stylesheet */
+.image2 {
+    display: flex; /* Centers content horizontally and vertically */
+    justify-content: center; 
+    align-items: center; 
+    height: auto; /* Allows the container to adjust to content */
+    margin: 20px auto; /* Centers the container and adds spacing */
+    max-width: 80%; /* Restricts the container width */
+    overflow: hidden; /* Ensures no extra content spills out */
+    position: relative;
+    text-align: center;
+    color: azure;
+}
+
+.blur {
+    position: relative;
+    width: 100%; /* Full-width container */
+    max-width: 900px; /* Limit the size */
+    margin: 0 auto; /* Center the container */
+    overflow: hidden; /* Prevent content spill */
+    
+    filter: blur(1.4px); /* Blur effect */
+    height: 400px; /* Set height for the blurred container */
+    
+
+}
+
+.cropped {
+    width: 100%; /* Ensures the image fits the container */
+    height: auto; /* Maintains the aspect ratio */
+    border-radius: 10px; /* Optional: adds rounded corners */
+}
+
+.text2{
+    position: absolute; /* Position relative to the container */
+    top: 55%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the text */
+    color: black; /* Text color */
+    font-size: 30px; /* Text size */    
+}
+
+#applybtn {
+    background: linear-gradient(to right, #ffaef4, #fff4b1); 
+    color: black; /* black text */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add padding */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1rem; /* Adjust font size */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+#applybtn:hover {
+    transform: scale(1.05); /* Slightly enlarge button */
+}
+
+
