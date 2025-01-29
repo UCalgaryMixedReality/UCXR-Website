@@ -17,9 +17,8 @@ body {
 section {
     padding: 40px;
     margin: 20px auto;
-    background: linear-gradient(135deg, #ffaef4, #fff4b1);
+    background: white;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 1200px;
     text-align: center;
 }
@@ -28,7 +27,7 @@ section {
     max-width: flex;
     margin: 0 auto;
     padding: 50px;
-    background: #fff; /* Optional */
+    background: #f3f3f2; /* Optional */
     border-radius: 10px; /* Optional */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional */
 }

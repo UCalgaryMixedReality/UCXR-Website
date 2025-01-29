@@ -12,7 +12,7 @@
 }
 
 .team-section {
-    background: linear-gradient(135deg, #ffaef4, #fff4b1); /* Gradient background */
+    background: #d6d6d4; /* Gradient background */
     color: black;
     border-radius: 20px; /* Rounded corners */
     padding: 20px; /* Inner padding */
@@ -86,7 +86,7 @@
 }
 
 #applybtn {
-    background: linear-gradient(to right, #ffaef4, #fff4b1); 
+    background: #d6d6d4; 
     color: black; /* black text */
     border: none; /* Remove border */
     padding: 10px 20px; /* Add padding */

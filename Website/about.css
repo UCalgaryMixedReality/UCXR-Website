@@ -8,7 +8,7 @@
 body{
     font-family: 'Playfair Display', sans-serif;
     display: grid;
-    background: linear-gradient(to top, #ffaef3, #fff4b1);
+    background: white;
     align-content: center;
     min-height: 100vh;
 }

@@ -15,7 +15,7 @@ body {
     flex-direction: column;
     align-content: center;
     min-height: 100vh;
-    background: linear-gradient(to top, #ffaef3, #fff4b1)
+    background: #292828;
 }
 
 /* Section Styling */
@@ -34,7 +34,7 @@ section {
     align-items: center;
     text-align: center;
     min-height: 30vh;
-    background-color: #fff;
+    background-color: #f3f3f2;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
