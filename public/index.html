@@ -18,47 +18,61 @@
     <link rel="icon" type="image/x-icon" href="images/ARmed_logo.jpg">
     
 </head>
+
 <body>
     <!-- This is for the nav bar -->
-    <nav class="navbar navbar-expand-lg bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container justify-content-center">
+          <!-- Logo -->
           <a class="navbar-brand" href="#">
-            <img src= "images/ARmed_logo.jpg" alt="logo picture" width="50">
+            <img src="images/ARmed_logo.jpg" alt="ARmed Logo" width="50">
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      
+          <!-- Navbar Toggler for Mobile -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
+      
+          <!-- Navbar Links -->
           <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
             <ul class="navbar-nav text-center">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="ourTeam.html">Our Team</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="gallery.html">Gallery</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sponsors.html">Sponsers</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contactUs.html">Contact Us</a>
-                </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ourTeam.html">Our Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="gallery.html">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="sponsors.html">Sponsors</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contactus.html">Contact Us</a>
+              </li>
             </ul>
           </div>
         </div>
-      </nav>
-    
+      </nav>  
+
     <!-- Slideshow container -->
     <div class="slideshow-container">
         <!-- Full-width images with number and caption text -->
         <div class="mySlides ">
             <div class="numbertext">1 / 5</div>
-            <img src="images/team.JPG" style="width:100%">
+            <img src="images\homepage_images\DSCF1366.jpg" style="width:100%">
            
         </div>
         <div class="mySlides ">
@@ -79,7 +93,7 @@
         <div class="mySlides ">
             <div class="numbertext">5 / 5</div>
             <img src="images/DSCF2762.JPG" style="width:100%">
-            
+            <!-- hello world -->
         </div>
 
         <!-- Next and previous buttons -->
@@ -87,12 +101,6 @@
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
     <br>
-    <!-- The dots/circles -->
-    <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-    </div>
 
     <div class="HOMEContainer">
         <div class="SmallerContainer">
@@ -103,9 +111,6 @@
                 <button class="join-button">Learn More About Us!</button>
             </a>
             
-            <div class="ARimage">
-                <img src="images/ARmed_logo.jpg" alt="logo" class="image-centre">
-            </div>
         </div> 
         <div class="secondContainer">
             <div class="shift-left">
@@ -117,7 +122,6 @@
                 </div>
             </div>
 
-            <img src="images/jointeam.png" alt="Join Our Team" class="image-right">
             <a href="ourTeam.html">
                 <button class="join-button">Join Now</button>
             </a>
