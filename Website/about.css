@@ -25,6 +25,7 @@ section{
 }
 
 .content{
+    font-family: 'Playfair Display', sans-serif;
     background: white;
     display: flex;
     justify-content: center;

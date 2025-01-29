@@ -21,6 +21,7 @@
 
 /* Navbar Styling */
 nav.navbar {
+  font-family: 'Playfair Display', sans-serif;
   background-color: #ffffff; /* White background for a clean look */
   border-radius: 0; /* Remove border radius to span the full width */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */

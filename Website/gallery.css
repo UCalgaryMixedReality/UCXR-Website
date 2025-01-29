@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+
 /* Global Reset */
 * {
     box-sizing: border-box;
@@ -6,6 +9,7 @@
 }
 
 body {
+    font-family: 'Playfair Display', sans-serif;
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -28,7 +32,7 @@ section {
     margin: 0 auto;
     padding: 50px;
     background: #f3f3f2; /* Optional */
-    border-radius: 10px; /* Optional */
+    border-radius: 5px; /* Optional */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional */
 }
 
@@ -47,7 +51,7 @@ section {
     margin: 0;
     position: relative;
     overflow: hidden;
-    border-radius: 15px;
+    border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -64,6 +68,7 @@ section {
 }
 
 .gallery-container figcaption {
+    font-family: 'Playfair Display', sans-serif;
     position: absolute;
     bottom: 0;
     left: 0;
