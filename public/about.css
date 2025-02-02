@@ -20,7 +20,7 @@ section{
     margin: 0 auto;
 }
 .image{
-    background: url("images/AR_about.jpg") center/cover no-repeat;
+    background: url("images/aboutus_images/AR_about.jpg") center/cover no-repeat;
     border: 40px solid white; /* Adds a white frame */
 }
 
