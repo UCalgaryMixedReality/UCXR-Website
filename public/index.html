@@ -16,161 +16,146 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="images/ARmed_logo.jpg">
-    
 </head>
 
 <body>
     <!-- This is for the nav bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container justify-content-center">
-          <!-- Logo -->
-          <a class="navbar-brand" href="#">
-            <img src="images/ARmed_logo.jpg" alt="ARmed Logo" width="50">
-          </a>
-      
-          <!-- Navbar Toggler for Mobile -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-      
-          <!-- Navbar Links -->
-          <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
-            <ul class="navbar-nav text-center">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="ourTeam.html">Our Team</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="gallery.html">Gallery</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="sponsors.html">Sponsors</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contactus.html">Contact Us</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>  
+            <!-- Logo -->
+            <a class="navbar-brand" href="#">
+                <img src="images/ARmed_logo.jpg" alt="ARmed Logo" width="50">
+            </a>
 
-    <!-- Slideshow container -->
-    <div class="slideshow-container">
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides ">
-            <div class="numbertext">1 / 5</div>
-            <img src="images\homepage_images\DSCF1366.jpg" style="width:100%">
-           
+            <!-- Navbar Toggler for Mobile -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+                <ul class="navbar-nav text-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ourTeam.html">Our Team</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sponsors.html">Sponsors</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contactus.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="mySlides ">
-            <div class="numbertext">2 / 5</div>
-            <img src="images/DSCF2779.JPG" style="width:100%">
-            
-        </div>
-        <div class="mySlides ">
-            <div class="numbertext">3 / 5</div>
-            <img src="images/DSCF2781.JPG" style="width:100%">
-            
-        </div>
-        <div class="mySlides ">
-            <div class="numbertext">4 / 5</div>
-            <img src="images/DSCF2752.JPG" style="width:100%">
-            
-        </div>
-        <div class="mySlides ">
-            <div class="numbertext">5 / 5</div>
-            <img src="images/DSCF2762.JPG" style="width:100%">
-            <!-- hello world -->
+    </nav>
+
+    <!-- Slideshow and Text Container -->
+    <div class="content-container">
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides">
+                <div class="numbertext">1 / 5</div>
+                <img src="images/homepage_images/DSCF1366.jpg" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">2 / 5</div>
+                <img src="images/DSCF2779.JPG" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">3 / 5</div>
+                <img src="images/DSCF2781.JPG" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">4 / 5</div>
+                <img src="images/DSCF2752.JPG" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <div class="numbertext">5 / 5</div>
+                <img src="images/DSCF2762.JPG" style="width:100%">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
 
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    <br>
-
-    <div class="HOMEContainer">
-        <div class="SmallerContainer">
+        <!-- Text Content -->
+        <div class="text-content">
             <div class="libre-baskerville-bold">
                 Revolutionizing the student team experience through Engineering, Science, Mathematics, and Art disciplines.
             </div>
             <a href="about.html">
                 <button class="join-button">Learn More About Us!</button>
             </a>
-            
-        </div> 
-        <div class="secondContainer">
-            <div class="shift-left">
-                <div class="libre-baskerville-bold">
-                    Join Our Team
-                </div>
-                <div class="libre-baskerville-regular">
-                    Join Our Diverse Teams, Including Our Medical, Business, and Engineering Teams!
-                </div>
-            </div>
-
-            <a href="ourTeam.html">
-                <button class="join-button">Join Now</button>
-            </a>
-        </div> 
         </div>
-            
-        <!-- Place script at the end of body if needed -->
-        <script src="interactive.js"></script>
-    
-           
     </div>
-    
-    <!-- This is for the footer -->    
+
+    <!-- Second Container -->
+    <div class="secondContainer">
+        <div class="shift-left">
+            <div class="libre-baskerville-bold">
+                Join Our Team
+            </div>
+            <div class="libre-baskerville-regular">
+                Join Our Diverse Teams, Including Our Medical, Business, and Engineering Teams!
+            </div>
+        </div>
+
+        <a href="ourTeam.html">
+            <button class="join-button">Join Now</button>
+        </a>
+    </div>
+
+    <!-- Footer -->
     <footer class="bg-dark text-light py-4">
         <div class="container px-4">
-        <div class="row">
-            <div class="col-6 col-lg-4">
-                <h3 class="pt-3 fw-bold">ARmed</h3>
-                <p>2500 University Dr NW, Calgary, AB T2N 1N4</p>
-                <p class="mb-0">armeduofc@gmail.com</p>
-            </div>
-            <div class="col">
-                <!-- I want this to look different -->
-                <ul class="list-unstyled">
-                    <li><a href="home.html" class="text-decoration-none text-light">Home</a></li>
-                    <li><a href="about.html" class="text-decoration-none text-light">About</a></li>
-                    <li><a href="ourTeam.html" class="text-decoration-none text-light">Our Team</a></li>
-                    <li><a href="sponsors.html" class="text-decoration-none text-light">Sponsors</a></li>
-                    <li><a href="gallery.html" class="text-decoration-none text-light">Gallery</a></li>
-                    <li><a href="contactUs.html" class="text-decoration-none text-light">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-lg-3 text-lg-end">
-                <h3 class="pt-3 fw-bold">Social Media</h3>
-                <div>
-                <a href="https://www.linkedin.com/company/armeduofc/posts/?feedView=all" class="text-decoration-none text-light"><i class="bi bi-linkedin fs-3"></i></a>
-                <a href="https://github.com/ARmedUCalgary" class="text-decoration-none text-light"><i class="bi bi-github fs-2"></i></a>
-                <a href="https://www.instagram.com/armeduofc/" class="text-decoration-none text-light"><i class="bi bi-instagram fs-2"></i>
+            <div class="row">
+                <div class="col-6 col-lg-4">
+                    <h3 class="pt-3 fw-bold">ARmed</h3>
+                    <p>2500 University Dr NW, Calgary, AB T2N 1N4</p>
+                    <p class="mb-0">armeduofc@gmail.com</p>
                 </div>
+                <div class="col">
+                    <!-- I want this to look different -->
+                    <ul class="list-unstyled">
+                        <li><a href="home.html" class="text-decoration-none text-light">Home</a></li>
+                        <li><a href="about.html" class="text-decoration-none text-light">About</a></li>
+                        <li><a href="ourTeam.html" class="text-decoration-none text-light">Our Team</a></li>
+                        <li><a href="sponsors.html" class="text-decoration-none text-light">Sponsors</a></li>
+                        <li><a href="gallery.html" class="text-decoration-none text-light">Gallery</a></li>
+                        <li><a href="contactUs.html" class="text-decoration-none text-light">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3 text-lg-end">
+                    <h3 class="pt-3 fw-bold">Social Media</h3>
+                    <div>
+                        <a href="https://www.linkedin.com/company/armeduofc/posts/?feedView=all" class="text-decoration-none text-light"><i class="bi bi-linkedin fs-3"></i></a>
+                        <a href="https://github.com/ARmedUCalgary" class="text-decoration-none text-light"><i class="bi bi-github fs-2"></i></a>
+                        <a href="https://www.instagram.com/armeduofc/" class="text-decoration-none text-light"><i class="bi bi-instagram fs-2"></i></a>
+                    </div>
                 </div>
                 <div class="d-flex justify-content-between">
-                <p>ARmed.</p>
-                <!-- this is the part where you can link to terms and conditions and also privacy policy 
-                <div class="d-flex">
-                <a href="#" class="text-decoration-none text-light me-4"
-                </div> -->
+                    <p>ARmed.</p>
+                    <!-- this is the part where you can link to terms and conditions and also privacy policy 
+                    <div class="d-flex">
+                    <a href="#" class="text-decoration-none text-light me-4"
+                    </div> -->
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Place script at the end of body if needed -->
+    <script src="interactive.js"></script>
 </body>
 </html>

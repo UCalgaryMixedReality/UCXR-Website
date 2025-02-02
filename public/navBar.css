@@ -1,4 +1,24 @@
-/* The following is for the na-bar*/
+/* Navbar Styling */
+nav.navbar {
+  font-family: 'STIX Two Text', serif; /* Apply STIX Two Text font */
+  background-color: black;
+  border-radius: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Links */
+nav.navbar .navbar-nav .nav-item .nav-link {
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 8px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-transform: uppercase;
+}
+
+/* Hover effect for links */
 .nav-link {
   position: relative;
 }
@@ -19,42 +39,6 @@
   opacity: 1;
 }
 
-/* Navbar Styling */
-nav.navbar {
-  font-family: 'Playfair Display', sans-serif;
-  background-color: #ffffff; /* White background for a clean look */
-  border-radius: 0; /* Remove border radius to span the full width */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  width: 100%; /* Ensure it spans the entire width of the page */
-  margin: 0; /* Remove default margins */
-  padding: flex; /* Remove unnecessary padding */
-}
-
-/* Navbar container styling */
-nav.navbar .container {
-  max-width: 100%; /* Make sure the inner container spans the full width */
-  padding-left: 1rem; /* Optional: Add some padding to the sides */
-  padding-right: 1rem; /* Optional: Add some padding to the sides */
-}
-
-/* Navbar Links */
-nav.navbar .navbar-nav .nav-item .nav-link {
-  color: #555; /* Neutral text color */
-  font-size: 1rem; /* Adjust text size */
-  font-weight: 500; /* Slightly bold for readability */
-  padding: 8px 15px; /* Space around links */
-  border-radius: 8px; /* Rounds link edges */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
-  text-transform: uppercase; /* Capitalize link text */
-}
-
-/* Navbar Brand Styling */
-nav.navbar .navbar-brand img {
-  border-radius: 50%; /* Circular logo */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for the logo */
-  transition: transform 0.3s ease; /* Smooth animation */
-}
-
-nav.navbar .navbar-brand img:hover {
-  transform: scale(1.1); /* Slight zoom on hover */
+.navbar.bg-dark {
+  background-color: #000000 !important; /* Pure black */
 }
