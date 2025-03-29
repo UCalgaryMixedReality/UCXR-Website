@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "armed-4c631"
-  }
+    "default": "armed-website-72e9b",
+    " staging": "armed-website-72e9b"
+  },
+  "targets": {},
+  "etags": {}
 }
