@@ -171,7 +171,11 @@ input, select, textarea {
 		h1 a {
 			color: inherit;
 			text-decoration: none;
-		}
+			display: inline-block;
+			padding-left: 50px; /* Adjust based on image size */
+			background: url("../../images/ARmed_logo.png") no-repeat left center;
+			background-size: 55px auto; /* Adjust as needed */
+		}		
 
 	h2, h3, h4, h5, h6 {
 		color: #fff;
