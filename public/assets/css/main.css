@@ -1,7 +1,5 @@
 @import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic");
-
-/*
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');/*
 	Spectral by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
@@ -12,7 +10,7 @@ iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
 code, del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, b,
-u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+u, i, center, dl, dt, dd, ol, ul, li, la, fieldset,
 form, label, legend, table, caption, tbody,
 tfoot, thead, tr, th, td, article, aside,
 canvas, details, embed, figure, figcaption,
@@ -103,7 +101,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #fff;
-		font-family: "Open Sans", Helvetica, sans-serif;
+		font-family: "Kantumruy Pro", sans-serif;
 		font-size: 15pt;
 		font-weight: 400;
 		letter-spacing: 0.075em;
@@ -162,7 +160,20 @@ input, select, textarea {
 		margin: 0 0 2em 0;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1 {
+		color: #fff;
+		font-weight: 800;
+		letter-spacing: 0.225em;
+		line-height: 1em;
+		margin: 0 0 1em 0;
+	}
+
+		h1 a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+	h2, h3, h4, h5, h6 {
 		color: #fff;
 		font-weight: 800;
 		letter-spacing: 0.225em;
@@ -171,7 +182,7 @@ input, select, textarea {
 		text-transform: uppercase;
 	}
 
-		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+		h2 a, h3 a, h4 a, h5 a, h6 a {
 			color: inherit;
 			text-decoration: none;
 		}
@@ -2487,7 +2498,7 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #ed4933;
+			background-color: #ec9a29;
 			box-shadow: none !important;
 			color: #ffffff !important;
 		}
@@ -2497,7 +2508,7 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #ef5e4a !important;
+				background-color: #ec9a29 !important;
 			}
 
 			input[type="submit"].primary:active,
@@ -2505,7 +2516,7 @@ input, select, textarea {
 			input[type="button"].primary:active,
 			button.primary:active,
 			.button.primary:active {
-				background-color: #eb341c !important;
+				background-color: #ec9a29 !important;
 			}
 
 		input[type="submit"].disabled, input[type="submit"]:disabled,
@@ -2563,23 +2574,23 @@ input, select, textarea {
 		}
 
 			.features li:nth-child(1) {
-				background-color: rgba(0, 0, 0, 0.035);
+				background-color: #F4CA90;
 			}
 
 			.features li:nth-child(2) {
-				background-color: rgba(0, 0, 0, 0.07);
+				background-color: #F4CA90;
 			}
 
 			.features li:nth-child(3) {
-				background-color: rgba(0, 0, 0, 0.105);
+				background-color: #F4CA90;
 			}
 
 			.features li:nth-child(4) {
-				background-color: rgba(0, 0, 0, 0.14);
+				background-color: #E3B88C;
 			}
 
 			.features li:nth-child(5) {
-				background-color: rgba(0, 0, 0, 0.175);
+				background-color: #E3B88C;
 			}
 
 			.features li:nth-child(6) {
@@ -2604,10 +2615,10 @@ input, select, textarea {
 
 			.features li:before {
 				display: block;
-				color: #00ffcc;
+				color: white;
 				position: absolute;
 				left: 1.75em;
-				top: 2.75em;
+				top: 2.75em; 
 				font-size: 1.5em;
 			}
 
@@ -2658,6 +2669,8 @@ input, select, textarea {
 
 			}
 
+
+
 /* Spotlight */
 
 	.spotlight {
@@ -2703,19 +2716,19 @@ input, select, textarea {
 		}
 
 		.spotlight:nth-child(1) {
-			background-color: rgba(0, 0, 0, 0.075);
+			background-color: #f4c27c;
 		}
 
 		.spotlight:nth-child(2) {
-			background-color: rgba(0, 0, 0, 0.15);
+			background-color: #f0b056;
 		}
 
 		.spotlight:nth-child(3) {
-			background-color: rgba(0, 0, 0, 0.225);
+			background-color: #ec9a29;
 		}
 
 		.spotlight:nth-child(4) {
-			background-color: rgba(0, 0, 0, 0.3);
+			background-color: #708B99;
 		}
 
 		.spotlight:nth-child(5) {
@@ -2817,7 +2830,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style1 {
-			background-color: #21b2a6;
+			background-color: #cab69b;
 			color: #c8ece9;
 		}
 
@@ -2842,7 +2855,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style1 header p {
-				color: #a6e0db;
+				color: white;
 			}
 
 			.wrapper.style1 header.major h2, .wrapper.style1 header.major h3, .wrapper.style1 header.major h4, .wrapper.style1 header.major h5, .wrapper.style1 header.major h6 {
@@ -2850,7 +2863,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style1 header.major p {
-				color: #c8ece9;
+				color: white;
 			}
 
 			.wrapper.style1 label {
@@ -2976,11 +2989,11 @@ input, select, textarea {
 			}
 
 		.wrapper.style2 {
-			background-color: #2e3842;
+			background-color: #708B99;
 		}
 
 		.wrapper.style3 {
-			background-color: #505393;
+			background-color: #F3A5BC;
 			color: #d3d4e4;
 		}
 
@@ -3005,7 +3018,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style3 header p {
-				color: #b9bad4;
+				color: white;
 			}
 
 			.wrapper.style3 header.major h2, .wrapper.style3 header.major h3, .wrapper.style3 header.major h4, .wrapper.style3 header.major h5, .wrapper.style3 header.major h6 {
@@ -3013,7 +3026,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style3 header.major p {
-				color: #d3d4e4;
+				color: white;
 			}
 
 			.wrapper.style3 label {
@@ -3034,7 +3047,7 @@ input, select, textarea {
 
 				.wrapper.style3 select option {
 					color: #ffffff;
-					background: #505393;
+					background: #547996;
 				}
 
 			.wrapper.style3 input[type="checkbox"] + label,
@@ -3351,7 +3364,7 @@ input, select, textarea {
 		-ms-transition: -ms-transform 0.5s ease;
 		transition: transform 0.5s ease;
 		-webkit-overflow-scrolling: touch;
-		background: #21b2a6;
+		background: #4F646F;
 		color: #ffffff;
 		height: 100%;
 		max-width: 80%;
@@ -3445,7 +3458,7 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease;
 		-ms-transition: background-color 0.2s ease;
 		transition: background-color 0.2s ease;
-		background: #2e3842;
+		background: #4F646F;
 		height: 3em;
 		left: 0;
 		line-height: 3em;
@@ -3584,7 +3597,7 @@ input, select, textarea {
 		text-align: center;
 	}
 
-		#banner h2 {
+		#banner h1 {
 			-moz-transform: scale(1);
 			-webkit-transform: scale(1);
 			-ms-transform: scale(1);
@@ -3601,7 +3614,7 @@ input, select, textarea {
 			z-index: 1;
 		}
 
-			#banner h2:before, #banner h2:after {
+			#banner h1:before, #banner h1:after {
 				-moz-transition: width 0.85s ease;
 				-webkit-transition: width 0.85s ease;
 				-ms-transition: width 0.85s ease;
@@ -3618,12 +3631,12 @@ input, select, textarea {
 				width: 100%;
 			}
 
-			#banner h2:before {
+			#banner h1:before {
 				top: 0;
 				left: 0;
 			}
 
-			#banner h2:after {
+			#banner h1:after {
 				bottom: 0;
 				right: 0;
 			}
@@ -3712,7 +3725,7 @@ input, select, textarea {
 				min-height: 0;
 			}
 
-				#banner h2 {
+				#banner h1 {
 					font-size: 1.25em;
 				}
 
@@ -3726,7 +3739,7 @@ input, select, textarea {
 
 		}
 
-	body.is-preload #banner h2 {
+	body.is-preload #banner h1 {
 		-moz-transform: scale(0.95);
 		-webkit-transform: scale(0.95);
 		-ms-transform: scale(0.95);
@@ -3734,7 +3747,7 @@ input, select, textarea {
 		opacity: 0;
 	}
 
-		body.is-preload #banner h2:before, body.is-preload #banner h2:after {
+		body.is-preload #banner h1:before, body.is-preload #banner h1:after {
 			width: 0;
 		}
 
@@ -3886,7 +3899,7 @@ input, select, textarea {
 
 	#footer {
 		padding: 6em 0 4em 0 ;
-		background-color: #1d242a;
+		background-color: #3a4854;
 		text-align: center;
 	}
 
@@ -3908,7 +3921,6 @@ input, select, textarea {
 			letter-spacing: 0.225em;
 			list-style: none;
 			padding: 0;
-			text-transform: uppercase;
 		}
 
 			#footer .copyright li {
@@ -3985,10 +3997,10 @@ input, select, textarea {
 
 	body.is-mobile.landing #banner,
 	body.is-mobile.landing .wrapper.style4 {
-		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
-		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/banner.jpg");
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/DSCF2779.jpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/DSCF2779.jpg");
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/DSCF2779.jpg");
+		background-image: linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("../../images/DSCF2779.jpg");
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
