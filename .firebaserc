@@ -1,8 +1,5 @@
 {
   "projects": {
-    "default": "armed-website-72e9b",
-    " staging": "armed-website-72e9b"
-  },
-  "targets": {},
-  "etags": {}
+    "default": "ucalgary-mixed-reality"
+  }
 }

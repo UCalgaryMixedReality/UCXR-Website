@@ -1,0 +1,200 @@
+@import url(fontawesome-all.min.css);
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');/*
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to top, #ffaef3, #fff4b1)
+}
+
+/* Section Styling */
+section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    width: 85vw;
+    margin: 50px auto;
+}
+
+/* Centering container */
+.thank-you-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 30vh;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+}
+
+.thank-you-container h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #292929;
+}
+
+.thank-you-container p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 800px;
+}
+
+
+
+.content {
+    background: #fff;
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.content h2 {
+    text-transform: uppercase;
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    color: #292929;
+}
+
+.content p {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #555;
+    max-width: 600px;
+    margin-bottom: 15px;
+}
+
+.links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.links li {
+    border: 1px solid #777;
+    border-radius: 5px;
+    padding: 10px 20px;
+    list-style: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.links li a {
+    color: #555;
+    text-decoration: none;
+}
+
+.links li:hover {
+    border-color: #292828;
+    background: #f4f4f4;
+}
+
+.links li:hover a {
+    color: #292828;
+}
+
+/* Sponsors Section */
+.sponsors-tier {
+    background-color: #ffffff; /* Plain white background */
+    border-radius: 12px; /* Rounded corners */
+    padding: 20px; /* Add spacing inside the container */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px 0; /* Spacing between sections */
+}
+
+/* Gold Tier Specific Styling */
+.sponsors-tier.gold-tier {
+    border: 5px solid #ffd700; /* Gold border for gold tier */
+}
+
+/* Bronze Tier Specific Styling */
+.sponsors-tier.bronze-tier {
+    border: 5px solid #cd7f32; /* Bronze border for bronze tier */
+}
+
+.sponsors-tier h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #292929;
+    letter-spacing: 1px;
+}
+
+.sponsors-logos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.sponsors-logos img {
+    width: auto;
+    max-width: 100%;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Gold Tier Logos */
+.gold-logo {
+    width: 300px !important; /* Ensure the size is applied */
+    height: auto;
+}
+
+/* Bronze Tier Logos */
+.bronze-logo {
+    width: 150px !important; /* Ensure the size is applied */
+    height: auto;
+}
+
+/* General Image Settings */
+.sponsors-logos img {
+    max-width: none; /* Remove the constraint */
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sponsors-logos img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+
+
+@media (max-width: 768px) {
+    .gold-logo {
+        width: 100px !important; /* Adjust size for smaller screens */
+    }
+
+    .bronze-logo {
+        width: 60px !important; /* Adjust size for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .gold-logo {
+        width: 80px !important; /* Further reduce for very small screens */
+    }
+
+    .bronze-logo {
+        width: 50px !important;
+    }
+}
