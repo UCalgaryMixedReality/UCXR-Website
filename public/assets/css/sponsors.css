@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600&display=swap');
+
+:root {
+  --bg-dark: #0a0c10;
+  --bg-card: #161922;
+  --text-light: #e0e0e0;
+  --highlight: white; /* XR magenta */
+  --accent: white;     /* XR cyan */
+  --tier-gold: #ffd700;
+  --tier-bronze: #cd7f32;
+  --font-main: 'Segoe UI', sans-serif;
+}
+
+/* Reset & Body */
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+}
+
+/* Thank You Banner */
+.thank-you-container {
+  background: linear-gradient(145deg, #1c0032, #003840);
+  border-radius: 16px;
+  text-align: center;
+  padding: 40px 20px;
+  margin: 40px auto;
+  max-width: 960px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+.thank-you-container h2 {
+  color: var(--highlight);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.thank-you-container p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+/* Sponsors Section */
+.sponsors-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Tier Cards */
+.sponsors-tier {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.sponsors-tier h3 {
+  color: var(--accent);
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Borders by Tier */
+.sponsors-tier.gold-tier {
+  border-left: 6px solid var(--tier-gold);
+}
+
+.sponsors-tier.bronze-tier {
+  border-left: 6px solid var(--tier-bronze);
+}
+
+/* Logos Grid */
+.sponsors-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Logos Styling */
+.sponsors-logos img {
+  max-height: 100px;
+  max-width: 180px;
+  object-fit: contain;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 8px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 255, 255, 0.1);
+}
+
+.sponsors-logos img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.2) drop-shadow(0 0 5px var(--accent));
+}
+
+/* Tooltip */
+.tooltip {
+  position: fixed;
+  background-color: var(--bg-card);
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .thank-you-container h2 {
+    font-size: 2rem;
+  }
+
+  .sponsors-logos img {
+    max-height: 80px;
+    max-width: 150px;
+  }
+
+  .sponsors-tier h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .thank-you-container {
+    padding: 30px 15px;
+  }
+
+  .sponsors-logos img {
+    max-height: 60px;
+    max-width: 120px;
+  }
+
+  .thank-you-container p {
+    font-size: 1rem;
+  }
+}
