@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/about.css" />
 		<link rel="icon" href="images/ARmed_logo.jpg">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
@@ -62,6 +63,91 @@
     </section>
 </article>
 
+<!-- Interactive Project Status Section with Image Thumbnails -->
+<section class="wrapper style5">
+	<div class="inner">
+	  <header>
+		<h2>Projects</h2>
+
+	  </header>
+  
+	  <div class="status-grid">
+		<div class="status-card">
+		  <div class="status-content">
+			<h4>Optics System</h4>
+			<p class="status-details">Final prototype complete — undergoing distortion calibration.</p>
+		  </div>
+		</div>
+		<div class="status-card">
+		  <div class="status-content">
+			<h4>PCB & Power</h4>
+			<p class="status-details">Second rev in fabrication. BMS verified, safe charging protocols integrated.</p>
+		  </div>
+		</div>
+		<div class="status-card">
+		  <div class="status-content">
+			<h4>Software & Interaction</h4>
+			<p class="status-details">Unity UI operational. Gesture-based input under development.</p>
+		  </div>
+		</div>
+		<div class="status-card">
+		  <div class="status-content">
+			<h4>Mechanical Housing</h4>
+			<p class="status-details">Carbon fiber chassis printed — testing thermal & EM performance.</p>
+		  </div>
+		</div>
+		<div class="status-card">
+		  <div class="status-content">
+			<h4>Live Demo</h4>
+			<p class="status-details">Targeting Fall 2025 showcase. Educational simulation content in progress.</p>
+		  </div>
+		</div>
+	  </div>
+	  
+  </section>
+  
+  <script>
+	const cards = document.querySelectorAll(".status-card");
+	const modal = document.createElement("div");
+	modal.className = "modal";
+	document.body.appendChild(modal);
+  
+	modal.innerHTML = `
+	  <span class="modal-close">&times;</span>
+	  <div class="modal-content">
+		<img src="" alt="Modal Image" />
+		<h3></h3>
+		<p></p>
+	  </div>
+	`;
+  
+	const modalImg = modal.querySelector("img");
+	const modalTitle = modal.querySelector("h3");
+	const modalText = modal.querySelector("p");
+	const closeModal = modal.querySelector(".modal-close");
+  
+	cards.forEach(card => {
+	  card.addEventListener("click", () => {
+		modalImg.src = card.querySelector("img").src;
+		modalTitle.textContent = card.querySelector("h4").textContent;
+		modalText.textContent = card.querySelector(".status-details").textContent;
+		modal.style.display = "block";
+	  });
+	});
+  
+	closeModal.onclick = () => {
+	  modal.style.display = "none";
+	};
+  
+	window.onclick = e => {
+	  if (e.target === modal) modal.style.display = "none";
+	};
+  </script>
+  
+  
+  
+  
+
 				<!-- Footer -->
                 <footer id="footer">
                     <ul class="icons">
@@ -71,7 +157,7 @@
 						<li><a href="mailto:armeduofc@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
                     </ul>
                     <ul class="copyright">
-                        <li>&copy; ARmed</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                        <li>&copy; ARmed</li>
                     </ul>
                 </footer>
 

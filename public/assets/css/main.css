@@ -5,6 +5,14 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+:root {
+	--font-main: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  }
+  
+  body {
+	font-family: var(--font-main);
+  }
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
