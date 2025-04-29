@@ -10,33 +10,28 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/ourteam.css" />
+		<link rel="stylesheet" href="assets/css/navbar.css" />
 		<link rel="icon" href="images/ARmed_logo.jpg">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="is-preload">
 
-		<!-- Page Wrapper -->
-		<div id="page-wrapper">
-
 			<!-- Header -->
-			<header id="header">
-				<h1><a href="index.html">ARmed</a></h1>
-				<nav id="nav">
-					<ul>
-						<li class="special">
-							<a href="#menu" class="menuToggle"><span>Menu</span></a>
-							<div id="menu">
-								<ul>
-									<li><a href="index.html">Home</a></li>
-									<li><a href="about.html">About</a></li>
-									<li><a href="team.html">Our Team</a></li>
-									<li><a href="sponsors.html">Sponsors</a></li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</nav>
+			<header class="navbar">
+				<header class="navbar">
+					<nav class="nav">
+					  <ul class="nav-menu">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="team.html">Our Team</a></li>
+						<li><a href="sponsors.html">Sponsors</a></li>
+					  </ul>
+					</nav>
+				  </header>
 			</header>
+
+			<div class="progress-bar" id="progressBar"></div>
 
 			<!-- Main -->
 			<article id="main">
@@ -47,11 +42,15 @@
 				<section class="wrapper style5">
 					<div class="inner">
 
-						<h3>Engineering Team</h3>
-						<p>The Engineering Team is responsible for identifying, researching, procuring, and integrating all components of the AR glasses, including sensors, batteries, and electrical elements. Their technical expertise and attention to detail should be reflected in the performance and durability in every aspect of the AR glasses' design and construction.</p>
-
-						<p>Within our Engineering Team, we have three major subteams: Mechanical, Electrical, and Software. These teams work in tandem to create our headset.</p>
-
+						<h3>Electrical Team</h3>
+						<p>The Electrical Team engineers the AR glasses' full electronic system, including PCB design, battery integration, sensor interfacing, and power management. They enable advanced features like haptic feedback, real-time sensor fusion, and high-efficiency communication between hardware layers, laying the foundation for responsive XR interactions.</p>
+						
+						<h3>Mechanical Team</h3>
+						<p>The Mechanical Team focuses on the structural and manufacturing aspects of the glasses. They design lightweight, ergonomic enclosures, manage thermal control, and use advanced machining techniques to ensure precision fitting of critical components. Their work balances durability, aesthetics, and user comfort for extended XR sessions.</p>
+						
+						<h3>Software Team</h3>
+						<p>The Software Team builds the intelligence behind the headset. They develop low-latency spatial mapping, SLAM (Simultaneous Localization and Mapping) algorithms, and real-time data processing to anchor virtual objects accurately within the physical world. Their systems drive hand tracking, environment sensing, and intuitive haptic feedback to deliver a seamless XR experience.</p>
+						
 						<hr/>
 
 						<h3>Our Executive Team</h3>
@@ -97,27 +96,26 @@
 			<section class="wrapper style5">
 				<div class="inner">
 					<header>
-						<h2>Meet Our Members</h2>
-						<p>Get to know the people bringing ARmed to life</p>
+						<h2>Technical Leads</h2>
 					</header>
 					<div class="team-grid">
 						<div class="profile">
-							<img src="images/team/parth.jpg" alt="Parth Shah">
+							<img src="images/headshots/parth_headshot.jpg" alt="Parth Shah">
 							<h4>Parth Shah</h4>
 							<p>President</p>
 						</div>
 						<div class="profile">
-							<img src="images/team/tolu.jpg" alt="Toluwanimi Oladiti">
+							<img src="images/headshots/tolu_headshot.jpg" alt="Toluwanimi Oladiti">
 							<h4>Toluwanimi Oladiti</h4>
 							<p>Mechanical Lead</p>
 						</div>
 						<div class="profile">
-							<img src="images/team/nicholas.jpg" alt="Nicholas">
+							<img src="images/headshots/nick_headshot.jpg" alt="Nicholas">
 							<h4>Nicholas</h4>
 							<p>Electrical Lead</p>
 						</div>
 						<div class="profile">
-							<img src="images/team/adhira.jpg" alt="Adhira John">
+							<img src="images/headshots/adhira_headshot.jpg" alt="Adhira John">
 							<h4>Adhira John</h4>
 							<p>Software Lead</p>
 						</div>
@@ -141,7 +139,6 @@
 			<!-- Footer -->
 			<footer id="footer">
 				<ul class="icons">
-					<li><a href="https://github.com/ARmedUCalgary" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 					<li><a href="https://www.linkedin.com/company/armeduofc/posts/?feedView=all" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 					<li><a href="https://www.instagram.com/armeduofc/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 					<li><a href="mailto:armeduofc@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
@@ -161,6 +158,13 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+
+		<script>	// Scroll progress bar
+			window.addEventListener('scroll', () => {
+				const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+				const scrolled = (window.scrollY / windowHeight) * 100;
+				document.getElementById('progressBar').style.width = scrolled + '%';
+			});</script>
 
 	</body>
 </html>

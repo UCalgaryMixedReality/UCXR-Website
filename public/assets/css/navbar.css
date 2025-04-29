@@ -1,0 +1,120 @@
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .logo a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  .logo a:hover {
+    color: #00e5ff;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.7);
+  }
+  
+  .nav {
+    position: relative;
+    width: 100%;
+  }
+  
+  .nav-menu {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+  }
+  
+  .nav-menu a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-menu a:hover {
+    background: linear-gradient(to right, #ff6a00, #ee0979);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Straight line underline effect (replacing dots) */
+  .nav-menu a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(to right, #ff6a00, #ee0979);
+    transition: width 0.3s ease;
+  }
+
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: linear-gradient(to right, #ff6a00, #ee0979);
+    z-index: 100;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+  
+  
+  .nav-menu a:hover::after {
+    width: 100%;
+  }
+  
+  /* Hide hamburger menu by default */
+  .nav-toggle {
+    display: none;
+  }
+  
+  .nav-toggle-label {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    color: #fff;
+  }
+  
+  /* Responsive behavior */
+  @media (max-width: 768px) {
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      gap: 0.5rem;
+    }
+    
+    .nav-toggle-label {
+      display: block;
+    }
+    
+    .nav-toggle:checked ~ .nav-menu {
+      display: flex;
+    }
+    
+    .nav-menu a {
+      width: 100%;
+      padding: 1rem;
+    }
+    
+    .nav-menu a::after {
+      bottom: 0;
+    }
+  }

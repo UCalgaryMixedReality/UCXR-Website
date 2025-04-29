@@ -1,133 +1,311 @@
-/* about.css - Styling for the ARmed About page */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-:root {
-    --primary-color: #0f1c2e;
-    --accent-color: #00bcd4;
-    --highlight-color: #ffe082;
-    --text-color: #e0e0e0;
-    --background-color: #0a0e14;
-    --card-bg: #1a1f2b;
-    --font-main: 'Segoe UI', 'Helvetica Neue', sans-serif;
-  }
-  
-  body {
-    font-family: var(--font-main);
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-weight: 300;
-    line-height: 1.7;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
-    color: var(--highlight-color);
-  }
-  
-  a {
-    color: var(--accent-color);
-    text-decoration: none;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  #header, #footer {
-    background-color: var(--primary-color);
-    color: var(--text-color);
-  }
-  
-  #menu {
-    background: var(--card-bg);
-  }
-  
-  .wrapper {
-    background: var(--card-bg);
-    padding: 2rem;
-    border-radius: 0.5rem;
-    margin-bottom: 2rem;
-  }
-  
-  .wrapper h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-  }
-  
-  .inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-  
-  .button.primary {
-    background-color: var(--accent-color);
-    color: #000;
-    font-weight: 500;
-    border: none;
-    transition: 0.3s ease;
-  }
-  
-  .button.primary:hover {
-    background-color: #00acc1;
-  }
-  
-  .icon {
-    color: var(--accent-color);
-  }
-  
-  .icon:hover {
-    color: var(--highlight-color);
-  }
-  
-  .image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 0.5rem;
-  }
+body {
+  background-color: #121212;
+  color: #ffffff;
+  overflow-x: hidden;
+}
 
-  .status-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive 2–4 column layout */
-    gap: 2rem;
-    margin-top: 2rem;
+section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #ababab;
+}
+
+.interactive-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.mechanical_section {
+  background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+  color: #ffffff;
+}
+
+.electrical_section {
+  background: linear-gradient(135deg, #0d1a26, #01080e);
+  color: #ffffff;
+}
+
+.software_section {
+  background: linear-gradient(135deg, #1a0d26, #0e0126);
+  color: #ffffff;
+}
+
+.tab-navigation {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  padding: 0.8rem 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.tab.active {
+  background: rgba(255, 255, 255, 0.25);
+  font-weight: bold;
+}
+
+.tab-content {
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+
+.tab-content.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.model-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.model-placeholder {
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.model-placeholder:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.model-placeholder::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 65%, rgba(255, 255, 255, 0.2) 75%, transparent 85%);
+  background-size: 200% 200%;
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.details-panel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  overflow: hidden;
+  padding: 0;
+  z-index: 10;
+}
+
+.details-panel.active {
+  width: 40%;
+  padding: 2rem;
+}
+
+.close-panel {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.spec-item {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.spec-title {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 0.3rem;
+}
+
+.spec-value {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.feature-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.slider-control {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-control:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Animation classes */
+.animate-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .feature-grid {
+      grid-template-columns: 1fr;
   }
   
-  .status-card {
-    background: var(--card-bg); /* keep your theme */
-    color: white; /* make text white */
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.4);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
+  .details-panel.active {
+      width: 80%;
   }
-  
-  .status-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 22px rgba(0,0,0,0.6);
-  }
-  
-  .status-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-  }
-  
-  .status-content {
-    padding: 1rem;
-    text-align: center; /* Center all text */
-  }
-  
-  .status-content h4 {
-    font-weight: bold; /* Make project titles bold */
-    color: white;
-    margin-bottom: 0.5rem;
-  }
-  
-  .status-content p {
-    color: white;
-    font-size: 0.95rem;
-  }
-  
+}
+
+.xr-button-row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.xr-button {
+  padding: 0.8rem 1.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 rgba(0, 255, 255, 0);
+}
+
+.xr-button:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.7), 0 0 25px rgba(0, 242, 254, 0.5);
+  transform: translateY(-2px);
+}
