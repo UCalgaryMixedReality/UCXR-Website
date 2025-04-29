@@ -11,6 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="assets/css/home.css" />
+		<link rel="stylesheet" href="assets/css/navbar.css" />
 		<link rel="icon" href="images/ARmed_logo.jpg">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
@@ -19,53 +20,51 @@
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="index.html">ARmed</a></h1>
-						<nav id="nav">
-							<ul>
-								<li class="special">
-									<a href="#menu" class="menuToggle"><span>Menu</span></a>
-									<div id="menu">
-										<ul>
-											<li><a href="index.html">Home</a></li>
-											<li><a href="about.html">About</a></li>
-											<li><a href="team.html">Our Team</a></li>
-											<li><a href="sponsors.html">Sponsors</a></li>
-										</ul>
-									</div>
-								</li>
-							</ul>
-						</nav>
-					</header>
-
-				<!-- Banner -->
+<header class="navbar">
+	<header class="navbar">
+		<nav class="nav">
+		  <ul class="nav-menu">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="team.html">Our Team</a></li>
+			<li><a href="sponsors.html">Sponsors</a></li>
+		  </ul>
+		</nav>
+	  </header>
+</header>
+													<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
-							<h1>ARmed</h1>
-							<p>Augmented Reality for Medicine<br />
+							<h1>UCXR</h1>
+							<p>UCalgary Extended Reality<br />
 							<br /></p>
-							<ul class="actions special">
-								<li><a href="team.html" class="button primary">Our Team</a></li>
-							</ul>
 						</div>
 						<a href="#one" class="more scrolly">Learn More</a>
 					</section>
 
 				<!-- One -->
-					<section id="one" class="wrapper style3 special">
+					<section id="one" class="wrapper style3 special home_1">
 						<div class="inner">
 							<header class="major">
 								<h2>Our Vision is to redefine the future<br />
 								of medical education</h2>
-								<p>We are an engineering design team dedicated to designing, manufacturing, and testing an Augmented Reality (AR) headset. Our project goes beyond traditional AR applications — we are developing this headset to visualize human anatomy and surgical simulations.</p>
+								<p>
+									Formerly known as ARmed, we've expanded our vision
+
+									UCXR, formerly known as ARMed, is a multidisciplinary engineering team at the University of Calgary dedicated to exploring the frontiers of extended reality technology. Our rebranding reflects our expanded focus beyond augmented reality to include the full spectrum of immersive technologies.
+									
+									We bring together expertise in hardware design, software development, and user experience to create cutting-edge XR solutions that address real-world challenges. Our team handles the entire development cycle — from PCB design and sensor integration to real-time visualization and immersive interfaces.
+									
+									Through collaborative innovation and iterative design, we aim to push the boundaries of what's possible in spatial computing and create technologies that enhance human capabilities.
+
+								</p>
 							</header>
 							
 						</div>
 					</section>
 
 				<!-- Two -->
-					<section id="two" class="wrapper alt style2">
+					<section id="two" class="wrapper alt style2 home_2">
 						<section class="spotlight">
 							<div class="image"><img src="images/ToluOpticalSystem.JPG" alt="" /></div><div class="content">
 								<h2>Every aspect of our project is created in-house<br />
@@ -89,10 +88,297 @@
 						</section>
 					</section>
 
+				<!-- Page Three-->
+				 <section class="home_3">
+
+					<div class="container">
+						<h1>Extended Reality (XR) Applications</h1>
+						<div class="gradient-line"></div>
+						
+						<div class="grid">
+						  <!-- Card 1: Retail & Shopping -->
+						  <div class="card" data-id="1">
+							<div class="card-header">
+							  <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+								<line x1="3" y1="6" x2="21" y2="6"></line>
+								<path d="M16 10a4 4 0 0 1-8 0"></path>
+							  </svg>
+							  Retail & Shopping
+							</div>
+							<div class="card-body">
+							  <p class="card-description">Try before you buy with virtual product previews in your space. See furniture in your home or try on clothes and accessories digitally.</p>
+							  <div class="card-image">
+								<img src="/api/placeholder/400/320" alt="AR Shopping Experience">
+							  </div>
+							</div>
+						  </div>
+
+						    <!-- Card 2: Navigation & Travel -->
+      <div class="card" data-id="2">
+        <div class="card-header">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="3 11 22 2 13 21 11 13 3 11"></polygon>
+          </svg>
+          Navigation & Travel
+        </div>
+        <div class="card-body">
+          <p class="card-description">Real-time directions overlaid on your view, highlighting points of interest, translating foreign signs, and providing contextual information about your surroundings.</p>
+          <div class="card-image">
+            <img src="/api/placeholder/400/320" alt="AR Navigation">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 3: Education & Learning -->
+      <div class="card" data-id="3">
+        <div class="card-header">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+          </svg>
+          Education & Learning
+        </div>
+        <div class="card-body">
+          <p class="card-description">Interactive 3D models bring concepts to life. Explore human anatomy, chemistry molecules, historical reconstructions, and planetary systems in immersive detail.</p>
+          <div class="card-image">
+            <img src="/api/placeholder/400/320" alt="AR Educational Experience">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 4: Healthcare & Medicine -->
+      <div class="card" data-id="4">
+        <div class="card-header">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"></path>
+            <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"></path>
+            <circle cx="12" cy="12" r="1"></circle>
+            <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"></path>
+            <path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"></path>
+          </svg>
+          Healthcare & Medicine
+        </div>
+        <div class="card-body">
+          <p class="card-description">Visualize patient anatomy, assist in surgical planning, enhance rehabilitation, and provide real-time guidance for medical procedures with augmented overlays.</p>
+          <div class="card-image">
+            <img src="/api/placeholder/400/320" alt="AR in Healthcare">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 5: Gaming & Entertainment -->
+      <div class="card" data-id="5">
+        <div class="card-header">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="6" y1="12" x2="18" y2="12"></line>
+            <line x1="12" y1="6" x2="12" y2="18"></line>
+            <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+          </svg>
+          Gaming & Entertainment
+        </div>
+        <div class="card-body">
+          <p class="card-description">Transform your environment into a playground with AR games that blend digital elements with physical space, creating immersive experiences and social interactions.</p>
+          <div class="card-image">
+            <img src="/api/placeholder/400/320" alt="AR Gaming">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 6: Industrial & Manufacturing -->
+      <div class="card" data-id="6">
+        <div class="card-header">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+          </svg>
+          Industrial & Manufacturing
+        </div>
+        <div class="card-body">
+          <p class="card-description">Enhance worker productivity with hands-free guided assembly, remote expert assistance, equipment maintenance visualization, and quality control inspections.</p>
+          <div class="card-image">
+            <img src="/api/placeholder/400/320" alt="AR in Manufacturing">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal for XR Interactive Demo -->
+  <div class="modal" id="xrModal">
+    <div class="modal-content">
+      <button class="close-btn" id="closeModal">&times;</button>
+      <h2 id="modalTitle" style="margin-bottom: 15px; color: #ff6a00;"></h2>
+      <p id="modalDescription" style="margin-bottom: 20px;"></p>
+      
+      <div class="xr-demo">
+        <h3>Interactive XR Demo</h3>
+        <div class="xr-scene" id="xrScene">
+          <div class="rotating-element" id="xrObject"></div>
+        </div>
+        <div class="xr-interaction">
+          <button class="xr-btn" id="rotateBtn">Rotate Object</button>
+          <button class="xr-btn" id="scaleBtn">Scale Object</button>
+          <button class="xr-btn" id="changeColorBtn">Change Color</button>
+        </div>
+      </div>
+    </div>
+  </div>
+		</section>
+
+			<script>
+
+				// Data for AR applications
+				const arApplications = [
+				  {
+					id: 1,
+					title: "Retail & Shopping",
+					description: "Try before you buy with virtual product previews in your space. See furniture in your home or try on clothes and accessories digitally.",
+					demo: "Furniture Placement Demo: See how different pieces of furniture would look and fit in your actual living space."
+				  },
+				  {
+					id: 2,
+					title: "Navigation & Travel",
+					description: "Real-time directions overlaid on your view, highlighting points of interest, translating foreign signs, and providing contextual information about your surroundings.",
+					demo: "City Explorer: Navigation overlay with real-time points of interest and path guidance."
+				  },
+				  {
+					id: 3,
+					title: "Education & Learning",
+					description: "Interactive 3D models bring concepts to life. Explore human anatomy, chemistry molecules, historical reconstructions, and planetary systems in immersive detail.",
+					demo: "Molecular Structure Visualizer: Interact with and manipulate 3D molecular structures."
+				  },
+				  {
+					id: 4,
+					title: "Healthcare & Medicine",
+					description: "Visualize patient anatomy, assist in surgical planning, enhance rehabilitation, and provide real-time guidance for medical procedures with augmented overlays.",
+					demo: "Anatomical Visualization: Explore human anatomy with detailed organ systems."
+				  },
+				  {
+					id: 5,
+					title: "Gaming & Entertainment",
+					description: "Transform your environment into a playground with AR games that blend digital elements with physical space, creating immersive experiences and social interactions.",
+					demo: "Room Defender: Interactive game where digital enemies emerge from your walls and furniture."
+				  },
+				  {
+					id: 6,
+					title: "Industrial & Manufacturing",
+					description: "Enhance worker productivity with hands-free guided assembly, remote expert assistance, equipment maintenance visualization, and quality control inspections.",
+					demo: "Assembly Guide: Step-by-step instructions overlaid on real equipment for maintenance."
+				  }
+				];
+				
+				// Get all cards and modal elements
+				const cards = document.querySelectorAll('.card');
+				const modal = document.getElementById('xrModal');
+				const closeModal = document.getElementById('closeModal');
+				const modalTitle = document.getElementById('modalTitle');
+				const modalDescription = document.getElementById('modalDescription');
+				const xrObject = document.getElementById('xrObject');
+				
+				// Button interactions
+				const rotateBtn = document.getElementById('rotateBtn');
+				const scaleBtn = document.getElementById('scaleBtn');
+				const changeColorBtn = document.getElementById('changeColorBtn');
+				
+				let isRotating = true;
+				let scale = 1;
+				const colors = ['rgba(255, 106, 0, 0.2)', 'rgba(238, 9, 121, 0.2)', 'rgba(0, 106, 255, 0.2)', 'rgba(0, 238, 121, 0.2)'];
+				let currentColorIndex = 0;
+				
+				// Add click event to all cards
+				cards.forEach(card => {
+				  card.addEventListener('click', () => {
+					const id = parseInt(card.getAttribute('data-id'));
+					const app = arApplications.find(a => a.id === id);
+					
+					if (app) {
+					  modalTitle.textContent = app.title;
+					  modalDescription.textContent = app.demo;
+					  
+					  // Reset animation and styles
+					  xrObject.style.animation = isRotating ? 'rotate 10s infinite linear' : 'none';
+					  xrObject.style.transform = 'scale(' + scale + ')';
+					  xrObject.style.backgroundColor = colors[currentColorIndex];
+					  xrObject.style.borderColor = colors[currentColorIndex].replace('0.2', '1');
+					  
+					  // Custom styling based on the application type
+					  if (id === 1) { // Retail
+						xrObject.style.borderRadius = '0';
+						xrObject.style.width = '120px';
+						xrObject.style.height = '80px';
+					  } else if (id === 2) { // Navigation
+						xrObject.style.borderRadius = '50%';
+						xrObject.style.width = '100px';
+						xrObject.style.height = '100px';
+					  } else if (id === 3) { // Education
+						xrObject.style.borderRadius = '10px';
+						xrObject.style.width = '100px';
+						xrObject.style.height = '100px';
+					  } else if (id === 4) { // Healthcare
+						xrObject.style.borderRadius = '40% 60% 60% 40% / 60% 30% 70% 40%';
+						xrObject.style.width = '120px';
+						xrObject.style.height = '120px';
+					  } else if (id === 5) { // Gaming
+						xrObject.style.borderRadius = '20px';
+						xrObject.style.width = '80px';
+						xrObject.style.height = '80px';
+					  } else if (id === 6) { // Industrial
+						xrObject.style.borderRadius = '5px';
+						xrObject.style.width = '150px';
+						xrObject.style.height = '100px';
+					  }
+					  
+					  modal.classList.add('active');
+					}
+				  });
+				});
+				
+				// Close modal
+				closeModal.addEventListener('click', () => {
+				  modal.classList.remove('active');
+				});
+				
+				// Close modal when clicking outside
+				window.addEventListener('click', (e) => {
+				  if (e.target === modal) {
+					modal.classList.remove('active');
+				  }
+				});
+				
+				// Rotate button
+				rotateBtn.addEventListener('click', () => {
+				  isRotating = !isRotating;
+				  xrObject.style.animation = isRotating ? 'rotate 10s infinite linear' : 'none';
+				  rotateBtn.textContent = isRotating ? 'Stop Rotation' : 'Rotate Object';
+				});
+				
+				// Scale button
+				scaleBtn.addEventListener('click', () => {
+				  scale = scale === 1 ? 1.5 : scale === 1.5 ? 0.75 : 1;
+				  xrObject.style.transform = 'scale(' + scale + ')';
+				  scaleBtn.textContent = scale === 1 ? 'Scale Object' : scale === 1.5 ? 'Shrink Object' : 'Reset Scale';
+				});
+				
+				// Change color button
+				changeColorBtn.addEventListener('click', () => {
+				  currentColorIndex = (currentColorIndex + 1) % colors.length;
+				  xrObject.style.backgroundColor = colors[currentColorIndex];
+				  xrObject.style.borderColor = colors[currentColorIndex].replace('0.2', '1');
+				});
+			  </script>
+
+<script>	// Scroll progress bar
+	window.addEventListener('scroll', () => {
+		const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+		const scrolled = (window.scrollY / windowHeight) * 100;
+		document.getElementById('progressBar').style.width = scrolled + '%';
+	});
+</script>
+
+
 				<!-- Footer -->
 					<footer id="footer">
 						<ul class="icons">
-							<li><a href="https://github.com/ARmedUCalgary" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
 							<li><a href="https://www.linkedin.com/company/armeduofc/posts/?feedView=all" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
 							<li><a href="https://www.instagram.com/armeduofc/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 							<li><a href="mailto:armeduofc@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
