@@ -43,8 +43,6 @@
   }
   
   #banner {
-    background-color: var(--primary-color);
-    color: var(--text-color);
     text-align: center;
     padding: 4rem 2rem;
   }
