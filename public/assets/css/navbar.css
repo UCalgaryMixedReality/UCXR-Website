@@ -60,6 +60,12 @@
     transition: width 0.3s ease;
   }
 
+  .nav-menu a.active {
+    background: linear-gradient(to right, #ff6a00, #ee0979);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   .progress-bar {
     position: fixed;
     top: 0;
