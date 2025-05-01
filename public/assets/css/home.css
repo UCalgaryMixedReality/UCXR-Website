@@ -1,8 +1,7 @@
 :root {
-    --primary-color: black;
-    --accent-color: black;
-    --highlight-color: white;
-    --text-color: #e0e0e0;
+    --primary-color: #221B22;
+    --highlight-color: #ffffff;
+    --text-color: white;
     --background-color: #0a0e14;
     --card-bg: #1a1f2b;
     --font-main: 'Segoe UI', 'Helvetica Neue', sans-serif;
@@ -47,16 +46,7 @@
     padding: 4rem 2rem;
   }
   
-  #one.wrapper.style3 {
-    background-color: var(--card-bg);
-    color: var(--text-color);
-    text-align: center;
-  }
-  
-  #two.wrapper.alt.style2 .spotlight {
-    background-color: var(--card-bg);
-    border-bottom: 1px solid #2c3e50;
-  }
+
   
   #footer {
     background-color: var(--primary-color);
@@ -92,7 +82,7 @@
 
   .home_3{
     height: 100vh;
-    background-color: white;
+    background-color: #392D39;
   }
 
   body {

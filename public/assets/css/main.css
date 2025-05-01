@@ -185,7 +185,7 @@ input, select, textarea {
 		}		
 
 	h2, h3, h4, h5, h6 {
-		color: #fff;
+		color: white;
 		font-weight: 800;
 		letter-spacing: 0.225em;
 		line-height: 1em;
@@ -2727,19 +2727,19 @@ input, select, textarea {
 		}
 
 		.spotlight:nth-child(1) {
-			background-color: #f4c27c;
+			background-color: #221B22;
 		}
 
 		.spotlight:nth-child(2) {
-			background-color: #f0b056;
+			background-color: #221B22;
 		}
 
 		.spotlight:nth-child(3) {
-			background-color: #ec9a29;
+			background-color: #221B22;
 		}
 
 		.spotlight:nth-child(4) {
-			background-color: #708B99;
+			background-color: rgba(0, 0, 0, 0.375);
 		}
 
 		.spotlight:nth-child(5) {
@@ -2823,7 +2823,7 @@ input, select, textarea {
 			@media screen and (max-width: 1280px) {
 
 				.wrapper > .inner {
-					width: 90%;
+					width: 100%;
 				}
 
 			}
@@ -3004,7 +3004,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background-color: #F4B8C2;
+			background: linear-gradient(to right, #ff6a00, #ee0979);
 			color: #d3d4e4;
 		}
 
@@ -3013,7 +3013,7 @@ input, select, textarea {
 			}
 
 			.wrapper.style3 h2, .wrapper.style3 h3, .wrapper.style3 h4, .wrapper.style3 h5, .wrapper.style3 h6 {
-				color: #ffffff;
+				color: #F5F5F5;
 			}
 
 			.wrapper.style3 hr {
@@ -3718,7 +3718,7 @@ input, select, textarea {
 			-ms-transition-delay: 1.25s;
 			transition-delay: 1.25s;
 			content: '';
-			background: black;
+			background: #221B22;
 			display: block;
 			width: 100%;
 			height: 100%;
@@ -3910,7 +3910,7 @@ input, select, textarea {
 
 	#footer {
 		padding: 6em 0 4em 0 ;
-		background-color: #3a4854;
+		background-color: #221B22;
 		text-align: center;
 	}
 
@@ -3919,7 +3919,7 @@ input, select, textarea {
 		}
 
 			#footer .icons a {
-				color: rgba(255, 255, 255, 0.5);
+				color: white;
 			}
 
 				#footer .icons a:hover {
@@ -3927,7 +3927,7 @@ input, select, textarea {
 				}
 
 		#footer .copyright {
-			color: rgba(255, 255, 255, 0.5);
+			color: white;
 			font-size: 0.8em;
 			letter-spacing: 0.225em;
 			list-style: none;
@@ -3999,7 +3999,7 @@ input, select, textarea {
 	}
 
 	body.landing #footer {
-		background-color: rgba(29, 36, 42, 0.9);
+		background-color: black;
 	}
 
 	body.is-mobile.landing #page-wrapper {
@@ -4028,5 +4028,5 @@ input, select, textarea {
 	}
 
 	body.is-mobile.landing #footer {
-		background-color: #1d242a;
+		background-color: black;
 	}
