@@ -377,7 +377,66 @@
 				const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 				const scrolled = (window.scrollY / windowHeight) * 100;
 				document.getElementById('progressBar').style.width = scrolled + '%';
-			});</script>
+			});
+		</script>
 
+		<script>
+			// Tab switching functionality
+			document.querySelectorAll('.tab').forEach(tab => {
+				tab.addEventListener('click', () => {
+					// Get the parent section
+					const section = tab.closest('section');
+					
+					// Remove active class from all tabs in this section
+					section.querySelectorAll('.tab').forEach(t => {
+						t.classList.remove('active');
+					});
+					
+					// Add active class to clicked tab
+					tab.classList.add('active');
+					
+					// Hide all tab content in this section
+					section.querySelectorAll('.tab-content').forEach(content => {
+						content.classList.remove('active');
+					});
+					
+					// Show corresponding tab content
+					const tabId = tab.getAttribute('data-tab');
+					document.getElementById(tabId).classList.add('active');
+				});
+			});
+			
+			// Details panel functionality
+			function showDetails(id) {
+				document.getElementById(id + '-details').classList.add('active');
+			}
+			
+			function hideDetails(id) {
+				document.getElementById(id + '-details').classList.remove('active');
+			}
+			
+			// Scroll progress bar
+			window.addEventListener('scroll', () => {
+				const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+				const scrolled = (window.scrollY / windowHeight) * 100;
+				document.getElementById('progressBar').style.width = scrolled + '%';
+			});
+			
+			// Intersection Observer for animations
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('animate-in');
+					}
+				});
+			}, { threshold: 0.1 });
+			
+			// Observe all sections and feature items
+			document.querySelectorAll('section, .feature-item').forEach(item => {
+				observer.observe(item);
+			});
+		</script>
+
+	
 	</body>
 </html>
