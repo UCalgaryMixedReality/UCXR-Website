@@ -4000,7 +4000,7 @@ input, select, textarea {
 	}
 
 	body.landing #footer {
-		background-color: black;
+		background-color: #221B22;
 	}
 
 	body.is-mobile.landing #page-wrapper {
@@ -4029,5 +4029,5 @@ input, select, textarea {
 	}
 
 	body.is-mobile.landing #footer {
-		background-color: black;
+		background-color: #221B22;
 	}
