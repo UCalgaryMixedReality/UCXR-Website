@@ -63,7 +63,7 @@ body {
 }
 
 .sponsors-tier h3 {
-  color: var(--accent);
+  color: black;
   text-align: center;
   font-size: 1.8rem;
   margin-bottom: 20px;
