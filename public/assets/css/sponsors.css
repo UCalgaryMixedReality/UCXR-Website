@@ -110,7 +110,7 @@ body {
 .tooltip {
   position: fixed;
   background-color: var(--bg-card);
-  color: white;
+  color: black;
   padding: 10px 15px;
   border-radius: 8px;
   font-size: 0.9rem;
