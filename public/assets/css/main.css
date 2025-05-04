@@ -2694,20 +2694,34 @@ input, select, textarea {
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
+		color: black;
 	}
 
 		.spotlight .image {
+			margin-right: 0em;
+			margin-top: 1em;
+			margin-bottom: 1em;
+			margin-left: 1.5em;
 			-moz-order: 1;
 			-webkit-order: 1;
 			-ms-order: 1;
 			order: 1;
-			border-radius: 0;
+			border-radius: 10px;
 			width: 40%;
 		}
 
 			.spotlight .image img {
-				border-radius: 0;
+				margin-right: 0em;
+				margin-top: 1em;
+				margin-bottom: 1em;
+				margin-left: 1.5em;
+				border-radius: 10px;
 				width: 100%;
+			}
+
+			.spotlight:nth-child(2n) .image {
+				margin-right: 4em;
+				margin-left: 0em;
 			}
 
 		.spotlight .content {
@@ -2725,18 +2739,19 @@ input, select, textarea {
 			-webkit-flex-direction: row-reverse;
 			-ms-flex-direction: row-reverse;
 			flex-direction: row-reverse;
+
 		}
 
 		.spotlight:nth-child(1) {
-			background-color: #221B22;
+			background-color: white;
 		}
 
 		.spotlight:nth-child(2) {
-			background-color: #221B22;
+			background-color: white;
 		}
 
 		.spotlight:nth-child(3) {
-			background-color: #221B22;
+			background-color: white;
 		}
 
 		.spotlight:nth-child(4) {

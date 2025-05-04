@@ -1,6 +1,6 @@
 :root {
     --primary-color: #221B22;
-    --highlight-color: #ffffff;
+    --highlight-color: black;
     --text-color: white;
     --background-color: #0a0e14;
     --card-bg: #1a1f2b;
@@ -49,14 +49,14 @@
 
   
   #footer {
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    background-color: #221B22;
+    color: white;
     text-align: center;
     padding: 2rem 1rem;
   }
   
   #footer .icons a {
-    color: var(--accent-color);
+    color: white;
     margin: 0 0.5rem;
     font-size: 1.4rem;
     transition: 0.3s;
@@ -65,13 +65,6 @@
   #footer .icons a:hover {
     color: var(--highlight-color);
   }
-  
-  .image img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 0.5rem;
-  }
-  
   .home_1{
     height: 100%;
   }
