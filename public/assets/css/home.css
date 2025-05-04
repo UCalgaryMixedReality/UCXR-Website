@@ -75,8 +75,9 @@
 
   .home_3{
     height: 100vh;
-    background-color: #392D39;
+    background-color: white;
   }
+  /* possible merch colours: #392D39, #221B22*/
 
   body {
   }
