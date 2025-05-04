@@ -1,342 +1,492 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-    <title>Projects</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/css/projects.css" />
-    <link rel="stylesheet" href="assets/css/navbar.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>UCXR</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/home.css" />
+		<link rel="stylesheet" href="assets/css/navbar.css" />
+		<link rel="icon" href="images/ARmed_logo.jpg">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+
+  <style>
+
+    .intro-section {
+      height: 100vh;
+      width: 100%;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 28px;
+      margin-top: 1.5rem;
+      background: #3f51b5;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .cta-button:hover {
+      background: #5c6bc0;
+      transform: translateY(-2px);
+    }
+
+    .slam-experience {
+      height: 100vh;
+      position: relative;
+      background-color: #000;
+    }
+
+    #pointCanvas {
+      width: 100%;
+      height: 100%; 
+      display: block;
+    }
+
+    .ui-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .metrics-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      padding: 15px;
+      width: 260px;
+      pointer-events: all;
+    }
+
+    .metrics-title {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #64b5f6;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .metric-label {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .metric-value {
+      color: #fff;
+      font-family: monospace;
+    }
+
+    .controls-container {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      padding: 15px;
+      width: 260px;
+      pointer-events: all;
+    }
+
+    .control-row {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 12px;
+    }
+
+    .control-label {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 5px;
+    }
+
+    .control-slider {
+      width: 100%;
+      height: 4px;
+    }
+
+    .instructions {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      padding: 0 20px;
+    }
+
+    .instruction-key {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      padding: 2px 8px;
+      margin: 0 3px;
+      font-size: 12px;
+      font-family: monospace;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
 </head>
-<body class="is-preload">
+<body>
 
-    <!-- Header -->
-    <header class="navbar">
-      <header class="navbar">
-        <nav class="nav">
-        <ul class="nav-menu">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="sponsors.html">Sponsors</a></li>
-        </ul>
-        </nav>
-      </header>
-    </header>
+    				<!-- Header -->
+                    <header class="navbar">
+                        <header class="navbar">
+                            <nav class="nav">
+                            <ul class="nav-menu">
+                                <li><a href="index.html" class="active">Home</a></li>
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="projects.html">Projects</a></li>
+                                <li><a href="sponsors.html">Sponsors</a></li>
+                            </ul>
+                            </nav>
+                        </header>
+                    </header>
 
-    <!-- Progress Bar -->
-    <div class="progress-bar" id="progressBar"></div>
-
-    <section class="full_viewport_height intro-section">
-        <div class="intro-content">
-          <h1>Step Into Mixed Reality</h1>
-          <p>
-            Experience the future of interaction through our custom-built mixed reality headset.
-            With spatial computing at its core, our system lets you reach out, grab, and manipulate
-            holograms anchored in the real world.
-          </p>
-          <p>
-            Whether you're visualizing anatomy, building in 3D space, or navigating digital interfaces,
-            every gesture brings virtual content into your environment—effortlessly and intuitively.
-          </p>
-        </div>
-      </section>
-            
-    </section>
-                  
                     
-                    <div class="tab-content" id="mechanical-tab-2">
-                        <div class="feature-grid">
-                            <div class="feature-item">
-                                <div class="feature-icon">👁️</div>
-                                <h3>Dynamic Eye Relief</h3>
-                                <p>Intelligent adjustment system for perfect eye positioning</p>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon"></div>
-                                <h3>Weight Distribution</h3>
-                                <p>Counterbalanced design for extended comfort</p>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon">🔄</div>
-                                <h3>Modular Fit</h3>
-                                <p>Customizable components for all head shapes</p>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon">🌡️</div>
-                                <h3>Thermal Management</h3>
-                                <p>Advanced cooling system for comfortable extended use</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="tab-content" id="mechanical-tab-3">
-                        <div class="model-container">
-                            <div class="model-placeholder" onclick="showDetails('materials')">
-                                <p>Advanced Materials<br>Click to explore</p>
-                            </div>
-                            <div class="details-panel" id="materials-details">
-                                <button class="close-panel" onclick="hideDetails('materials')">×</button>
-                                <h2>Advanced Materials</h2>
-                                <p>Cutting-edge materials enabling next-generation XR experiences</p>
-                                
-                                <div class="spec-item">
-                                    <div class="spec-title">OUTER SHELL</div>
-                                    <div class="spec-value">Carbon fiber reinforced polymer</div>
-                                </div>
-                                
-                                <div class="spec-item">
-                                    <div class="spec-title">INTERNAL STRUCTURE</div>
-                                    <div class="spec-value">Magnesium-aluminum alloy</div>
-                                </div>
-                                
-                                <div class="spec-item">
-                                    <div class="spec-title">FACIAL INTERFACE</div>
-                                    <div class="spec-value">Medical-grade hypoallergenic silicone</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Interactive 3D Cube Section -->
-<section id="interactive-cube" style="height: 100vh; background: #000; margin: 0; padding: 0;">
-    <canvas id="cubeCanvas" style="width: 100%; height: 100%; display: block;"></canvas>
+  <!-- Full Viewport Intro Section -->
+  <section class="intro-section">
+    <div class="intro-content">
+      <h1>Step Into Mixed Reality</h1>
+      <p>
+        Experience the future of interaction through our advanced spatial computing platform.
+        Our SLAM-based system tracks your environment in real-time, creating accurate digital twins
+        of physical spaces with millimeter precision.
+      </p>
+      <p>
+        Manipulate holographic content with natural gestures as our AI recognizes spatial anchors,
+        occlusion boundaries, and depth maps—bringing digital content into perfect harmony with your physical world.
+      </p>
+      <a href="#slam-experience" class="cta-button">Launch Experience</a>
+    </div>
   </section>
-  
-  <!-- Three.js CDN -->
+
+  <!-- XR SLAM Experience -->
+  <section id="slam-experience" class="slam-experience">
+    <canvas id="pointCanvas"></canvas>
+    
+    <div class="ui-overlay">
+      <div class="metrics-container">
+        <div class="metrics-title">SLAM Metrics</div>
+        <div class="metric-row">
+          <span class="metric-label">Tracked Features</span>
+          <span class="metric-value" id="tracked-features">0</span>
+        </div>
+        <div class="metric-row">
+          <span class="metric-label">Point Cloud Density</span>
+          <span class="metric-value" id="point-density">0</span>
+        </div>
+        <div class="metric-row">
+          <span class="metric-label">Confidence Score</span>
+          <span class="metric-value" id="confidence">0%</span>
+        </div>
+        <div class="metric-row">
+          <span class="metric-label">Frame Rate</span>
+          <span class="metric-value" id="framerate">0 FPS</span>
+        </div>
+      </div>
+
+      <div class="controls-container">
+        <div class="metrics-title">Controls</div>
+        <div class="control-row">
+          <span class="control-label">Point Size</span>
+          <input type="range" min="1" max="5" step="0.1" value="2" class="control-slider" id="point-size-control">
+        </div>
+        <div class="control-row">
+          <span class="control-label">Density</span>
+          <input type="range" min="5000" max="30000" step="1000" value="15000" class="control-slider" id="density-control">
+        </div>
+      </div>
+      
+      <div class="instructions">
+        <span>Click and drag to rotate | Scroll to zoom | <span class="instruction-key">W</span><span class="instruction-key">A</span><span class="instruction-key">S</span><span class="instruction-key">D</span> to move</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   
   <script>
-    const canvas = document.getElementById('cubeCanvas');
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
-    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-  
-    // Cube
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshStandardMaterial({ color: 0x00aaff, roughness: 0.4, metalness: 0.6 });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
-  
-    // Lighting
-    const light = new THREE.DirectionalLight(0xffffff, 1);
-    light.position.set(2, 2, 5).normalize();
-    scene.add(light);
-  
-    camera.position.z = 3;
-  
-    // Track mouse
-    let targetRotationX = 0;
-    let targetRotationY = 0;
-  
-    canvas.addEventListener('mousemove', (event) => {
-      const rect = canvas.getBoundingClientRect();
-      const mouseX = (event.clientX - rect.left) / rect.width - 0.5;
-      const mouseY = (event.clientY - rect.top) / rect.height - 0.5;
-      targetRotationY = mouseX * Math.PI;
-      targetRotationX = mouseY * Math.PI;
+    // Smooth scroll to sections
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
     });
-  
-    function animate() {
-      requestAnimationFrame(animate);
-      // Smooth rotation
-      cube.rotation.y += (targetRotationY - cube.rotation.y) * 0.05;
-      cube.rotation.x += (targetRotationX - cube.rotation.x) * 0.05;
-      renderer.render(scene, camera);
+
+    // SLAM Experience - Main Three.js setup
+    const canvas = document.getElementById('pointCanvas');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    
+    // Scene setup
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x000000);
+    
+    // Camera setup
+    const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 2000);
+    camera.position.set(0, 0, 500);
+    
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0x404040, 1.5);
+    scene.add(ambientLight);
+    
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(1, 1, 1);
+    scene.add(directionalLight);
+    
+    // UI elements
+    const trackedFeaturesElement = document.getElementById('tracked-features');
+    const pointDensityElement = document.getElementById('point-density');
+    const confidenceElement = document.getElementById('confidence');
+    const framerateElement = document.getElementById('framerate');
+    
+    // Point cloud configuration
+    let numPoints = 15000;
+    let pointSize = 2.0;
+    let pointCloud;
+    
+    // Create the point cloud
+    function createPointCloud() {
+      if (pointCloud) {
+        scene.remove(pointCloud);
+      }
+      
+      const geometry = new THREE.BufferGeometry();
+      const positions = new Float32Array(numPoints * 3);
+      const colors = new Float32Array(numPoints * 3);
+      
+      const spreadX = 800;
+      const spreadY = 400;
+      const spreadZ = 600;
+      
+      for (let i = 0; i < numPoints; i++) {
+        // Create points in a roughly room-like shape
+        let x, y, z;
+        
+        if (Math.random() > 0.3) {
+          // Walls, floor, ceiling - flat surfaces
+          const surface = Math.floor(Math.random() * 6);
+          
+          if (surface === 0) {
+            // Floor
+            x = (Math.random() - 0.5) * spreadX;
+            y = -spreadY/2 + Math.random() * 10; 
+            z = (Math.random() - 0.5) * spreadZ;
+          } else if (surface === 1) {
+            // Ceiling
+            x = (Math.random() - 0.5) * spreadX;
+            y = spreadY/2 - Math.random() * 10;
+            z = (Math.random() - 0.5) * spreadZ;
+          } else if (surface === 2) {
+            // Front wall
+            x = (Math.random() - 0.5) * spreadX;
+            y = (Math.random() - 0.5) * spreadY;
+            z = -spreadZ/2 + Math.random() * 10;
+          } else if (surface === 3) {
+            // Back wall
+            x = (Math.random() - 0.5) * spreadX;
+            y = (Math.random() - 0.5) * spreadY;
+            z = spreadZ/2 - Math.random() * 10;
+          } else if (surface === 4) {
+            // Left wall
+            x = -spreadX/2 + Math.random() * 10;
+            y = (Math.random() - 0.5) * spreadY;
+            z = (Math.random() - 0.5) * spreadZ;
+          } else {
+            // Right wall
+            x = spreadX/2 - Math.random() * 10;
+            y = (Math.random() - 0.5) * spreadY;
+            z = (Math.random() - 0.5) * spreadZ;
+          }
+        } else {
+          // Random points for "furniture" or objects in the room
+          x = (Math.random() - 0.5) * spreadX * 0.8;
+          y = (Math.random() - 0.5) * spreadY * 0.8;
+          z = (Math.random() - 0.5) * spreadZ * 0.8;
+        }
+        
+        positions[i * 3] = x;
+        positions[i * 3 + 1] = y;
+        positions[i * 3 + 2] = z;
+        
+        // Color based on distance from center for a depth-like effect
+        const distance = Math.sqrt(x*x + y*y + z*z);
+        const maxDistance = Math.sqrt(spreadX*spreadX + spreadY*spreadY + spreadZ*spreadZ) / 2;
+        const normalized = Math.min(distance / maxDistance, 1);
+        
+        // Blue to cyan gradient based on depth
+        colors[i * 3] = Math.max(0.0, 1.0 - normalized);  // Red
+        colors[i * 3 + 1] = Math.max(0.3, 1.0 - normalized * 0.5);  // Green
+        colors[i * 3 + 2] = 1.0;  // Blue always on
+      }
+      
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+      
+      const material = new THREE.PointsMaterial({
+        size: pointSize,
+        vertexColors: true,
+        sizeAttenuation: true
+      });
+      
+      pointCloud = new THREE.Points(geometry, material);
+      scene.add(pointCloud);
+      
+      // Update UI
+      pointDensityElement.textContent = numPoints.toLocaleString();
+      trackedFeaturesElement.textContent = Math.floor(numPoints * 0.85).toLocaleString();
+      confidenceElement.textContent = Math.floor(80 + Math.random() * 15) + '%';
     }
-  
-    animate();
-  
+    
+    // Control event listeners
+    const pointSizeControl = document.getElementById('point-size-control');
+    const densityControl = document.getElementById('density-control');
+    
+    pointSizeControl.addEventListener('input', (e) => {
+      pointSize = parseFloat(e.target.value);
+      if (pointCloud && pointCloud.material) {
+        pointCloud.material.size = pointSize;
+      }
+    });
+    
+    densityControl.addEventListener('input', (e) => {
+      numPoints = parseInt(e.target.value);
+      createPointCloud();
+    });
+    
+    // Mouse interaction variables
+    let isMouseDown = false;
+    let rotationSpeed = 0.005;
+    let mouseX = 0, mouseY = 0;
+    let targetRotationX = 0, targetRotationY = 0;
+    
+    // Handle mouse events for rotation
+    canvas.addEventListener('mousedown', (e) => {
+      isMouseDown = true;
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+    
+    document.addEventListener('mouseup', () => {
+      isMouseDown = false;
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+      if (isMouseDown) {
+        const deltaX = e.clientX - mouseX;
+        const deltaY = e.clientY - mouseY;
+        
+        targetRotationY += deltaX * 0.01;
+        targetRotationX += deltaY * 0.01;
+        
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      }
+    });
+    
+    // Handle wheel for zoom
+    canvas.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      camera.position.z += e.deltaY * 0.5;
+      camera.position.z = Math.max(100, Math.min(1000, camera.position.z));
+    });
+    
+    // Keyboard controls
+    const keyState = {};
+    
+    document.addEventListener('keydown', (e) => {
+      keyState[e.key.toLowerCase()] = true;
+    });
+    
+    document.addEventListener('keyup', (e) => {
+      keyState[e.key.toLowerCase()] = false;
+    });
+    
+    // Animation loop
+    let lastTime = 0;
+    let frameCount = 0;
+    let lastFpsUpdate = 0;
+    
+    function animate(time) {
+      requestAnimationFrame(animate);
+      
+      // Movement based on keyboard input
+      const moveSpeed = 5;
+      if (keyState['w']) camera.position.z -= moveSpeed;
+      if (keyState['s']) camera.position.z += moveSpeed;
+      if (keyState['a']) camera.position.x -= moveSpeed;
+      if (keyState['d']) camera.position.x += moveSpeed;
+      
+      // Smooth rotation
+      if (pointCloud) {
+        pointCloud.rotation.y += (targetRotationY - pointCloud.rotation.y) * 0.1;
+        pointCloud.rotation.x += (targetRotationX - pointCloud.rotation.x) * 0.1;
+      }
+      
+      // Update FPS counter
+      frameCount++;
+      if (time - lastFpsUpdate > 1000) {
+        const fps = Math.round((frameCount * 1000) / (time - lastFpsUpdate));
+        framerateElement.textContent = fps + ' FPS';
+        frameCount = 0;
+        lastFpsUpdate = time;
+      }
+      
+      // Render
+      renderer.render(scene, camera);
+      
+      lastTime = time;
+    }
+    
     // Handle window resize
     window.addEventListener('resize', () => {
-      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
-      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+      renderer.setSize(window.innerWidth, window.innerHeight);
     });
-  </script>
-  
-
-        <!-- Electrical Section -->
-        <section class="electrical_section" id="electrical">
-            <div class="section-content">
-              <h1>ELARA</h1>
-              <h2 style="text-align: center;">Engineered Lightweight Augmented Reality Assembly</h2>
-              <p class="tagline">
-                Our first headset designed to be a comfortable and powerful platform for 
-                education, training, and immersive computing.
-              </p>
-          
-              <div class="tab-navigation">
-                <button class="tab active" data-tab="electrical-tab-1">Power Converters</button>
-                <button class="tab" data-tab="electrical-tab-2">Battery Management</button>
-                <button class="tab" data-tab="electrical-tab-3">Embedded Systems</button>
-                <!-- NEW BUTTONS -->
-                <button class="tab" data-tab="electrical-tab-4">Optics System</button>
-                <button class="tab" data-tab="electrical-tab-5">IMU Integration</button>
-                <button class="tab" data-tab="electrical-tab-6">Thermal Pipeline</button>
-              </div>
-
- <div class="tab-content" id="electrical-tab-4">
-      <div class="model-container">
-        <div class="model-placeholder" onclick="showDetails('optics')">
-          <p>Optical Engine<br>Click to explore</p>
-        </div>
-        <div class="details-panel" id="optics-details">
-          <button class="close-panel" onclick="hideDetails('optics')">×</button>
-          <h2>Optical Engine</h2>
-          <p>Custom waveguide with integrated eye-tracking and light field rendering</p>
-          <div class="spec-item">
-            <div class="spec-title">Field of View</div>
-            <div class="spec-value">42° diagonal</div>
-          </div>
-          <div class="spec-item">
-            <div class="spec-title">Display</div>
-            <div class="spec-value">1920x1080 micro-OLED with LVDS driver</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="tab-content" id="electrical-tab-5">
-      <div class="model-container">
-        <div class="model-placeholder" onclick="showDetails('imu')">
-          <p>Inertial Measurement Unit<br>Click to explore</p>
-        </div>
-        <div class="details-panel" id="imu-details">
-          <button class="close-panel" onclick="hideDetails('imu')">×</button>
-          <h2>IMU Integration</h2>
-          <p>Real-time orientation tracking with fusion algorithms</p>
-          <div class="spec-item">
-            <div class="spec-title">Sampling Rate</div>
-            <div class="spec-value">1 kHz (filtered)</div>
-          </div>
-          <div class="spec-item">
-            <div class="spec-title">Fusion Engine</div>
-            <div class="spec-value">Kalman-based predictive orientation</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="tab-content" id="electrical-tab-6">
-      <div class="model-container">
-        <div class="model-placeholder" onclick="showDetails('thermal')">
-          <p>Thermal Pipeline<br>Click to explore</p>
-        </div>
-        <div class="details-panel" id="thermal-details">
-          <button class="close-panel" onclick="hideDetails('thermal')">×</button>
-          <h2>Thermal Pipeline</h2>
-          <p>Advanced thermal dissipation using embedded heat spreaders and sensor feedback</p>
-          <div class="spec-item">
-            <div class="spec-title">Cooling</div>
-            <div class="spec-value">Passive graphite spreader with active fan assist</div>
-          </div>
-          <div class="spec-item">
-            <div class="spec-title">Temperature Control</div>
-            <div class="spec-value">On-die thermal sensors with dynamic frequency scaling</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-    </main>
-
-    <!-- Footer -->
-    <footer id="footer">
-        <ul class="icons">
-            <li><a href="https://www.linkedin.com/company/armeduofc/posts/?feedView=all" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-            <li><a href="https://www.instagram.com/armeduofc/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-            <li><a href="mailto:armeduofc@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-        </ul>
-        <ul class="copyright">
-            <li>&copy; UCalgary Extended Reality</li>
-        </ul>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
     
-    <script>
-        // Tab switching functionality
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                // Get the parent section
-                const section = tab.closest('section');
-                
-                // Remove active class from all tabs in this section
-                section.querySelectorAll('.tab').forEach(t => {
-                    t.classList.remove('active');
-                });
-                
-                // Add active class to clicked tab
-                tab.classList.add('active');
-                
-                // Hide all tab content in this section
-                section.querySelectorAll('.tab-content').forEach(content => {
-                    content.classList.remove('active');
-                });
-                
-                // Show corresponding tab content
-                const tabId = tab.getAttribute('data-tab');
-                document.getElementById(tabId).classList.add('active');
-            });
-        });
-        
-        // Details panel functionality
-        function showDetails(id) {
-            document.getElementById(id + '-details').classList.add('active');
-        }
-        
-        function hideDetails(id) {
-            document.getElementById(id + '-details').classList.remove('active');
-        }
-        
-        // Scroll progress bar
-        window.addEventListener('scroll', () => {
-            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (window.scrollY / windowHeight) * 100;
-            document.getElementById('progressBar').style.width = scrolled + '%';
-        });
-        
-        // Intersection Observer for animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-in');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        // Observe all sections and feature items
-        document.querySelectorAll('section, .feature-item').forEach(item => {
-            observer.observe(item);
-        });
-
-        function showDetails(id) {
-  document.getElementById(`${id}-details`).classList.add('active');
-}
-
-function hideDetails(id) {
-  document.getElementById(`${id}-details`).classList.remove('active');
-}
-
-    </script>
-
-
-
+    // Start the XR experience
+    createPointCloud();
+    animate(0);
+  </script>
 </body>
 </html>
