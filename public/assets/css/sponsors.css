@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600&display=swap');
 
 :root {
-  --bg-dark: #221B22;
-  --bg-card: #392D39;
+  --bg-dark: white;
+  --bg-card: white;
   --text-light: #e0e0e0;
   --highlight: white; /* XR magenta */
   --accent: white;     /* XR cyan */
@@ -21,7 +21,7 @@ body {
 }
 
 /* Thank You Banner */
-/* this awesoem colour combo: linear-gradient(145deg, #1c0032, #003840); */
+/* this awesome colour combo: linear-gradient(145deg, #1c0032, #003840); */
 .thank-you-container {
   background: linear-gradient(to right, #ff6a00, #ee0979);
   border-radius: 16px;
