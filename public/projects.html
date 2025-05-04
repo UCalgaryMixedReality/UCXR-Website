@@ -1,442 +1,341 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Projects</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/about.css" />
-		<link rel="stylesheet" href="assets/css/navbar.css" />
-		<link rel="icon" href="images/ARmed_logo.jpg">
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+    <title>ARmed UCalgary - Projects</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/projects.css" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
+<body class="is-preload">
 
-			<!-- Header -->
-			<header class="navbar">
-				<header class="navbar">
-					<nav class="nav">
-					  <ul class="nav-menu">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">About Us</a></li>
-						<li><a href="projects.html" class="active">Projects</a></li>
-						<li><a href="sponsors.html">Sponsors</a></li>
-					  </ul>
-					</nav>
-				  </header>
-			</header>
+    <!-- Header -->
+    <header class="navbar">
+        <nav class="nav">
+          <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About Us</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="sponsors.html">Sponsors</a></li>
+          </ul>
+        </nav>
+      </header>
+      
 
-			<div class="progress-bar" id="progressBar"></div>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
 
-			<!-- Main -->
-			<article id="main">
-				<header>
-					<h2>Projects</h2>
-					<p>Learn more about our current projects</p>
-				</header>
+    <section class="full_viewport_height intro-section">
+        <div class="intro-content">
+          <h1>Step Into Mixed Reality</h1>
+          <p>
+            Experience the future of interaction through our custom-built mixed reality headset.
+            With spatial computing at its core, our system lets you reach out, grab, and manipulate
+            holograms anchored in the real world.
+          </p>
+          <p>
+            Whether you're visualizing anatomy, building in 3D space, or navigating digital interfaces,
+            every gesture brings virtual content into your environment—effortlessly and intuitively.
+          </p>
+        </div>
+      </section>
+            
+    </section>
+                  
+                    
+                    <div class="tab-content" id="mechanical-tab-2">
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <div class="feature-icon">👁️</div>
+                                <h3>Dynamic Eye Relief</h3>
+                                <p>Intelligent adjustment system for perfect eye positioning</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon"></div>
+                                <h3>Weight Distribution</h3>
+                                <p>Counterbalanced design for extended comfort</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">🔄</div>
+                                <h3>Modular Fit</h3>
+                                <p>Customizable components for all head shapes</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">🌡️</div>
+                                <h3>Thermal Management</h3>
+                                <p>Advanced cooling system for comfortable extended use</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="mechanical-tab-3">
+                        <div class="model-container">
+                            <div class="model-placeholder" onclick="showDetails('materials')">
+                                <p>Advanced Materials<br>Click to explore</p>
+                            </div>
+                            <div class="details-panel" id="materials-details">
+                                <button class="close-panel" onclick="hideDetails('materials')">×</button>
+                                <h2>Advanced Materials</h2>
+                                <p>Cutting-edge materials enabling next-generation XR experiences</p>
+                                
+                                <div class="spec-item">
+                                    <div class="spec-title">OUTER SHELL</div>
+                                    <div class="spec-value">Carbon fiber reinforced polymer</div>
+                                </div>
+                                
+                                <div class="spec-item">
+                                    <div class="spec-title">INTERNAL STRUCTURE</div>
+                                    <div class="spec-value">Magnesium-aluminum alloy</div>
+                                </div>
+                                
+                                <div class="spec-item">
+                                    <div class="spec-title">FACIAL INTERFACE</div>
+                                    <div class="spec-value">Medical-grade hypoallergenic silicone</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Interactive 3D Cube Section -->
+<section id="interactive-cube" style="height: 100vh; background: #000; margin: 0; padding: 0;">
+    <canvas id="cubeCanvas" style="width: 100%; height: 100%; display: block;"></canvas>
+  </section>
+  
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <script>
+    const canvas = document.getElementById('cubeCanvas');
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+  
+    // Cube
+    const geometry = new THREE.BoxGeometry();
+    const material = new THREE.MeshStandardMaterial({ color: 0x00aaff, roughness: 0.4, metalness: 0.6 });
+    const cube = new THREE.Mesh(geometry, material);
+    scene.add(cube);
+  
+    // Lighting
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(2, 2, 5).normalize();
+    scene.add(light);
+  
+    camera.position.z = 3;
+  
+    // Track mouse
+    let targetRotationX = 0;
+    let targetRotationY = 0;
+  
+    canvas.addEventListener('mousemove', (event) => {
+      const rect = canvas.getBoundingClientRect();
+      const mouseX = (event.clientX - rect.left) / rect.width - 0.5;
+      const mouseY = (event.clientY - rect.top) / rect.height - 0.5;
+      targetRotationY = mouseX * Math.PI;
+      targetRotationX = mouseY * Math.PI;
+    });
+  
+    function animate() {
+      requestAnimationFrame(animate);
+      // Smooth rotation
+      cube.rotation.y += (targetRotationY - cube.rotation.y) * 0.05;
+      cube.rotation.x += (targetRotationX - cube.rotation.x) * 0.05;
+      renderer.render(scene, camera);
+    }
+  
+    animate();
+  
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+    });
+  </script>
+  
 
-				<section class="mechanical_section" id="mechanical">
-					<div class="section-content">
-						<h1>Mechanical Engineering</h1>
-						<p class="tagline">Precision-engineered hardware for immersive XR experiences</p>
-						
-						<div class="tab-navigation">
-							<button class="tab active" data-tab="mechanical-tab-1">Hardware Components</button>
-							<button class="tab" data-tab="mechanical-tab-2">Ergonomics</button>
-							<button class="tab" data-tab="mechanical-tab-3">Materials</button>
-						</div>
-						
-						<div class="interactive-area">
-							<div class="tab-content active" id="mechanical-tab-1">
-								<div class="model-container">
-									<div class="model-placeholder" onclick="showDetails('headset-chassis')">
-										<p>XR Headset Chassis<br>Click to view details</p>
-									</div>
-									<div class="details-panel" id="headset-chassis-details">
-										<button class="close-panel" onclick="hideDetails('headset-chassis')">×</button>
-										<h2>XR Headset Chassis</h2>
-										<p>Advanced engineered chassis with optimized weight distribution and thermal management</p>
-										
-										<div class="spec-item">
-											<div class="spec-title">WEIGHT</div>
-											<div class="spec-value">320g</div>
-										</div>
-										
-										<div class="spec-item">
-											<div class="spec-title">MATERIALS</div>
-											<div class="spec-value">Carbon fiber composite, Magnesium alloy</div>
-										</div>
-										
-										<div class="spec-item">
-											<div class="spec-title">COOLING</div>
-											<div class="spec-value">Passive heat dissipation with vapor chamber</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div class="tab-content" id="mechanical-tab-2">
-								<div class="feature-grid">
-									<div class="feature-item">
-										<div class="feature-icon">👁️</div>
-										<h3>Dynamic Eye Relief</h3>
-										<p>Intelligent adjustment system for perfect eye positioning</p>
-									</div>
-									<div class="feature-item">
-										<div class="feature-icon">⚖️</div>
-										<h3>Weight Distribution</h3>
-										<p>Counterbalanced design for extended comfort</p>
-									</div>
-									<div class="feature-item">
-										<div class="feature-icon">🔄</div>
-										<h3>Modular Fit</h3>
-										<p>Customizable components for all head shapes</p>
-									</div>
-									<div class="feature-item">
-										<div class="feature-icon">🌡️</div>
-										<h3>Thermal Management</h3>
-										<p>Advanced cooling system for comfortable extended use</p>
-									</div>
-								</div>
-							</div>
-							
-							<div class="tab-content" id="mechanical-tab-3">
-								<div class="model-container">
-									<div class="model-placeholder" onclick="showDetails('materials')">
-										<p>Advanced Materials<br>Click to explore</p>
-									</div>
-									<div class="details-panel" id="materials-details">
-										<button class="close-panel" onclick="hideDetails('materials')">×</button>
-										<h2>Advanced Materials</h2>
-										<p>Cutting-edge materials enabling next-generation XR experiences</p>
-										
-										<div class="spec-item">
-											<div class="spec-title">OUTER SHELL</div>
-											<div class="spec-value">Carbon fiber reinforced polymer</div>
-										</div>
-										
-										<div class="spec-item">
-											<div class="spec-title">INTERNAL STRUCTURE</div>
-											<div class="spec-value">Magnesium-aluminum alloy</div>
-										</div>
-										
-										<div class="spec-item">
-											<div class="spec-title">FACIAL INTERFACE</div>
-											<div class="spec-value">Medical-grade hypoallergenic silicone</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-			
-				<section class="electrical_section" id="electrical">
-					<div class="section-content">
-						<h1>Electrical Engineering</h1>
-						<p class="tagline">Advanced circuits and power systems driving immersive experiences</p>
-						
-						<div class="tab-navigation">
-							<button class="tab active" data-tab="electrical-tab-1">Display Systems</button>
-							<button class="tab" data-tab="electrical-tab-2">Sensors</button>
-							<button class="tab" data-tab="electrical-tab-3">Power Management</button>
-						</div>
-						
-						<div class="interactive-area">
-							<div class="tab-content active" id="electrical-tab-1">
-								<div class="model-container">
-									<div class="model-placeholder" onclick="showDetails('display-tech')">
-										<p>XR Display Technology<br>Click to view specifications</p>
-									</div>
-									<div class="details-panel" id="display-tech-details">
-										<button class="close-panel" onclick="hideDetails('display-tech')">×</button>
-										<h2>High Resolution Display</h2>
-										<p>State-of-the-art display system for ultra-immersive experiences</p>
-										
-										<div class="spec-item">
-											<div class="spec-title">RESOLUTION</div>
-											<div class="spec-value">4K per eye (3840 × 2160)</div>
-										</div>
-										
-										<div class="spec-item">
-											<div class="spec-title">REFRESH RATE</div>
-											<div class="spec-value">120Hz with dynamic adjustment</div>
-										</div>
-										
-										<div class="spec-item">
-											<div class="spec-title">FIELD OF VIEW</div>
-											<div class="spec-value">120° diagonal</div>
-										</div>
-										
-										<div class="spec-item">
-											<div class="spec-title">TECHNOLOGY</div>
-											<div class="spec-value">Micro OLED with HDR support</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div class="tab-content" id="electrical-tab-2">
-								<div class="feature-grid">
-									<div class="feature-item">
-										<div class="feature-icon">👁️‍🗨️</div>
-										<h3>Eye Tracking</h3>
-										<p>Dual IR cameras with 1000Hz sampling rate</p>
-									</div>
-									<div class="feature-item">
-										<div class="feature-icon">📏</div>
-										<h3>Room Mapping</h3>
-										<p>LIDAR + 3D depth sensing cameras</p>
-									</div>
-									<div class="feature-item">
-										<div class="feature-icon">🖐️</div>
-										<h3>Hand Tracking</h3>
-										<p>Sub-millimeter precision finger tracking</p>
-									</div>
-									<div class="feature-item">
-										<div class="feature-icon">🧠</div>
-										<h3>Biometric Sensors</h3>
-										<p>Pulse, respiration, and EEG monitoring</p>
-									</div>
-								</div>
-							</div>
-							
-							<div class="tab-content" id="electrical-tab-3">
-								<div class="model-container">
-									<div class="model-placeholder" onclick="showDetails('power-system')">
-										<p>Power Management System<br>Click to explore</p>
-									</div>
-									<div class="details-panel" id="power-system-details">
-										<button class="close-panel" onclick="hideDetails('power-system')">×</button>
-										<h2>Intelligent Power Management</h2>
-										<p>Advanced power systems for extended usage with minimal heat</p>
-										
-										<div class="spec-item">
-											<div class="spec-title">BATTERY CAPACITY</div>
-											<div class="spec-value">5000mAh high-density Li-Po</div>
-										</div>
-										
-										<div class="spec-item">
-											<div class="spec-title">RUNTIME</div>
-											<div class="spec-value">4 hours active use, 12 hours standby</div>
-										</div>
-										
-										<div class="spec-item">
-											<div class="spec-title">CHARGING</div>
-											<div class="spec-value">USB-C with 65W fast charging (0-80% in 30 min)</div>
-										</div>
-										
-										<div class="spec-item">
-											<div class="spec-title">POWER OPTIMIZATION</div>
-											<div class="spec-value">Dynamic foveated rendering with AI assistance</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-			
-				<section class="software_section" id="software">
-					<div class="section-content">
-						<h1>Software Engineering</h1>
-						<p class="tagline">Innovative XR software platforms and development tools</p>
-						
-						<div class="tab-navigation">
-							<button class="tab active" data-tab="software-tab-1">Operating System</button>
-							<button class="tab" data-tab="software-tab-2">Dev Tools</button>
-							<button class="tab" data-tab="software-tab-3">AI Integration</button>
-						</div>
-						
-						<div class="interactive-area">
-							<div class="tab-content active" id="software-tab-1">
-								<div class="model-container">
-									<div class="model-placeholder" onclick="showDetails('xr-os')">
-										<p>XR Operating System<br>Click to view features</p>
-									</div>
-									<div class="details-panel" id="xr-os-details">
-										<button class="close-panel" onclick="hideDetails('xr-os')">×</button>
-										<h2>XR Operating System</h2>
-										<p>Custom-built platform optimized for immersive experiences</p>
-										
-										<div class="spec-item">
-											<div class="spec-title">KERNEL</div>
-											<div class="spec-value">Real-time optimized with predictive input processing</div>
-										</div>
-										
-										<div class="spec-item">
-											<div class="spec-title">INTERFACE</div>
-											<div class="spec-value">Spatial computing with gesture, voice, and eye control</div>
-										</div>
-										
-										<div class="spec-item">
-											<div class="spec-title">PERFORMANCE</div>
-											<div class="spec-value">Sub-20ms motion-to-photon latency</div>
-										</div>
-										
-										<div class="spec-item">
-											<div class="spec-title">SECURITY</div>
-											<div class="spec-value">Hardware-encrypted spatial data with privacy zones</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							
-							<div class="tab-content" id="software-tab-2">
-								<div class="feature-grid">
-									<div class="feature-item">
-										<div class="feature-icon">🎮</div>
-										<h3>XR SDK</h3>
-										<p>Comprehensive tools for rapid application development</p>
-									</div>
-									<div class="feature-item">
-										<div class="feature-icon">📐</div>
-										<h3>3D Asset Pipeline</h3>
-										<p>Automated optimization for XR environments</p>
-									</div>
-									<div class="feature-item">
-										<div class="feature-icon">🧮</div>
-										<h3>Physics Engine</h3>
-										<p>Real-time physics with haptic feedback integration</p>
-									</div>
-									<div class="feature-item">
-										<div class="feature-icon">🔄</div>
-										<h3>Cross-platform Tools</h3>
-										<p>Develop once, deploy everywhere ecosystem</p>
-									</div>
-								</div>
-							</div>
-							
-							<div class="tab-content" id="software-tab-3">
-								<div class="model-container">
-									<div class="model-placeholder" onclick="showDetails('ai-systems')">
-										<p>AI & ML Systems<br>Click to explore</p>
-									</div>
-									<div class="details-panel" id="ai-systems-details">
-										<button class="close-panel" onclick="hideDetails('ai-systems')">×</button>
-										<h2>Advanced AI Integration</h2>
-										<p>Neural networks enhancing every aspect of the XR experience</p>
-										
-										<div class="spec-item">
-											<div class="spec-title">SPATIAL INTELLIGENCE</div>
-											<div class="spec-value">Real-time environment understanding and prediction</div>
-										</div>
-										
-										<div class="spec-item">
-											<div class="spec-title">AVATAR TECHNOLOGY</div>
-											<div class="spec-value">Neural rendering with emotion detection</div>
-										</div>
-										
-										<div class="spec-item">
-											<div class="spec-title">CONTENT GENERATION</div>
-											<div class="spec-value">On-device procedural asset creation</div>
-										</div>
-										
-										<div class="spec-item">
-											<div class="spec-title">USER ADAPTATION</div>
-											<div class="spec-value">Personalized interface that learns from interactions</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+        <!-- Electrical Section -->
+        <section class="electrical_section" id="electrical">
+            <div class="section-content">
+              <h1>ELARA</h1>
+              <h2 style="text-align: center;">Engineered Lightweight Augmented Reality Assembly</h2>
+              <p class="tagline">
+                Our first headset designed to be a comfortable and powerful platform for 
+                education, training, and immersive computing.
+              </p>
+          
+              <div class="tab-navigation">
+                <button class="tab active" data-tab="electrical-tab-1">Power Converters</button>
+                <button class="tab" data-tab="electrical-tab-2">Battery Management</button>
+                <button class="tab" data-tab="electrical-tab-3">Embedded Systems</button>
+                <!-- NEW BUTTONS -->
+                <button class="tab" data-tab="electrical-tab-4">Optics System</button>
+                <button class="tab" data-tab="electrical-tab-5">IMU Integration</button>
+                <button class="tab" data-tab="electrical-tab-6">Thermal Pipeline</button>
+              </div>
+
+ <div class="tab-content" id="electrical-tab-4">
+      <div class="model-container">
+        <div class="model-placeholder" onclick="showDetails('optics')">
+          <p>Optical Engine<br>Click to explore</p>
+        </div>
+        <div class="details-panel" id="optics-details">
+          <button class="close-panel" onclick="hideDetails('optics')">×</button>
+          <h2>Optical Engine</h2>
+          <p>Custom waveguide with integrated eye-tracking and light field rendering</p>
+          <div class="spec-item">
+            <div class="spec-title">Field of View</div>
+            <div class="spec-value">42° diagonal</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-title">Display</div>
+            <div class="spec-value">1920x1080 micro-OLED with LVDS driver</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="electrical-tab-5">
+      <div class="model-container">
+        <div class="model-placeholder" onclick="showDetails('imu')">
+          <p>Inertial Measurement Unit<br>Click to explore</p>
+        </div>
+        <div class="details-panel" id="imu-details">
+          <button class="close-panel" onclick="hideDetails('imu')">×</button>
+          <h2>IMU Integration</h2>
+          <p>Real-time orientation tracking with fusion algorithms</p>
+          <div class="spec-item">
+            <div class="spec-title">Sampling Rate</div>
+            <div class="spec-value">1 kHz (filtered)</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-title">Fusion Engine</div>
+            <div class="spec-value">Kalman-based predictive orientation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="electrical-tab-6">
+      <div class="model-container">
+        <div class="model-placeholder" onclick="showDetails('thermal')">
+          <p>Thermal Pipeline<br>Click to explore</p>
+        </div>
+        <div class="details-panel" id="thermal-details">
+          <button class="close-panel" onclick="hideDetails('thermal')">×</button>
+          <h2>Thermal Pipeline</h2>
+          <p>Advanced thermal dissipation using embedded heat spreaders and sensor feedback</p>
+          <div class="spec-item">
+            <div class="spec-title">Cooling</div>
+            <div class="spec-value">Passive graphite spreader with active fan assist</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-title">Temperature Control</div>
+            <div class="spec-value">On-die thermal sensors with dynamic frequency scaling</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <ul class="icons">
+            <li><a href="https://www.linkedin.com/company/armeduofc/posts/?feedView=all" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            <li><a href="https://www.instagram.com/armeduofc/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+            <li><a href="mailto:armeduofc@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+        <ul class="copyright">
+            <li>&copy; UCalgary Extended Reality</li>
+        </ul>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Get the parent section
+                const section = tab.closest('section');
+                
+                // Remove active class from all tabs in this section
+                section.querySelectorAll('.tab').forEach(t => {
+                    t.classList.remove('active');
+                });
+                
+                // Add active class to clicked tab
+                tab.classList.add('active');
+                
+                // Hide all tab content in this section
+                section.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Show corresponding tab content
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+        
+        // Details panel functionality
+        function showDetails(id) {
+            document.getElementById(id + '-details').classList.add('active');
+        }
+        
+        function hideDetails(id) {
+            document.getElementById(id + '-details').classList.remove('active');
+        }
+        
+        // Scroll progress bar
+        window.addEventListener('scroll', () => {
+            const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (window.scrollY / windowHeight) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+        
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        // Observe all sections and feature items
+        document.querySelectorAll('section, .feature-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        function showDetails(id) {
+  document.getElementById(`${id}-details`).classList.add('active');
+}
+
+function hideDetails(id) {
+  document.getElementById(`${id}-details`).classList.remove('active');
+}
+
+    </script>
 
 
-			</article>
-			</section>
 
-		
-			<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-					<li><a href="https://www.linkedin.com/company/armeduofc/posts/?feedView=all" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-					<li><a href="https://www.instagram.com/armeduofc/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="mailto:armeduofc@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; UCalgary Extended Reality</li>
-				</ul>
-			</footer>
-
-		</div>
-
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-
-		<script>	// Scroll progress bar
-			window.addEventListener('scroll', () => {
-				const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-				const scrolled = (window.scrollY / windowHeight) * 100;
-				document.getElementById('progressBar').style.width = scrolled + '%';
-			});
-		</script>
-
-		<script>
-			// Tab switching functionality
-			document.querySelectorAll('.tab').forEach(tab => {
-				tab.addEventListener('click', () => {
-					// Get the parent section
-					const section = tab.closest('section');
-					
-					// Remove active class from all tabs in this section
-					section.querySelectorAll('.tab').forEach(t => {
-						t.classList.remove('active');
-					});
-					
-					// Add active class to clicked tab
-					tab.classList.add('active');
-					
-					// Hide all tab content in this section
-					section.querySelectorAll('.tab-content').forEach(content => {
-						content.classList.remove('active');
-					});
-					
-					// Show corresponding tab content
-					const tabId = tab.getAttribute('data-tab');
-					document.getElementById(tabId).classList.add('active');
-				});
-			});
-			
-			// Details panel functionality
-			function showDetails(id) {
-				document.getElementById(id + '-details').classList.add('active');
-			}
-			
-			function hideDetails(id) {
-				document.getElementById(id + '-details').classList.remove('active');
-			}
-			
-			// Scroll progress bar
-			window.addEventListener('scroll', () => {
-				const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-				const scrolled = (window.scrollY / windowHeight) * 100;
-				document.getElementById('progressBar').style.width = scrolled + '%';
-			});
-			
-			// Intersection Observer for animations
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('animate-in');
-					}
-				});
-			}, { threshold: 0.1 });
-			
-			// Observe all sections and feature items
-			document.querySelectorAll('section, .feature-item').forEach(item => {
-				observer.observe(item);
-			});
-		</script>
-
-	
-	</body>
+</body>
 </html>

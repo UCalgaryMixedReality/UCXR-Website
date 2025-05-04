@@ -49,14 +49,18 @@
 					<section id="one" class="wrapper style3 special home_1">
 						<div class="inner">
 							<header class="major">
-								<h2>Our Vision is to redefine the future<br />
-								of medical education</h2>
+								<h2>History</h2>
 								<p>
-									UCXR, formerly known as ARmed, is a multidisciplinary engineering team at the University of Calgary dedicated to exploring the frontiers of extended reality technology. Our rebranding reflects our expanded focus beyond augmented reality to include the full spectrum of immersive technologies.
+									UCXR, formerly known as ARmed, is a multidisciplinary engineering team at the University of Calgary 
+									dedicated to exploring the frontiers of extended reality technology. Our rebranding reflects our expanded focus beyond a
+									ugmented reality to include the full spectrum of immersive technologies.
 									
-									We bring together expertise in hardware design, software development, and user experience to create cutting-edge XR solutions that address real-world challenges. Our team handles the entire development cycle — from PCB design and sensor integration to real-time visualization and immersive interfaces.
+									We bring together expertise in hardware design, software development, 
+									and user experience to create cutting-edge XR solutions that address real-world challenges. Our team handles the entire development 
+									cycle — from PCB design and sensor integration to real-time visualization and immersive interfaces.
 									
-									Through collaborative innovation and iterative design, we aim to push the boundaries of what's possible in spatial computing and create technologies that enhance human capabilities.
+									Through collaborative innovation and iterative design, we aim to push the boundaries of what's possible in spatial 
+									computing and create technologies that enhance human capabilities.
 
 								</p>
 							</header>
@@ -70,7 +74,9 @@
 							<div class="image"><img src="images/ToluOpticalSystem.JPG" alt="" /></div><div class="content">
 								<h2>Every aspect of our project is created in-house<br />
 								</h2>
-								<p>From the mechanical and electrical systems to the software that powers the headset, our multidisciplinary team collaborates closely to ensure seamless integration across all components.</p>
+								<p>From the mechanical and electrical systems to the software that 
+									powers the headset, our multidisciplinary team collaborates closely 
+									to ensure seamless integration across all components.</p>
 							</div>
 						</section>
 						<section class="spotlight">
@@ -171,157 +177,6 @@
     </div>
   </div>
 		</section>
-
-			<script>
-
-				// Data for AR applications
-				const arApplications = [
-				  {
-					id: 1,
-					title: "Retail & Shopping",
-					description: "Try before you buy with virtual product previews in your space. See furniture in your home or try on clothes and accessories digitally.",
-					demo: "Furniture Placement Demo: See how different pieces of furniture would look and fit in your actual living space."
-				  },
-				  {
-					id: 2,
-					title: "Navigation & Travel",
-					description: "Real-time directions overlaid on your view, highlighting points of interest, translating foreign signs, and providing contextual information about your surroundings.",
-					demo: "City Explorer: Navigation overlay with real-time points of interest and path guidance."
-				  },
-				  {
-					id: 3,
-					title: "Education & Learning",
-					description: "Interactive 3D models bring concepts to life. Explore human anatomy, chemistry molecules, historical reconstructions, and planetary systems in immersive detail.",
-					demo: "Molecular Structure Visualizer: Interact with and manipulate 3D molecular structures."
-				  },
-				  {
-					id: 4,
-					title: "Healthcare & Medicine",
-					description: "Visualize patient anatomy, assist in surgical planning, enhance rehabilitation, and provide real-time guidance for medical procedures with augmented overlays.",
-					demo: "Anatomical Visualization: Explore human anatomy with detailed organ systems."
-				  },
-				  {
-					id: 5,
-					title: "Gaming & Entertainment",
-					description: "Transform your environment into a playground with AR games that blend digital elements with physical space, creating immersive experiences and social interactions.",
-					demo: "Room Defender: Interactive game where digital enemies emerge from your walls and furniture."
-				  },
-				  {
-					id: 6,
-					title: "Industrial & Manufacturing",
-					description: "Enhance worker productivity with hands-free guided assembly, remote expert assistance, equipment maintenance visualization, and quality control inspections.",
-					demo: "Assembly Guide: Step-by-step instructions overlaid on real equipment for maintenance."
-				  }
-				];
-				
-				// Get all cards and modal elements
-				const cards = document.querySelectorAll('.card');
-				const modal = document.getElementById('xrModal');
-				const closeModal = document.getElementById('closeModal');
-				const modalTitle = document.getElementById('modalTitle');
-				const modalDescription = document.getElementById('modalDescription');
-				const xrObject = document.getElementById('xrObject');
-				
-				// Button interactions
-				const rotateBtn = document.getElementById('rotateBtn');
-				const scaleBtn = document.getElementById('scaleBtn');
-				const changeColorBtn = document.getElementById('changeColorBtn');
-				
-				let isRotating = true;
-				let scale = 1;
-				const colors = ['rgba(255, 106, 0, 0.2)', 'rgba(238, 9, 121, 0.2)', 'rgba(0, 106, 255, 0.2)', 'rgba(0, 238, 121, 0.2)'];
-				let currentColorIndex = 0;
-				
-				// Add click event to all cards
-				cards.forEach(card => {
-				  card.addEventListener('click', () => {
-					const id = parseInt(card.getAttribute('data-id'));
-					const app = arApplications.find(a => a.id === id);
-					
-					if (app) {
-					  modalTitle.textContent = app.title;
-					  modalDescription.textContent = app.demo;
-					  
-					  // Reset animation and styles
-					  xrObject.style.animation = isRotating ? 'rotate 10s infinite linear' : 'none';
-					  xrObject.style.transform = 'scale(' + scale + ')';
-					  xrObject.style.backgroundColor = colors[currentColorIndex];
-					  xrObject.style.borderColor = colors[currentColorIndex].replace('0.2', '1');
-					  
-					  // Custom styling based on the application type
-					  if (id === 1) { // Retail
-						xrObject.style.borderRadius = '0';
-						xrObject.style.width = '120px';
-						xrObject.style.height = '80px';
-					  } else if (id === 2) { // Navigation
-						xrObject.style.borderRadius = '50%';
-						xrObject.style.width = '100px';
-						xrObject.style.height = '100px';
-					  } else if (id === 3) { // Education
-						xrObject.style.borderRadius = '10px';
-						xrObject.style.width = '100px';
-						xrObject.style.height = '100px';
-					  } else if (id === 4) { // Healthcare
-						xrObject.style.borderRadius = '40% 60% 60% 40% / 60% 30% 70% 40%';
-						xrObject.style.width = '120px';
-						xrObject.style.height = '120px';
-					  } else if (id === 5) { // Gaming
-						xrObject.style.borderRadius = '20px';
-						xrObject.style.width = '80px';
-						xrObject.style.height = '80px';
-					  } else if (id === 6) { // Industrial
-						xrObject.style.borderRadius = '5px';
-						xrObject.style.width = '150px';
-						xrObject.style.height = '100px';
-					  }
-					  
-					  modal.classList.add('active');
-					}
-				  });
-				});
-				
-				// Close modal
-				closeModal.addEventListener('click', () => {
-				  modal.classList.remove('active');
-				});
-				
-				// Close modal when clicking outside
-				window.addEventListener('click', (e) => {
-				  if (e.target === modal) {
-					modal.classList.remove('active');
-				  }
-				});
-				
-				// Rotate button
-				rotateBtn.addEventListener('click', () => {
-				  isRotating = !isRotating;
-				  xrObject.style.animation = isRotating ? 'rotate 10s infinite linear' : 'none';
-				  rotateBtn.textContent = isRotating ? 'Stop Rotation' : 'Rotate Object';
-				});
-				
-				// Scale button
-				scaleBtn.addEventListener('click', () => {
-				  scale = scale === 1 ? 1.5 : scale === 1.5 ? 0.75 : 1;
-				  xrObject.style.transform = 'scale(' + scale + ')';
-				  scaleBtn.textContent = scale === 1 ? 'Scale Object' : scale === 1.5 ? 'Shrink Object' : 'Reset Scale';
-				});
-				
-				// Change color button
-				changeColorBtn.addEventListener('click', () => {
-				  currentColorIndex = (currentColorIndex + 1) % colors.length;
-				  xrObject.style.backgroundColor = colors[currentColorIndex];
-				  xrObject.style.borderColor = colors[currentColorIndex].replace('0.2', '1');
-				});
-			  </script>
-
-<script>	// Scroll progress bar
-	window.addEventListener('scroll', () => {
-		const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-		const scrolled = (window.scrollY / windowHeight) * 100;
-		document.getElementById('progressBar').style.width = scrolled + '%';
-	});
-</script>
-
 
 				<!-- Footer -->
                 <footer id="footer">
