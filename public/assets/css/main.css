@@ -3734,7 +3734,7 @@ input, select, textarea {
 			-ms-transition-delay: 1.25s;
 			transition-delay: 1.25s;
 			content: '';
-			background: #221B22;
+			background: white;
 			display: block;
 			width: 100%;
 			height: 100%;
