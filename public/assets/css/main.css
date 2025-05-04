@@ -2698,10 +2698,8 @@ input, select, textarea {
 	}
 
 		.spotlight .image {
-			margin-right: 0em;
-			margin-top: 1em;
-			margin-bottom: 1em;
-			margin-left: 1.5em;
+			width: 100%;
+			margin: 1em;
 			-moz-order: 1;
 			-webkit-order: 1;
 			-ms-order: 1;
@@ -2711,16 +2709,14 @@ input, select, textarea {
 		}
 
 			.spotlight .image img {
-				margin-right: 0em;
-				margin-top: 1em;
-				margin-bottom: 1em;
-				margin-left: 1.5em;
+				width: 100%;
+				margin: 1em;
 				border-radius: 10px;
 				width: 100%;
 			}
 
 			.spotlight:nth-child(2n) .image {
-				margin-right: 4em;
+				margin-right: 2em;
 				margin-left: 0em;
 			}
 
@@ -2785,7 +2781,7 @@ input, select, textarea {
 		@media screen and (max-width: 1280px) {
 
 			.spotlight .image {
-				width: 45%;
+				width: 80%;
 			}
 
 			.spotlight .content {
@@ -2805,7 +2801,7 @@ input, select, textarea {
 				}
 
 				.spotlight .image {
-					width: 100%;
+					width: 90%;
 				}
 
 				.spotlight .content {
