@@ -6,7 +6,7 @@
   --text-light: #e0e0e0;
   --highlight: white; /* XR magenta */
   --accent: white;     /* XR cyan */
-  --tier-gold: #ffd700;
+  --tier-gold: white;
   --tier-bronze: #cd7f32;
   --font-main: 'Segoe UI', sans-serif;
 }
