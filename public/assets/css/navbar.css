@@ -45,7 +45,7 @@
   }
   
   .nav-menu a:hover {
-    background: linear-gradient(to right, #ff6a00, #ee0979);
+    background: linear-gradient(to right, #9925f7, #56bcf9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -58,12 +58,12 @@
     bottom: -5px;
     width: 0%;
     height: 2px;
-    background: linear-gradient(to right, #ff6a00, #ee0979);
+    background: linear-gradient(to right, #9925f7, #56bcf9);
     transition: width 0.3s ease;
   }
 
   .nav-menu a.active {
-    background: linear-gradient(to right, #ff6a00, #ee0979);
+    background: linear-gradient(to right, #9925f7, #56bcf9);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -73,7 +73,7 @@
     top: 0;
     left: 0;
     height: 5px;
-    background: linear-gradient(to right, #ff6a00, #ee0979);
+    background: linear-gradient(to right, #9925f7, #56bcf9);
     z-index: 100;
     width: 0%;
     transition: width 0.3s ease;

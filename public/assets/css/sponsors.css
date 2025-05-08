@@ -23,7 +23,7 @@ body {
 /* Thank You Banner */
 /* this awesome colour combo: linear-gradient(145deg, #1c0032, #003840); */
 .thank-you-container {
-  background: linear-gradient(to right, #ff6a00, #ee0979);
+  background: linear-gradient(145deg, #9925f7, #56bcf9);
   border-radius: 16px;
   text-align: center;
   padding: 40px 20px;

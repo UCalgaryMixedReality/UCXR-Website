@@ -297,7 +297,7 @@ hr {
   font-weight: 600;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(to right, #ff6a00, #ee0979);
+  background: linear-gradient(145deg, #9925f7, #56bcf9);
   color: white;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -305,7 +305,7 @@ hr {
 }
 
 .xr-button:hover {
-  box-shadow: 0 0 15px #ff6a00, 0 0 25px #ee0979;
+  box-shadow: 0 0 10px #9925f7, 0 0 10px #56bcf9;
   transform: translateY(-2px);
 }
 
