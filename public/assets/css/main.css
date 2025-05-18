@@ -3851,10 +3851,10 @@ input, select, textarea {
 	#main > header {
 		min-height: 100vh;
   		padding: 12em 3em 10em 3em;
-		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../../images/team.JPG");
-		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../../images/team.JPG");
-		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../../images/team.JPG");
-		background-image: linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../../images/team.JPG");
+		background-image: -moz-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../../images/ferzamhololens.jpg");
+		background-image: -webkit-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../../images/parth_xrgame.JPG");
+		background-image: -ms-linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../../images/lavalvirtual_aadi_parth.JPG");
+		background-image: linear-gradient(top, rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("../../images/lavalvirtual_aadi_parth.JPG");
 		background-attachment: fixed;
 		background-position: center center;
 		background-repeat: no-repeat;
