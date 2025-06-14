@@ -1,82 +1,127 @@
 .navbar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0.5rem 0.5rem 1rem 0.5rem;
-  background-color: white;
-  color: black;
-}
-
-.nav {
-  position: relative;
-  width: 100%;
-}
-
-.nav-menu {
-  display: flex;
-  justify-content: center; /* Added to center the menu items */
-  gap: 2rem;
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0 0 0;
-}
-
-.nav-menu a {
-  text-decoration: none;
-  font-weight: bold;
-  color: black;
-  padding: 0.5rem 1rem;
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-.nav-menu a:hover {
-  background: linear-gradient(to right, #9925f7, #56bcf9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.nav-menu a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0%;
-  height: 2px;
-  background: linear-gradient(to right, #9925f7, #56bcf9);
-  transition: width 0.3s ease;
-}
-
-.nav-menu a.active {
-  background: linear-gradient(to right, #9925f7, #56bcf9);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.nav-menu a:hover::after {
-  width: 100%;
-}
-
-@media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    background-color: white;
+    color: black;
+  }
+  
+  .logo a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: #fff;
+    transition: color 0.3s ease;
+  }
+  
+  .logo a:hover {
+    color: #00e5ff;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.7);
+  }
+  
+  .nav {
+    position: relative;
+    width: 100%;
+  }
+  
   .nav-menu {
-    flex-direction: row;
-    justify-content: center; /* Ensure centering on mobile */
-    width: 100%;
-    text-align: center;
-    gap: 0.5rem;
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
   }
-
+  
   .nav-menu a {
-    width: 100%;
-    padding: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: all 0.3s ease;
   }
-
+  
+  .nav-menu a:hover {
+    background: linear-gradient(to right, #9925f7, #56bcf9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  /* Straight line underline effect (replacing dots) */
   .nav-menu a::after {
-    bottom: 0;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(to right, #9925f7, #56bcf9);
+    transition: width 0.3s ease;
   }
-}
 
-/* Removed unused styles (optional, keep if needed on other pages) */
-.logo a, .progress-bar, .nav-toggle, .nav-toggle-label {
-  display: none; /* Hidden unless used in other pages */
-}
+  .nav-menu a.active {
+    background: linear-gradient(to right, #9925f7, #56bcf9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: linear-gradient(to right, #9925f7, #56bcf9);
+    z-index: 100;
+    width: 0%;
+    transition: width 0.3s ease;
+  }
+  
+  
+  .nav-menu a:hover::after {
+    width: 100%;
+  }
+  
+  /* Hide hamburger menu by default */
+  .nav-toggle {
+    display: none;
+  }
+  
+  .nav-toggle-label {
+    display: none;
+    font-size: 3rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    color: #fff;
+  }
+  
+  /* Responsive behavior */
+  @media (max-width: 768px) {
+    .nav-menu {
+      flex-direction: row;
+      width: 100%;
+      text-align: center;
+      gap: 0.5rem;
+    }
+    
+    .nav-toggle-label {
+      display: block;
+    }
+    
+    .nav-toggle:checked ~ .nav-menu {
+      display: flex;
+    }
+    
+    .nav-menu a {
+      width: 100%;
+      padding: 1rem;
+    }
+    
+    .nav-menu a::after {
+      bottom: 0;
+    }
+  }
