@@ -130,6 +130,7 @@
 			}
 		});
 
+<<<<<<< HEAD
 		// SLAM Experience - Main Three.js setup
 		const canvas = document.getElementById('pointCanvas');
 		const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
@@ -367,5 +368,453 @@
 		createPointCloud();
 		animate(0);
 	</script>
+=======
+    #pointCanvas {
+      width: 100%;
+      height: 100%; 
+      display: block;
+    }
+
+    .ui-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .metrics-container {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      padding: 15px;
+      width: 260px;
+      pointer-events: all;
+    }
+
+    .metrics-title {
+      font-size: 14px;
+      margin-bottom: 10px;
+      color: #64b5f6;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 13px;
+    }
+
+    .metric-label {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .metric-value {
+      color: #fff;
+      font-family: monospace;
+    }
+
+    .controls-container {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      padding: 15px;
+      width: 260px;
+      pointer-events: all;
+    }
+
+    .control-row {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 12px;
+    }
+
+    .control-label {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 5px;
+    }
+
+    .control-slider {
+      width: 100%;
+      height: 4px;
+    }
+
+    .instructions {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 14px;
+      padding: 0 20px;
+    }
+
+    .instruction-key {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      padding: 2px 8px;
+      margin: 0 3px;
+      font-size: 12px;
+      font-family: monospace;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+    				<!-- Header -->
+                    <header class="navbar">
+                        <header class="navbar">
+                            <nav class="nav">
+                            <ul class="nav-menu">
+                              <li><a href="index.html">Home</a></li>
+                              <li><a href="about.html">About</a></li>
+                                <li><a href="projects.html" class="active">Projects</a></li>
+                                <li><a href="sponsors.html">Sponsors</a></li>
+                            </ul>
+                            </nav>
+                        </header>
+                    </header>
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <script>	// Scroll progress bar
+    window.addEventListener('scroll', () => {
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (window.scrollY / windowHeight) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+	</script>
+                    
+  <!-- Full Viewport Intro Section -->
+  <section class="intro-section">
+    <div class="intro-content">
+      <h1>Step Into Mixed Reality</h1>
+      <p>
+        UCXR has explored spatial computing for the purposes of designing, manufacturing, and assembling our first
+        augmented reality headset. We are excited to share our journey with you through this interactive experience.
+      </p>
+      <p>
+        Our current softare development projects are focused on vSLAM (Simultaneous Localization and Mapping). We
+        have successfully implemented a solution for hand gesture recogntiion and head tracking. This with the control
+        of a game engine allows us to make a strong application, further powered by information recieved from the electrical
+        team.
+      </p>
+      <a href="#slam-experience" class="cta-button">Launch Experience</a>
+    </div>
+  </section>
+
+  <!-- XR SLAM Experience -->
+  <section id="slam-experience" class="slam-experience">
+    <canvas id="pointCanvas"></canvas>
+    
+    <div class="ui-overlay">
+      <div class="metrics-container">
+        <div class="metrics-title">SLAM Metrics</div>
+        <div class="metric-row">
+          <span class="metric-label">Tracked Features</span>
+          <span class="metric-value" id="tracked-features">0</span>
+        </div>
+        <div class="metric-row">
+          <span class="metric-label">Point Cloud Density</span>
+          <span class="metric-value" id="point-density">0</span>
+        </div>
+        <div class="metric-row">
+          <span class="metric-label">Confidence Score</span>
+          <span class="metric-value" id="confidence">0%</span>
+        </div>
+        <div class="metric-row">
+          <span class="metric-label">Frame Rate</span>
+          <span class="metric-value" id="framerate">0 FPS</span>
+        </div>
+      </div>
+
+      <div class="controls-container">
+        <div class="metrics-title">Controls</div>
+        <div class="control-row">
+          <span class="control-label">Point Size</span>
+          <input type="range" min="1" max="5" step="0.1" value="2" class="control-slider" id="point-size-control">
+        </div>
+        <div class="control-row">
+          <span class="control-label">Density</span>
+          <input type="range" min="5000" max="30000" step="1000" value="15000" class="control-slider" id="density-control">
+        </div>
+      </div>
+      
+      <div class="instructions">
+        <span>Click and drag to rotate | Scroll to zoom | <span class="instruction-key">W</span><span class="instruction-key">A</span><span class="instruction-key">S</span><span class="instruction-key">D</span> to move</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <script>
+    // Smooth scroll to sections
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // SLAM Experience - Main Three.js setup
+    const canvas = document.getElementById('pointCanvas');
+    const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    
+    // Scene setup
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x000000);
+    
+    // Camera setup
+    const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 2000);
+    camera.position.set(0, 0, 500);
+    
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0x404040, 1.5);
+    scene.add(ambientLight);
+    
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+    directionalLight.position.set(1, 1, 1);
+    scene.add(directionalLight);
+    
+    // UI elements
+    const trackedFeaturesElement = document.getElementById('tracked-features');
+    const pointDensityElement = document.getElementById('point-density');
+    const confidenceElement = document.getElementById('confidence');
+    const framerateElement = document.getElementById('framerate');
+    
+    // Point cloud configuration
+    let numPoints = 15000;
+    let pointSize = 2.0;
+    let pointCloud;
+    
+    // Create the point cloud
+    function createPointCloud() {
+      if (pointCloud) {
+        scene.remove(pointCloud);
+      }
+      
+      const geometry = new THREE.BufferGeometry();
+      const positions = new Float32Array(numPoints * 3);
+      const colors = new Float32Array(numPoints * 3);
+      
+      const spreadX = 800;
+      const spreadY = 400;
+      const spreadZ = 600;
+      
+      for (let i = 0; i < numPoints; i++) {
+        // Create points in a roughly room-like shape
+        let x, y, z;
+        
+        if (Math.random() > 0.3) {
+          // Walls, floor, ceiling - flat surfaces
+          const surface = Math.floor(Math.random() * 6);
+          
+          if (surface === 0) {
+            // Floor
+            x = (Math.random() - 0.5) * spreadX;
+            y = -spreadY/2 + Math.random() * 10; 
+            z = (Math.random() - 0.5) * spreadZ;
+          } else if (surface === 1) {
+            // Ceiling
+            x = (Math.random() - 0.5) * spreadX;
+            y = spreadY/2 - Math.random() * 10;
+            z = (Math.random() - 0.5) * spreadZ;
+          } else if (surface === 2) {
+            // Front wall
+            x = (Math.random() - 0.5) * spreadX;
+            y = (Math.random() - 0.5) * spreadY;
+            z = -spreadZ/2 + Math.random() * 10;
+          } else if (surface === 3) {
+            // Back wall
+            x = (Math.random() - 0.5) * spreadX;
+            y = (Math.random() - 0.5) * spreadY;
+            z = spreadZ/2 - Math.random() * 10;
+          } else if (surface === 4) {
+            // Left wall
+            x = -spreadX/2 + Math.random() * 10;
+            y = (Math.random() - 0.5) * spreadY;
+            z = (Math.random() - 0.5) * spreadZ;
+          } else {
+            // Right wall
+            x = spreadX/2 - Math.random() * 10;
+            y = (Math.random() - 0.5) * spreadY;
+            z = (Math.random() - 0.5) * spreadZ;
+          }
+        } else {
+          // Random points for "furniture" or objects in the room
+          x = (Math.random() - 0.5) * spreadX * 0.8;
+          y = (Math.random() - 0.5) * spreadY * 0.8;
+          z = (Math.random() - 0.5) * spreadZ * 0.8;
+        }
+        
+        positions[i * 3] = x;
+        positions[i * 3 + 1] = y;
+        positions[i * 3 + 2] = z;
+        
+        // Color based on distance from center for a depth-like effect
+        const distance = Math.sqrt(x*x + y*y + z*z);
+        const maxDistance = Math.sqrt(spreadX*spreadX + spreadY*spreadY + spreadZ*spreadZ) / 2;
+        const normalized = Math.min(distance / maxDistance, 1);
+        
+        // Blue to cyan gradient based on depth
+        colors[i * 3] = Math.max(0.0, 1.0 - normalized);  // Red
+        colors[i * 3 + 1] = Math.max(0.3, 1.0 - normalized * 0.5);  // Green
+        colors[i * 3 + 2] = 1.0;  // Blue always on
+      }
+      
+      geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+      
+      const material = new THREE.PointsMaterial({
+        size: pointSize,
+        vertexColors: true,
+        sizeAttenuation: true
+      });
+      
+      pointCloud = new THREE.Points(geometry, material);
+      scene.add(pointCloud);
+      
+      // Update UI
+      pointDensityElement.textContent = numPoints.toLocaleString();
+      trackedFeaturesElement.textContent = Math.floor(numPoints * 0.85).toLocaleString();
+      confidenceElement.textContent = Math.floor(80 + Math.random() * 15) + '%';
+    }
+    
+    // Control event listeners
+    const pointSizeControl = document.getElementById('point-size-control');
+    const densityControl = document.getElementById('density-control');
+    
+    pointSizeControl.addEventListener('input', (e) => {
+      pointSize = parseFloat(e.target.value);
+      if (pointCloud && pointCloud.material) {
+        pointCloud.material.size = pointSize;
+      }
+    });
+    
+    densityControl.addEventListener('input', (e) => {
+      numPoints = parseInt(e.target.value);
+      createPointCloud();
+    });
+    
+    // Mouse interaction variables
+    let isMouseDown = false;
+    let rotationSpeed = 0.005;
+    let mouseX = 0, mouseY = 0;
+    let targetRotationX = 0, targetRotationY = 0;
+    
+    // Handle mouse events for rotation
+    canvas.addEventListener('mousedown', (e) => {
+      isMouseDown = true;
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+    
+    document.addEventListener('mouseup', () => {
+      isMouseDown = false;
+    });
+    
+    document.addEventListener('mousemove', (e) => {
+      if (isMouseDown) {
+        const deltaX = e.clientX - mouseX;
+        const deltaY = e.clientY - mouseY;
+        
+        targetRotationY += deltaX * 0.01;
+        targetRotationX += deltaY * 0.01;
+        
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      }
+    });
+    
+    // Handle wheel for zoom
+    canvas.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      camera.position.z += e.deltaY * 0.5;
+      camera.position.z = Math.max(100, Math.min(1000, camera.position.z));
+    });
+    
+    // Keyboard controls
+    const keyState = {};
+    
+    document.addEventListener('keydown', (e) => {
+      keyState[e.key.toLowerCase()] = true;
+    });
+    
+    document.addEventListener('keyup', (e) => {
+      keyState[e.key.toLowerCase()] = false;
+    });
+    
+    // Animation loop
+    let lastTime = 0;
+    let frameCount = 0;
+    let lastFpsUpdate = 0;
+    
+    function animate(time) {
+      requestAnimationFrame(animate);
+      
+      // Movement based on keyboard input
+      const moveSpeed = 5;
+      if (keyState['w']) camera.position.z -= moveSpeed;
+      if (keyState['s']) camera.position.z += moveSpeed;
+      if (keyState['a']) camera.position.x -= moveSpeed;
+      if (keyState['d']) camera.position.x += moveSpeed;
+      
+      // Smooth rotation
+      if (pointCloud) {
+        pointCloud.rotation.y += (targetRotationY - pointCloud.rotation.y) * 0.1;
+        pointCloud.rotation.x += (targetRotationX - pointCloud.rotation.x) * 0.1;
+      }
+      
+      // Update FPS counter
+      frameCount++;
+      if (time - lastFpsUpdate > 1000) {
+        const fps = Math.round((frameCount * 1000) / (time - lastFpsUpdate));
+        framerateElement.textContent = fps + ' FPS';
+        frameCount = 0;
+        lastFpsUpdate = time;
+      }
+      
+      // Render
+      renderer.render(scene, camera);
+      
+      lastTime = time;
+    }
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+    
+    // Start the XR experience
+    createPointCloud();
+    animate(0);
+  </script>
+>>>>>>> cf556686f666f16788cb8fa579ece8ef56e806b7
 </body>
 </html>
