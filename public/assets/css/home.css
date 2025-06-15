@@ -76,7 +76,14 @@
   .home_3 {
   background-color: white;
   padding: 2rem 1rem;
-}
+  }
+
+  img.ucxr-logo {
+    max-width: 25%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
 
   /* possible merch colours: #392D39, #221B22*/
 
