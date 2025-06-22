@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - UCalgary Mixed Reality</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/navbar.css" />
+  <link rel="stylesheet" href="assets/css/team-portal.css" />
+  <link rel="icon" href="images/UCXR_logo.jpg" />
+</head>
+<body class="is-preload">
+
+  <!-- Header -->
+	<header class="navbar">
+	<nav class="nav">
+		<div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+		<div></div>
+		<div></div>
+		<div></div>
+		</div>
+		<ul class="nav-menu left-menu">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="about.html" class="active">About</a></li>
+		<li><a href="projects.html">Projects</a></li>
+		<li><a href="sponsors.html">Sponsors</a></li>
+		<li><a href="contact.html">Contact Us</a></li>
+		</ul>
+		<ul class="nav-menu right-menu">
+		<li><a href="team-login.html" class="team-portal">Team Portal</a></li>
+		</ul>
+	</nav>
+	</header>
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Main content -->
+  <article id="main">
+    <section class="wrapper style5">
+      <div class="inner">
+        <header>
+          <h2>Contact Us</h2>
+          <p>Have questions? Send us a message.</p>
+        </header>
+
+        <form action="mailto:ucalgarymixedreality@gmail.com" method="POST" enctype="text/plain" class="contact-form">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="Name" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="Email" required />
+
+          <label for="subject">Subject:</label>
+          <input type="text" id="subject" name="Subject" required />
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="Message" rows="6" required></textarea>
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </section>
+  </article>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <ul class="icons">
+      <li><a href="https://www.linkedin.com/company/armeduofc/posts/?feedView=all" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+      <li><a href="https://www.instagram.com/uofc_xr" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+      <li><a href="mailto:armeduofc@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+    </ul>
+    <ul class="copyright">
+      <li>&copy; UCalgary Mixed Reality</li>
+    </ul>
+  </footer>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Scroll progress bar
+    window.addEventListener('scroll', () => {
+      const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const scrolled = (window.scrollY / windowHeight) * 100;
+      document.getElementById('progressBar').style.width = scrolled + '%';
+    });
+  </script>
+
+</body>
+</html>

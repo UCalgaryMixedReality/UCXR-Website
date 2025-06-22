@@ -19,19 +19,24 @@
 
 				<!-- Header -->
 				<header class="navbar">
-					<header class="navbar">
-						<nav class="nav">
-						  <ul class="nav-menu">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="projects.html">Projects</a></li>
-							<li><a href="sponsors.html" class="active">Sponsors</a></li>
-						  </ul>
-
-						</nav>
-					  </header>
+				<nav class="nav">
+					<div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+					<div></div>
+					<div></div>
+					<div></div>
+					</div>
+					<ul class="nav-menu left-menu">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html" class="active">About</a></li>
+					<li><a href="projects.html">Projects</a></li>
+					<li><a href="sponsors.html">Sponsors</a></li>
+					<li><a href="contact.html">Contact Us</a></li>
+					</ul>
+					<ul class="nav-menu right-menu">
+					<li><a href="team-login.html" class="team-portal">Team Portal</a></li>
+					</ul>
+				</nav>
 				</header>
-
 				<div class="progress-bar" id="progressBar"></div>
 
 					<section class="thank-you-container">
@@ -116,33 +121,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-
-<!--
-	<script>
-  const tooltip = document.createElement("div");
-	tooltip.className = "tooltip";
-	tooltip.style.position = "fixed"; // use fixed instead of absolute
-	tooltip.style.pointerEvents = "none"; // so it doesn't interfere with mouse events
-	tooltip.style.opacity = 0;
-	tooltip.style.transition = "opacity 0.2s ease";
-	document.body.appendChild(tooltip);
-
-	const sponsorLogos = document.querySelectorAll(".sponsors-logos img");
-
-	sponsorLogos.forEach(logo => {
-	logo.addEventListener("mousemove", e => {
-		tooltip.style.opacity = 1;
-		tooltip.textContent = logo.getAttribute("data-info");
-		tooltip.style.left = `${e.clientX + 10}px`;
-		tooltip.style.top = `${e.clientY + 10}px`;
-	});
-
-	logo.addEventListener("mouseleave", () => {
-		tooltip.style.opacity = 0;
-	});
-	});
-</script>
--->
 
 <script>	// Scroll progress bar
 	window.addEventListener('scroll', () => {

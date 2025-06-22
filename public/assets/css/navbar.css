@@ -1,127 +1,146 @@
+/* Navbar styling */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #000;
+  padding: 1.3rem 2rem; /* slight tweak */
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+/* Nav container */
+.nav {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Hamburger button (hidden on desktop) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  width: 25px;
+  height: 20px;
+  justify-content: center;
+}
+
+.hamburger div {
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* Nav menus */
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.right-menu {
+  margin-left: auto;
+}
+
+/* Nav links */
+.nav-menu li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  padding-bottom: 4px;
+  display: inline-block;
+  border-bottom: -5px solid transparent;
+}
+
+.nav-menu li a:hover,
+.nav-menu li a.active {
+  color: #ddd;
+  border-bottom-color: #ddd;
+}
+
+/* Team Portal circle */
+.team-portal {
+  border: 1px solid white;
+  border-radius: 80px;
+  padding: 0.4rem 1.8rem; /* slightly reduced vertical padding */
+  white-space: nowrap;
+  font-weight: 10;
+  line-height: 1.6; /* taller line height to prevent cutoff */
+  display: inline-block;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-bottom: 2px; /* small margin to avoid border cutoff */
+}
+
+/* Less opaque white hover */
+.team-portal:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: black;
+}
+
+/* Body padding to avoid content behind fixed navbar */
+body {
+  padding-top: 90px;
+  margin: 0;
+}
+
+/* Progress bar */
+#progressBar {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  height: 4px;
+  background: white;
+  width: 0;
+  z-index: 1100;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .hamburger {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 0.5rem;
-    padding-right: 0.5rem;
-    padding-bottom: 1rem;
-    padding-left: 0.5rem;
-    background-color: white;
-    color: black;
   }
-  
-  .logo a {
-    text-decoration: none;
-    font-size: 1.5rem;
-    color: #fff;
-    transition: color 0.3s ease;
-  }
-  
-  .logo a:hover {
-    color: #00e5ff;
-    text-shadow: 0 0 10px rgba(0, 229, 255, 0.7);
-  }
-  
-  .nav {
-    position: relative;
-    width: 100%;
-  }
-  
   .nav-menu {
-    display: flex;
-    gap: 2rem;
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0 0 0;
-  }
-  
-  .nav-menu a {
-    text-decoration: none;
-    font-weight: bold;
-    color: black;
-    padding: 0.5rem 1rem;
-    position: relative;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-menu a:hover {
-    background: linear-gradient(to right, #9925f7, #56bcf9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  /* Straight line underline effect (replacing dots) */
-  .nav-menu a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0%;
-    height: 2px;
-    background: linear-gradient(to right, #9925f7, #56bcf9);
-    transition: width 0.3s ease;
-  }
-
-  .nav-menu a.active {
-    background: linear-gradient(to right, #9925f7, #56bcf9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .progress-bar {
     position: fixed;
-    top: 0;
+    top: 60px; /* height of navbar */
     left: 0;
-    height: 5px;
-    background: linear-gradient(to right, #9925f7, #56bcf9);
-    z-index: 100;
-    width: 0%;
-    transition: width 0.3s ease;
+    right: 0;
+    background: #000;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 1050;
   }
-  
-  
-  .nav-menu a:hover::after {
-    width: 100%;
+  .nav-menu.open {
+    max-height: 300px; /* enough to show all links */
   }
-  
-  /* Hide hamburger menu by default */
-  .nav-toggle {
+  .right-menu {
+    margin-left: 0;
+  }
+  .nav-menu li a {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #progressBar {
     display: none;
   }
-  
-  .nav-toggle-label {
-    display: none;
-    font-size: 3rem;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    right: 1rem;
-    color: #fff;
-  }
-  
-  /* Responsive behavior */
-  @media (max-width: 768px) {
-    .nav-menu {
-      flex-direction: row;
-      width: 100%;
-      text-align: center;
-      gap: 0.5rem;
-    }
-    
-    .nav-toggle-label {
-      display: block;
-    }
-    
-    .nav-toggle:checked ~ .nav-menu {
-      display: flex;
-    }
-    
-    .nav-menu a {
-      width: 100%;
-      padding: 1rem;
-    }
-    
-    .nav-menu a::after {
-      bottom: 0;
-    }
-  }
+}

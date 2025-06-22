@@ -12,22 +12,30 @@
 		<script src="assets/js/about.js"></script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
+
+	
 	<body class="is-preload">
 
 		<!-- Header -->
 		<header class="navbar">
-			<header class="navbar">
-				<nav class="nav">
-				<ul class="nav-menu">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html" class="active">About</a></li>
-					<li><a href="projects.html">Projects</a></li>
-					<li><a href="sponsors.html">Sponsors</a></li>
-				</ul>
-				</nav>
-			</header>
+		<nav class="nav">
+			<div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<ul class="nav-menu left-menu">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html" class="active">About</a></li>
+			<li><a href="projects.html">Projects</a></li>
+			<li><a href="sponsors.html">Sponsors</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+			<ul class="nav-menu right-menu">
+			<li><a href="team-login.html" class="team-portal">Team Portal</a></li>
+			</ul>
+		</nav>
 		</header>
-
 		<div class="progress-bar" id="progressBar"></div>
 
         <!-- Main -->
@@ -152,6 +160,16 @@
 					document.getElementById('progressBar').style.width = scrolled + '%';
 				});
 			</script>
+
+			<script>
+			const hamburger = document.querySelector('.hamburger');
+			const leftMenu = document.querySelector('.left-menu');
+
+			hamburger.addEventListener('click', () => {
+			leftMenu.classList.toggle('open');
+			});
+			</script>
+
 
 	</body>
 </html>

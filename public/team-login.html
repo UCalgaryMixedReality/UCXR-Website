@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Team Login</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/navbar.css" />
+		<link rel="icon" href="images/UCXR_logo.jpg">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://accounts.google.com/gsi/client" async defer></script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+        <header class="navbar">
+        <nav class="nav">
+            <div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+            <div></div>
+            <div></div>
+            <div></div>
+            </div>
+            <ul class="nav-menu left-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="sponsors.html">Sponsors</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <ul class="nav-menu right-menu">
+            <li><a href="team-login.html" class="team-portal">Team Portal</a></li>
+            </ul>
+        </nav>
+        </header>
+        
+		<!-- Main -->
+		<article id="main">
+			<section class="wrapper style5">
+				<div class="inner">
+					<h3>Login</h3>
+                <div id="g_id_onload"
+                    data-client_id="575944431031-5ocuftjn77068r3oom3grtgpo0kdtf85.apps.googleusercontent.com"
+                    data-callback="handleCredentialResponse">
+                </div>					<div class="g_id_signin" data-type="standard"></div>
+					<p id="login-error" style="color: red; display: none;">Access denied: Email not authorized.</p>
+				</div>
+			</section>
+		</article>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<ul class="icons">
+				<li><a href="https://www.linkedin.com/company/armeduofc" class="icon brands fa-linkedin"></a></li>
+				<li><a href="https://www.instagram.com/uofc_xr" class="icon brands fa-instagram"></a></li>
+				<li><a href="mailto:armeduofc@gmail.com" class="icon solid fa-envelope"></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>© UCalgary Mixed Reality</li>
+			</ul>
+		</footer>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/main.js"></script>
+
+		<!-- Google Sign-In Logic -->
+		<script>
+			const authorizedEmails = ["parths7979@gmail.com"];
+			function handleCredentialResponse(response) {
+				const userEmail = parseJwt(response.credential).email;
+				if (authorizedEmails.includes(userEmail)) {
+					sessionStorage.setItem('userEmail', userEmail);
+					window.location.href = 'team-portal.html';
+				} else {
+					$('#login-error').show();
+				}
+			}
+			function parseJwt(token) {
+				const base64 = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
+				return JSON.parse(atob(base64));
+			}
+		</script>

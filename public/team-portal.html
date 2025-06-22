@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Team Portal - UCalgary Mixed Reality</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="assets/css/navbar.css" />
+	<link rel="stylesheet" href="assets/css/team-portal.css" />
+	<link rel="icon" href="images/UCXR_logo.jpg" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	<style>
+		.team-links section {
+			margin-bottom: 2.5rem;
+		}
+
+		.team-links h3 {
+			font-size: 1.5rem;
+			margin-bottom: 1rem;
+			color: #0078d7;
+			border-bottom: 2px solid #0078d7;
+			padding-bottom: 0.25rem;
+		}
+
+		.team-links ul {
+			list-style-type: none;
+			padding-left: 0;
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+			gap: 1rem;
+		}
+
+		.team-links li {
+			background: #f4f4f4;
+			padding: 1rem 1.25rem;
+			border-radius: 8px;
+			text-align: center;
+			transition: background 0.3s ease;
+			box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+		}
+
+		.team-links li:hover {
+			background: #ddd;
+		}
+
+		.team-links a {
+			text-decoration: none;
+			color: #333;
+			font-weight: 600;
+			font-size: 1.05rem;
+			display: block;
+		}
+
+		/* Form styling same as before */
+		form label {
+			display: block;
+			margin-top: 1rem;
+			font-weight: 600;
+		}
+
+		form input, form select {
+			width: 100%;
+			padding: 0.5rem;
+			margin-top: 0.25rem;
+			border-radius: 4px;
+			border: 1px solid #ccc;
+			font-size: 1rem;
+		}
+
+		form .submit-btn {
+			margin-top: 1.5rem;
+			padding: 0.75rem 1.5rem;
+			background: #0078d7;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			font-size: 1.1rem;
+			cursor: pointer;
+			transition: background 0.3s ease;
+		}
+
+		form .submit-btn:hover {
+			background: #005ea3;
+		}
+
+		.success-message {
+			margin-top: 1rem;
+			color: green;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body class="is-preload">
+
+	<!-- Header -->
+	<header class="navbar">
+	<nav class="nav">
+		<div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<ul class="nav-menu left-menu">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html" class="active">About</a></li>
+			<li><a href="projects.html">Projects</a></li>
+			<li><a href="sponsors.html">Sponsors</a></li>
+			<li><a href="contact.html">Contact Us</a></li>
+		</ul>
+		<ul class="nav-menu right-menu">
+			<li><a href="team-login.html" class="team-portal">Team Portal</a></li>
+		</ul>
+	</nav>
+	</header>
+	<!-- Scroll Bar -->
+	<div class="progress-bar" id="progressBar"></div>
+
+	<!-- Main -->
+	<article id="main">
+		<section class="wrapper style5">
+			<div class="inner">
+
+				<header>
+					<h2>Team Portal Links</h2>
+				</header>
+
+				<div class="team-links">
+
+					<section>
+						<h3>Mechanical</h3>
+						<ul>
+							<li><a href="https://drive.google.com/drive/folders/MECH_INSTALL_GUIDES" target="_blank" rel="noopener noreferrer">Installation Guides</a></li>
+							<li><a href="https://drive.google.com/drive/folders/MECH_PARTS_MANUALS" target="_blank" rel="noopener noreferrer">Parts Manuals</a></li>
+							<li><a href="https://docs.google.com/document/d/MECH_DESIGN_STANDARDS" target="_blank" rel="noopener noreferrer">Design Standards</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Electrical</h3>
+						<ul>
+							<li><a href="https://drive.google.com/drive/folders/ELEC_WIRING_GUIDES" target="_blank" rel="noopener noreferrer">Wiring Guides</a></li>
+							<li><a href="https://drive.google.com/drive/folders/ELEC_COMPONENTS" target="_blank" rel="noopener noreferrer">Component Datasheets</a></li>
+							<li><a href="https://docs.google.com/document/d/ELEC_SAFETY_PROTOCOLS" target="_blank" rel="noopener noreferrer">Safety Protocols</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Software</h3>
+						<ul>
+							<li><a href="https://drive.google.com/drive/folders/SW_TOOLS" target="_blank" rel="noopener noreferrer">Software & Tools</a></li>
+							<li><a href="https://github.com/YourTeamRepo" target="_blank" rel="noopener noreferrer">Code Repository</a></li>
+							<li><a href="https://docs.google.com/document/d/SW_INSTALL_GUIDE" target="_blank" rel="noopener noreferrer">Software Installation Guide</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Modelling</h3>
+						<ul>
+							<li><a href="https://drive.google.com/drive/folders/MODEL_ASSETS" target="_blank" rel="noopener noreferrer">3D Models & Assets</a></li>
+							<li><a href="https://docs.google.com/document/d/MODEL_STANDARDS" target="_blank" rel="noopener noreferrer">Modelling Standards</a></li>
+							<li><a href="https://drive.google.com/drive/folders/MODEL_REFERENCES" target="_blank" rel="noopener noreferrer">Reference Materials</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Admin</h3>
+						<ul>
+							<li><a href="https://docs.google.com/document/d/MEETING_MINUTES_DOC_ID" target="_blank" rel="noopener noreferrer">Meeting Minutes</a></li>
+							<li><a href="https://drive.google.com/drive/folders/SPONSOR_PROPOSALS_FOLDER_ID" target="_blank" rel="noopener noreferrer">Sponsorship Proposals</a></li>
+							<li><a href="https://discord.gg/YOUR_TEAM_DISCORD" target="_blank" rel="noopener noreferrer">Team Discord</a></li>
+							<li><a href="mailto:armeduofc@gmail.com">Email Team Lead</a></li>
+						</ul>
+					</section>
+				</div>
+	</article>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<ul class="icons">
+			<li><a href="https://www.linkedin.com/company/armeduofc/posts/?feedView=all" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+			<li><a href="https://www.instagram.com/uofc_xr" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+			<li><a href="mailto:armeduofc@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+		</ul>
+		<ul class="copyright">
+			<li>&copy; UCalgary Mixed Reality</li>
+		</ul>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+	<script>
+		// Scroll progress bar
+		window.addEventListener('scroll', () => {
+			const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+			const scrolled = (window.scrollY / windowHeight) * 100;
+			document.getElementById('progressBar').style.width = scrolled + '%';
+		});
+
+		// Reimbursement form logic
+		document.addEventListener('DOMContentLoaded', () => {
+			const today = new Date().toISOString().split('T')[0];
+			document.getElementById('submission-date').value = today;
+
+			document.getElementById('reimbursement-form').addEventListener('submit', async function (e) {
+				e.preventDefault();
+
+				const formData = {
+					purchaseDate: document.getElementById('purchase-date').value,
+					submissionDate: document.getElementById('submission-date').value,
+					purchaseName: document.getElementById('purchase-name').value,
+					itemName: document.getElementById('item-name').value,
+					cost: document.getElementById('amount').value,
+					type: document.getElementById('type').value,
+					receiptUrls: "Uploaded manually (not linked yet)"
+				};
+
+				try {
+					const response = await fetch("https://script.google.com/macros/s/AKfycbwTbRb4z8uVvFg0GkKF7AnSEMdhGb_V6H35ix8d_a35-oMsbDj8yPZS6jH_fuSKCZqv/exec", {
+						method: "POST",
+						headers: { "Content-Type": "application/json" },
+						body: JSON.stringify(formData)
+					});
+
+					if (response.ok) {
+						document.getElementById('reimbursement-success').style.display = 'block';
+						this.reset();
+						document.getElementById('submission-date').value = today;
+						setTimeout(() => {
+							document.getElementById('reimbursement-success').style.display = 'none';
+						}, 3000);
+					} else {
+						alert("Failed to submit. Please try again.");
+					}
+				} catch (err) {
+					console.error(err);
+					alert("Error submitting form.");
+				}
+			});
+		});
+	</script>
+</body>
+</html>
