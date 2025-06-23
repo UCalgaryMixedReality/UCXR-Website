@@ -8,75 +8,140 @@
 		<link rel="stylesheet" href="assets/css/navbar.css" />
 		<link rel="icon" href="images/UCXR_logo.jpg">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script src="https://accounts.google.com/gsi/client" async defer></script>
+		<style>
+			/* Center login form with background image */
+			body {
+				background-image: url('images/background.jpg'); /* Reference to local background image */
+				background-size: cover;
+				background-position: center;
+				background-attachment: fixed;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				min-height: 100vh;
+				margin: 0;
+				padding-top: 90px;
+				font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+			}
+			.login-container {
+				text-align: center;
+				color: white;
+				width: 100%;
+				max-width: 400px;
+			}
+			.login-container h3 {
+				display: none; /* Hidden to match UCalgary Racing */
+			}
+			.password-wrapper {
+				position: relative;
+				display: inline-block;
+				width: 100%;
+			}
+			.password-wrapper input[type="password"] {
+				width: 100%;
+				padding: 0.8rem 2.5rem 0.8rem 1rem;
+				background: rgba(0, 0, 0, 0.8);
+				border: 1px solid #fff;
+				border-radius: 25px;
+				color: white;
+				font-size: 1rem;
+				outline: none;
+			}
+			.password-wrapper input::placeholder {
+				color: #bbb;
+			}
+			.password-wrapper .arrow {
+				position: absolute;
+				right: 1rem;
+				top: 50%;
+				transform: translateY(-50%);
+				color: white;
+				font-size: 1.2rem;
+				cursor: pointer;
+			}
+			#login-error {
+				color: red;
+				font-size: 0.9rem;
+				margin-top: 0.5rem;
+				display: none;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
-
 		<!-- Header -->
-        <header class="navbar">
-        <nav class="nav">
-            <div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
-            <div></div>
-            <div></div>
-            <div></div>
-            </div>
-            <ul class="nav-menu left-menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html" class="active">About</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="sponsors.html">Sponsors</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-            <ul class="nav-menu right-menu">
-            <li><a href="team-login.html" class="team-portal">Team Portal</a></li>
-            </ul>
-        </nav>
-        </header>
-        
-		<!-- Main -->
-		<article id="main">
-			<section class="wrapper style5">
-				<div class="inner">
-					<h3>Login</h3>
-                <div id="g_id_onload"
-                    data-client_id="575944431031-5ocuftjn77068r3oom3grtgpo0kdtf85.apps.googleusercontent.com"
-                    data-callback="handleCredentialResponse">
-                </div>					<div class="g_id_signin" data-type="standard"></div>
-					<p id="login-error" style="color: red; display: none;">Access denied: Email not authorized.</p>
-				</div>
-			</section>
-		</article>
+				<header class="navbar">
+					<nav class="nav">
+						<div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
+							<div></div>
+							<div></div>
+							<div></div>
+						</div>
+						<ul class="nav-menu left-menu">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="projects.html">Projects</a></li>
+							<li><a href="sponsors.html">Sponsors</a></li>
+							<li><a href="contact.html">Contact Us</a></li>
+							<li><a href="merch.html" class="active">Merch</a></li>
+						</ul>
+						<ul class="nav-menu right-menu">
+							<li><a href="team-login.html" class="team-portal">Team Portal</a></li>
+						</ul>
+					</nav>
+				</header>
+		<div class="progress-bar" id="progressBar"></div>
 
-		<!-- Footer -->
-		<footer id="footer">
-			<ul class="icons">
-				<li><a href="https://www.linkedin.com/company/armeduofc" class="icon brands fa-linkedin"></a></li>
-				<li><a href="https://www.instagram.com/uofc_xr" class="icon brands fa-instagram"></a></li>
-				<li><a href="mailto:armeduofc@gmail.com" class="icon solid fa-envelope"></a></li>
-			</ul>
-			<ul class="copyright">
-				<li>© UCalgary Mixed Reality</li>
-			</ul>
-		</footer>
+		<!-- Main -->
+		<div class="login-container">
+			<h3>Team Portal Login</h3>
+			<form id="login-form" onsubmit="handleLogin(event)">
+				<div class="password-wrapper">
+					<input type="password" id="password" name="password" placeholder="Password" required>
+					<span class="arrow" onclick="document.getElementById('login-form').requestSubmit()">➜</span>
+				</div>
+			</form>
+			<p id="login-error">Incorrect password</p>
+		</div>
 
 		<!-- Scripts -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/main.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
 
-		<!-- Google Sign-In Logic -->
+		<!-- Login Logic -->
 		<script>
-			const authorizedEmails = ["parths7979@gmail.com"];
-			function handleCredentialResponse(response) {
-				const userEmail = parseJwt(response.credential).email;
-				if (authorizedEmails.includes(userEmail)) {
-					sessionStorage.setItem('userEmail', userEmail);
+			function handleLogin(event) {
+				event.preventDefault();
+				const password = document.getElementById('password').value;
+				const hashedPassword = sha256(password);
+				const correctHash = 'c775e7b757ede630cd0aa1113bd102661ab38829ca52a6422ab782862f268646'; // Hash for "team123"
+				if (hashedPassword === correctHash) {
+					sessionStorage.setItem('isLoggedIn', 'true');
 					window.location.href = 'team-portal.html';
 				} else {
-					$('#login-error').show();
+					document.getElementById('login-error').style.display = 'block';
 				}
 			}
-			function parseJwt(token) {
-				const base64 = token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/');
-				return JSON.parse(atob(base64));
-			}
 		</script>
+
+		<!-- Navbar Toggle -->
+		<script>
+			const hamburger = document.querySelector('.hamburger');
+			const navMenu = document.querySelector('.nav-menu');
+			hamburger.addEventListener('click', () => {
+				hamburger.classList.toggle('active');
+				navMenu.classList.toggle('open');
+			});
+		</script>
+
+		<!-- Progress Bar -->
+		<script>
+			window.addEventListener('scroll', () => {
+				const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+				const scrolled = (window.scrollY / windowHeight) * 100;
+				document.getElementById('progressBar').style.width = scrolled + '%';
+			});
+		</script>
+		
+	</body>
+</html>

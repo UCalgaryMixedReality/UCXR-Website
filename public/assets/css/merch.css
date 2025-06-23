@@ -1,0 +1,116 @@
+/* Merch Page Styling */
+main {
+    background: linear-gradient(180deg, #f9fafb 0%, #e5e7eb 100%);
+    min-height: calc(100vh - 80px); /* Adjust for navbar height */
+}
+
+h1 {
+    color: #1e3a8a; /* Deep blue for XR branding */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+p.text-center {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #4b5563;
+    font-size: 1.1rem;
+}
+
+/* Product Card Styling */
+.grid > div {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+}
+
+.grid > div:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.grid > div img {
+    transition: transform 0.5s ease;
+}
+
+.grid > div:hover img {
+    transform: scale(1.05);
+}
+
+.grid > div h3 {
+    color: #1e40af;
+    font-weight: 700;
+}
+
+.grid > div p.text-gray-600 {
+    font-weight: 600;
+    color: #2563eb;
+}
+
+.grid > div p.text-gray-500 {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.grid > div a {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 500;
+}
+
+.grid > div a:hover {
+    background-color: #1e40af;
+    transform: translateY(-2px);
+}
+
+/* Contact Section Styling */
+.mt-12 h2 {
+    color: #1e3a8a;
+    animation: slideIn 0.8s ease-out;
+}
+
+.mt-12 p {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #4b5563;
+}
+
+.mt-12 a {
+    background-color: #2563eb;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+}
+
+.mt-12 a:hover {
+    background-color: #1e40af;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 640px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .grid > div {
+        margin-bottom: 1.5rem;
+    }
+
+    .mt-12 a {
+        padding: 0.5rem 1.5rem;
+    }
+}

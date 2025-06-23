@@ -6,7 +6,7 @@
   width: 100%;
   z-index: 1000;
   background: #000;
-  padding: 1.3rem 2rem; /* slight tweak */
+  padding: 1.3rem 2rem;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
   box-sizing: border-box;
@@ -29,18 +29,32 @@
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
-  width: 25px;
+  width: 30px;
   height: 20px;
   justify-content: center;
+  z-index: 1100;
 }
 
-.hamburger div {
+.hamburger span {
   height: 3px;
   background: white;
   border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
-/* Nav menus */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Nav menu */
 .nav-menu {
   list-style: none;
   padding: 0;
@@ -50,7 +64,7 @@
   align-items: center;
 }
 
-.right-menu {
+.team-portal-item {
   margin-left: auto;
 }
 
@@ -62,7 +76,7 @@
   transition: color 0.3s ease;
   padding-bottom: 4px;
   display: inline-block;
-  border-bottom: -5px solid transparent;
+  border-bottom: -2px solid transparent; /* Fixed invalid -2px */
 }
 
 .nav-menu li a:hover,
@@ -75,18 +89,17 @@
 .team-portal {
   border: 1px solid white;
   border-radius: 80px;
-  padding: 0.4rem 1.8rem; /* slightly reduced vertical padding */
+  padding: 0.4rem 1.8rem;
   white-space: nowrap;
-  font-weight: 10;
-  line-height: 1.6; /* taller line height to prevent cutoff */
+  font-weight: 400;
+  line-height: 1.6;
   display: inline-block;
   box-sizing: border-box;
   background-clip: padding-box;
   transition: background-color 0.3s ease, color 0.3s ease;
-  margin-bottom: 2px; /* small margin to avoid border cutoff */
+  margin-bottom: -px;
 }
 
-/* Less opaque white hover */
 .team-portal:hover {
   background-color: rgba(255, 255, 255, 0.85);
   color: black;
@@ -116,26 +129,36 @@ body {
   }
   .nav-menu {
     position: fixed;
-    top: 60px; /* height of navbar */
+    top: 60px;
     left: 0;
     right: 0;
     background: #000;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 1rem 2rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
+    padding: 2rem;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
     z-index: 1050;
   }
   .nav-menu.open {
-    max-height: 300px; /* enough to show all links */
+    transform: translateY(0);
   }
-  .right-menu {
+  .team-portal-item {
     margin-left: 0;
+  }
+  .nav-menu li {
+    width: 100%;
+    text-align: center;
   }
   .nav-menu li a {
     font-size: 1.3rem;
+    padding: 0.5rem 0;
+    width: 100%;
+  }
+  .team-portal {
+    padding: 0.5rem 2rem;
+    width: 100%;
+    text-align: center;
   }
 }
 
