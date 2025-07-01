@@ -23,7 +23,7 @@ body {
 /* Thank You Banner */
 /* this awesome colour combo: linear-gradient(145deg, #1c0032, #003840); */
 .thank-you-container {
-  background: linear-gradient(145deg, #9925f7, #56bcf9);
+  background: linear-gradient(145deg, #a33bf8, #67c3fa); /* Picked shades 10% lighter than club colours to give a softer look */
   border-radius: 16px;
   text-align: center;
   padding: 40px 20px;
@@ -160,7 +160,7 @@ body {
 }
 
 #footer {
-  background-color: #221B22;
+  background-color: black;
   color: white;
   text-align: center;
   padding: 2rem 1rem;
