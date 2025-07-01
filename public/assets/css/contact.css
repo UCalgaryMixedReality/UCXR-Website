@@ -2,7 +2,7 @@
 #main {
   position: relative;
   padding: 50px 0;
-  background-image: url("../../images/tools.jpg");
+  background-image: url("../../images/tools.jpg"); /* Replace with your image path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -86,46 +86,16 @@
 }
 
 #main button:hover {
-  background-color: white; /* this doesn't seem to be in effect */
+  background-color: white; /* this doesn't seem to be in effectr */
 }
 
-/* Layout for form and icons side-by-side */
-.contact-layout {
-  display: flex;
-  flex-direction: row; /* Ensures side-by-side layout */
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: 30px;
-  flex-wrap: nowrap; /* Prevent wrapping */
-}
-
-/* Contact icons aligned vertically */
-.contact-icons {
-  display: flex;
-  gap: 20px;
-}
-
-/* Contact icons section */
-.contact-icons {
-  margin-top: 25px;
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-}
-
-.contact-icons a {
-  color: white;
-  margin: 0 0.5rem;
-  font-size: 1.4rem;
-  transition: 0.3s;
-}
-
-.contact-icons a:hover img {
-  transform: scale(1.5);
-  opacity: 0.8;
-}
-
-
+/* Focus styles for accessibility 
+.form-group input:focus,
+.form-group textarea:focus,
+#main button:focus {
+  outline: 2px solid #4CAF50;
+  outline-offset: 2px;
+} */
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
@@ -147,18 +117,6 @@
   }
   #main button {
     padding: 8px 16px; /* Slightly smaller button */
-  }
-}
-
-@media (max-width: 600px) {
-  .contact-layout {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .contact-icons {
-    flex-direction: row;
-    justify-content: center;
   }
 }
 
