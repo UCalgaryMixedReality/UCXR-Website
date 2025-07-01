@@ -15,18 +15,14 @@
 		<!-- Header -->
 				<header class="navbar">
 					<nav class="nav">
-						<div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
-							<div></div>
-							<div></div>
-							<div></div>
-						</div>
+						<div class="hamburger" id="hamburger">&#9776;</div>
 						<ul class="nav-menu left-menu">
 							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
+							<li><a href="about.html" class="active">About</a></li>
 							<li><a href="projects.html">Projects</a></li>
 							<li><a href="sponsors.html">Sponsors</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
-							<li><a href="merch.html" class="active">Merch</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							<li><a href="merch.html">Merch</a></li>
 						</ul>
 						<ul class="nav-menu right-menu">
 							<li><a href="team-login.html" class="team-portal">Team Portal</a></li>
@@ -121,16 +117,17 @@
 		</article>
 
 		<!-- Footer -->
-		<footer id="footer">
-			<ul class="icons">
-				<li><a href="https://www.linkedin.com/company/armeduofc/posts/?feedView=all" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-				<li><a href="https://www.instagram.com/uofc_xr" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-				<li><a href="mailto:armeduofc@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-			</ul>
-			<ul class="copyright">
-				<li>© UCalgary Mixed Reality</li>
-			</ul>
-		</footer>
+                <footer id="footer">
+                    <ul class="icons">
+                        <li><a href="https://github.com/UCalgaryMixedReality" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.linkedin.com/company/ucxr/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://www.instagram.com/uofc_xr" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="mailto:ucalgarymixedreality@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                    </ul>
+                    <ul class="copyright">
+                        <li>&copy; UCalgary Mixed Reality</li>
+                    </ul>
+                </footer>
 
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -149,13 +146,16 @@
 			});
 		</script>
 
-		<script>
-			const hamburger = document.querySelector('.hamburger');
-			const navMenu = document.querySelector('.nav-menu');
+		<script> // for the hamburger navbar functionality
+			document.addEventListener("DOMContentLoaded", function () {
+				const hamburger = document.getElementById("hamburger");
+				const leftMenu = document.querySelector(".left-menu");
+				const rightMenu = document.querySelector(".right-menu");
 
-			hamburger.addEventListener('click', () => {
-				hamburger.classList.toggle('active');
-				navMenu.classList.toggle('open');
+				hamburger.addEventListener("click", function () {
+				leftMenu.classList.toggle("show");
+				rightMenu.classList.toggle("show");
+				});
 			});
 		</script>
 	</body>
