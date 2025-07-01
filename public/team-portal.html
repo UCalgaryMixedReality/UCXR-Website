@@ -13,13 +13,22 @@
 		.team-links section {
 			margin-bottom: 2.5rem;
 		}
-
 		.team-links h3 {
-			font-size: 1.5rem;
-			margin-bottom: 1rem;
-			color: #0078d7;
-			border-bottom: 2px solid #0078d7;
-			padding-bottom: 0.25rem;
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: #0078d7;
+		position: relative;
+		padding-bottom: 0.5rem; /* space for the line */
+		}
+
+		.team-links h3::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		height: 2px;
+		width: 100%;
+		background: linear-gradient(to right, #9925f7, #56bcf9); /* gradient */
 		}
 
 		.team-links ul {
@@ -40,12 +49,12 @@
 		}
 
 		.team-links li:hover {
-			background: #ddd;
+			background: linear-gradient(145deg, #b866f9, #89d0fb); /* picked shades 30% lighter than the club orlours to give a softer look */
 		}
 
 		.team-links a {
 			text-decoration: none;
-			color: #333;
+			color: black;
 			font-weight: 600;
 			font-size: 1.05rem;
 			display: block;
@@ -95,18 +104,14 @@
 	<!-- Header -->
 				<header class="navbar">
 					<nav class="nav">
-						<div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
-							<div></div>
-							<div></div>
-							<div></div>
-						</div>
+						<div class="hamburger" id="hamburger">&#9776;</div>
 						<ul class="nav-menu left-menu">
 							<li><a href="index.html">Home</a></li>
 							<li><a href="about.html">About</a></li>
 							<li><a href="projects.html">Projects</a></li>
 							<li><a href="sponsors.html">Sponsors</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
-							<li><a href="merch.html" class="active">Merch</a></li>
+							<li><a href="contact.html">Contact</a></li>
+							<li><a href="merch.html">Merch</a></li>
 						</ul>
 						<ul class="nav-menu right-menu">
 							<li><a href="team-login.html" class="team-portal">Team Portal</a></li>
@@ -122,7 +127,7 @@
 			<div class="inner">
 
 				<header>
-					<h2>Team Portal Links</h2>
+					<h2>Team Dashboard Links</h2>
 				</header>
 
 				<div class="team-links">
@@ -130,62 +135,65 @@
 					<section>
 						<h3>Mechanical</h3>
 						<ul>
-							<li><a href="https://drive.google.com/drive/folders/MECH_INSTALL_GUIDES" target="_blank" rel="noopener noreferrer">Installation Guides</a></li>
-							<li><a href="https://drive.google.com/drive/folders/MECH_PARTS_MANUALS" target="_blank" rel="noopener noreferrer">Parts Manuals</a></li>
-							<li><a href="https://docs.google.com/document/d/MECH_DESIGN_STANDARDS" target="_blank" rel="noopener noreferrer">Design Standards</a></li>
+							<li><a href="https://drive.google.com/drive/folders/12z82qgCk3iHm-OjdRZgQAI-yjxtfFfk5" target="_blank" rel="noopener noreferrer">SolidWorks Resources</a></li>
+							<li><a href="https://drive.google.com/drive/folders/1XSy89ZrfaoQaM24WX0Ueg_HVAcrjbnH-" target="_blank" rel="noopener noreferrer">CAD Resources</a></li>
+							<li><a href="https://drive.google.com/drive/folders/1AL91joDrCry1vXcc9tiPnCWs1xRZ8YkK" target="_blank" rel="noopener noreferrer">Kenesto Resources</a></li>
 						</ul>
 					</section>
 
 					<section>
 						<h3>Electrical</h3>
 						<ul>
-							<li><a href="https://drive.google.com/drive/folders/ELEC_WIRING_GUIDES" target="_blank" rel="noopener noreferrer">Wiring Guides</a></li>
+							<li><a href="https://drive.google.com/drive/folders/155cIb87y4vCIlBHlFhjNdwmX3RmAySMy" target="_blank" rel="noopener noreferrer">Altium Resources</a></li>
+							<li><a href="https://docs.google.com/document/d/1qfIoPS4QEwFu0spKa6m1xX0xpMOO8sXSyuHxTten02E/edit?tab=t.0" target="_blank" rel="noopener noreferrer">MPLAB Firmware Setup</a></li> 
 							<li><a href="https://drive.google.com/drive/folders/ELEC_COMPONENTS" target="_blank" rel="noopener noreferrer">Component Datasheets</a></li>
-							<li><a href="https://docs.google.com/document/d/ELEC_SAFETY_PROTOCOLS" target="_blank" rel="noopener noreferrer">Safety Protocols</a></li>
 						</ul>
 					</section>
 
 					<section>
 						<h3>Software</h3>
 						<ul>
-							<li><a href="https://drive.google.com/drive/folders/SW_TOOLS" target="_blank" rel="noopener noreferrer">Software & Tools</a></li>
-							<li><a href="https://github.com/YourTeamRepo" target="_blank" rel="noopener noreferrer">Code Repository</a></li>
-							<li><a href="https://docs.google.com/document/d/SW_INSTALL_GUIDE" target="_blank" rel="noopener noreferrer">Software Installation Guide</a></li>
+							<li><a href="https://github.com/UCalgaryMixedReality" target="_blank" rel="noopener noreferrer">Code Repository</a></li>
+							<li><a href="https://drive.google.com/drive/folders/13jnQhZT3GUheKTgjrArmoDLRwCdhtd4P" target="_blank" rel="noopener noreferrer">Unity Resources</a></li>
+							<li><a href="https://drive.google.com/drive/folders/1G4w7HQCA5wq40MFxrVkLIw5bZXR2gjIV" target="_blank" rel="noopener noreferrer">C/C++ Resources</a></li>
 						</ul>
 					</section>
 
 					<section>
 						<h3>Modelling</h3>
 						<ul>
-							<li><a href="https://drive.google.com/drive/folders/MODEL_ASSETS" target="_blank" rel="noopener noreferrer">3D Models & Assets</a></li>
-							<li><a href="https://docs.google.com/document/d/MODEL_STANDARDS" target="_blank" rel="noopener noreferrer">Modelling Standards</a></li>
-							<li><a href="https://drive.google.com/drive/folders/MODEL_REFERENCES" target="_blank" rel="noopener noreferrer">Reference Materials</a></li>
+							<li><a href="https://drive.google.com/drive/folders/1rsFFF-UM9UWZgoQGr0CPJoI_YGkWH-tj" target="_blank" rel="noopener noreferrer">Modelling Resources</a></li>
+							<li><a href="https://docs.google.com/document/d/1apKIJc4IbllktD7yNTsTBSBXWRr7SvCHVMtAYqWNIhE/edit?tab=t.0" target="_blank" rel="noopener noreferrer">Human Atlas Overview</a></li>
+							<li><a href="https://drive.google.com/drive/folders/BCI_SETUP" target="_blank" rel="noopener noreferrer">BCI Setup</a></li>
+							<li><a href="https://drive.google.com/drive/folders/BLENDER_SETUP" target="_blank" rel="noope ner noreferrer">Blender Setup</a></li>
+
 						</ul>
 					</section>
 
 					<section>
 						<h3>Admin</h3>
 						<ul>
-							<li><a href="https://docs.google.com/document/d/MEETING_MINUTES_DOC_ID" target="_blank" rel="noopener noreferrer">Meeting Minutes</a></li>
-							<li><a href="https://drive.google.com/drive/folders/SPONSOR_PROPOSALS_FOLDER_ID" target="_blank" rel="noopener noreferrer">Sponsorship Proposals</a></li>
-							<li><a href="https://discord.gg/YOUR_TEAM_DISCORD" target="_blank" rel="noopener noreferrer">Team Discord</a></li>
-							<li><a href="mailto:armeduofc@gmail.com">Email Team Lead</a></li>
+							<li><a href="https://docs.google.com/spreadsheets/d/1fCvqj8lQ4fhHeGU6_UXEz4i6imquIg9W0oOEXNCkfPQ/edit?gid=91796935#gid=91796935" target="_blank" rel="noopener noreferrer">Projects Sheet</a></li>
+							<li><a href="https://drive.google.com/drive/folders/13R7aG9BZhtYeLUXyTOqCf1puGSuzy0wq" target="_blank" rel="noopener noreferrer">Sponsor Resources</a></li>
+							<!-- <li><a href="https://discord.gg/YOUR_TEAM_DISCORD" target="_blank" rel="noopener noreferrer">Team Discord</a></li> -->
+							<li><a href="mailto:ucalgarymixedreality@gmail.com">Email UCXR Lead</a></li>
 						</ul>
 					</section>
 				</div>
 	</article>
 
 	<!-- Footer -->
-	<footer id="footer">
-		<ul class="icons">
-			<li><a href="https://www.linkedin.com/company/armeduofc/posts/?feedView=all" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-			<li><a href="https://www.instagram.com/uofc_xr" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-			<li><a href="mailto:armeduofc@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-		</ul>
-		<ul class="copyright">
-			<li>&copy; UCalgary Mixed Reality</li>
-		</ul>
-	</footer>
+                <footer id="footer">
+                    <ul class="icons">
+                        <li><a href="https://github.com/UCalgaryMixedReality" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.linkedin.com/company/ucxr/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://www.instagram.com/uofc_xr" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="mailto:ucalgarymixedreality@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                    </ul>
+                    <ul class="copyright">
+                        <li>&copy; UCalgary Mixed Reality</li>
+                    </ul>
+                </footer>
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
@@ -246,5 +254,19 @@
 			});
 		});
 	</script>
+
+	<script> // for the hamburger navbar functionality
+		document.addEventListener("DOMContentLoaded", function () {
+			const hamburger = document.getElementById("hamburger");
+			const leftMenu = document.querySelector(".left-menu");
+			const rightMenu = document.querySelector(".right-menu");
+
+			hamburger.addEventListener("click", function () {
+			leftMenu.classList.toggle("show");
+			rightMenu.classList.toggle("show");
+			});
+		});
+	</script>
+
 </body>
 </html>

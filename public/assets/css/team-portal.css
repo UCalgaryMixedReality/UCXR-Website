@@ -66,3 +66,21 @@
 			color: green;
 			font-weight: bold;
 		}
+
+		#footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+#footer .icons a {
+  color: white;
+  margin: 0 0.5rem;
+  font-size: 1.4rem;
+  transition: 0.3s;
+}
+
+#footer .icons a:hover {
+  color: var(--highlight-color);
+}
