@@ -164,7 +164,7 @@ input, select, textarea {
 	}
 
 	p {
-		margin: 0 0 2em 0;
+		margin: 0 0 1.5em 0;
 	}
 
 	h1 {
@@ -2444,7 +2444,6 @@ input, select, textarea {
 		height: 3.125em;
 		letter-spacing: 0.225em;
 		line-height: 3.125em;
-		max-width: 30em;
 		padding: 0 2.75em;
 		text-align: center;
 		text-decoration: none;
@@ -3013,7 +3012,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background: linear-gradient(145deg, #9925f7, #56bcf9);
+			background: linear-gradient(145deg, #a33bf8, #67c3fa); /* picked shades 10% lighter than club colours to give a softer look */
 			color: #d3d4e4;
 		}
 
@@ -3727,7 +3726,7 @@ input, select, textarea {
 			-ms-transition-delay: 1.25s;
 			transition-delay: 1.25s;
 			content: '';
-			background: white;
+			background: black;
 			display: block;
 			width: 100%;
 			height: 100%;
@@ -3925,7 +3924,7 @@ input, select, textarea {
 
 	#footer {
 		padding: 6em 0 4em 0 ;
-		background-color: #221B22;
+		background-color: black;
 		text-align: center;
 	}
 
@@ -4014,7 +4013,7 @@ input, select, textarea {
 	}
 
 	body.landing #footer {
-		background-color: #221B22;
+		background-color: black;
 	}
 
 	body.is-mobile.landing #page-wrapper {
@@ -4039,5 +4038,5 @@ input, select, textarea {
 	}
 
 	body.is-mobile.landing #footer {
-		background-color: #221B22;
+		background-color: black;
 	}
