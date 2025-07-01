@@ -23,36 +23,6 @@
   align-items: center;
 }
 
-/* Hamburger button (hidden on desktop) */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-  width: 30px;
-  height: 20px;
-  justify-content: center;
-  z-index: 1100;
-}
-
-.hamburger span {
-  height: 3px;
-  background: white;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-}
-
-.hamburger.active span:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
 
 /* Nav menu */
 .nav-menu {
@@ -81,8 +51,9 @@
 
 .nav-menu li a:hover,
 .nav-menu li a.active {
-  color: #ddd;
-  border-bottom-color: #ddd;
+  border-bottom: 2px solid transparent; /* Transparent border initially */
+  color: #fff; /* Text color on hover */
+  border-bottom-color: #fff; /* Border color on hover */
 }
 
 /* Team Portal circle */
@@ -111,6 +82,42 @@ body {
   margin: 0;
 }
 
+/* Hamburger menu - hidden by default */
+.hamburger {
+  display: none;
+  font-size: 1rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive nav */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    display: none; /* Hidden by default */
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .right-menu {
+    align-self: flex-end;
+  }
+}
+
+
 /* Progress bar */
 #progressBar {
   position: fixed;
@@ -120,46 +127,6 @@ body {
   background: white;
   width: 0;
   z-index: 1100;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .hamburger {
-    display: flex;
-  }
-  .nav-menu {
-    position: fixed;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background: #000;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding: 2rem;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
-    z-index: 1050;
-  }
-  .nav-menu.open {
-    transform: translateY(0);
-  }
-  .team-portal-item {
-    margin-left: 0;
-  }
-  .nav-menu li {
-    width: 100%;
-    text-align: center;
-  }
-  .nav-menu li a {
-    font-size: 1.3rem;
-    padding: 0.5rem 0;
-    width: 100%;
-  }
-  .team-portal {
-    padding: 0.5rem 2rem;
-    width: 100%;
-    text-align: center;
-  }
 }
 
 @media (max-width: 768px) {
