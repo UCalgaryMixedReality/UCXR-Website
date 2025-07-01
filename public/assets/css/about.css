@@ -297,7 +297,7 @@ hr {
   font-weight: 600;
   border: none;
   border-radius: 8px;
-  background: linear-gradient(145deg, #9925f7, #56bcf9);
+  background: linear-gradient(145deg, #a33bf8, #67c3fa); /* Picked shades 10% lighter than club colours to give a softer look */
   color: white;
   text-decoration: none;
   transition: all 0.3s ease;
