@@ -5,10 +5,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/home.css" />
-		<link rel="stylesheet" href="assets/css/navbar.css" />
 		<link rel="stylesheet" href="assets/css/merch.css" />
-
+		<link rel="stylesheet" href="assets/css/navbar.css" />
 		<link rel="icon" href="images/UCXR_logo.jpg">
 		<script src="https://cdn.tailwindcss.com"></script>
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -23,17 +21,13 @@
 				<!-- Header -->
 				<header class="navbar">
 					<nav class="nav">
-						<div class="hamburger" aria-label="Toggle menu" role="button" tabindex="0">
-							<div></div>
-							<div></div>
-							<div></div>
-						</div>
+						<div class="hamburger" id="hamburger">&#9776;</div>
 						<ul class="nav-menu left-menu">
 							<li><a href="index.html">Home</a></li>
 							<li><a href="about.html">About</a></li>
 							<li><a href="projects.html">Projects</a></li>
 							<li><a href="sponsors.html">Sponsors</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
+							<li><a href="contact.html">Contact</a></li>
 							<li><a href="merch.html" class="active">Merch</a></li>
 						</ul>
 						<ul class="nav-menu right-menu">
@@ -50,33 +44,33 @@
 					<!-- Merch Grid -->
 					<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 						<!-- Product Card 1 -->
-						<div class="bg-white rounded-lg shadow-md overflow-hidden">
-							<img src="https://via.placeholder.com/300x200?text=UCXR+T-Shirt" alt="UCXR T-Shirt" class="w-full h-48 object-cover">
-							<div class="p-6">
-								<h3 class="text-xl font-semibold text-gray-800">UCXR T-Shirt</h3>
-								<p class="text-gray-600 mt-2">$25.00</p>
-								<p class="text-gray-500 mt-2">Comfortable cotton t-shirt with the UCXR logo. Available in S, M, L, XL.</p>
-								<a href="mailto:armeduofc@gmail.com" class="mt-4 w-full inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 text-center">Contact to Order</a>
+						<div class="product-card">
+							<img src="../../images/smiley_face.avif" alt="UCXR T-Shirt" class="product-image">
+							<div class="product-content">
+								<h3>UCXR T-Shirt</h3>
+								<p class="price">$25.00</p>
+								<p class="description">Comfortable cotton t-shirt with the UCXR logo. Available in S, M, L, XL.</p>
+								<a href="mailto:ucalgarymixedreality@gmail.com" class="order-button">Contact to Order</a>
 							</div>
 						</div>
 						<!-- Product Card 2 -->
-						<div class="bg-white rounded-lg shadow-md overflow-hidden">
-							<img src="https://via.placeholder.com/300x200?text=UCXR+Hoodie" alt="UCXR Hoodie" class="w-full h-48 object-cover">
-							<div class="p-6">
-								<h3 class="text-xl font-semibold text-gray-800">UCXR Hoodie</h3>
-								<p class="text-gray-600 mt-2">$45.00</p>
-								<p class="text-gray-500 mt-2">Cozy fleece hoodie perfect for XR hackathons. Available in S, M, L, XL.</p>
-								<a href="mailto:armeduofc@gmail.com" class="mt-4 w-full inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 text-center">Contact to Order</a>
+						<div class="product-card">
+							<img src="../../images/sunnies.png" alt="UCXR Hoodie" class="product-image">
+							<div class="product-content">
+								<h3>UCXR Hoodie</h3>
+								<p class="price">$45.00</p>
+								<p class="description">Cozy fleece hoodie perfect for XR hackathons. Available in S, M, L, XL.</p>
+								<a href="mailto:ucalgarymixedreality@gmail.com" class="order-button">Contact to Order</a>
 							</div>
 						</div>
 						<!-- Product Card 3 -->
-						<div class="bg-white rounded-lg shadow-md overflow-hidden">
-							<img src="https://via.placeholder.com/300x200?text=UCXR+Cap" alt="UCXR Cap" class="w-full h-48 object-cover">
-							<div class="p-6">
-								<h3 class="text-xl font-semibold text-gray-800">UCXR Cap</h3>
-								<p class="text-gray-600 mt-2">$20.00</p>
-								<p class="text-gray-500 mt-2">Stylish cap with embroidered UCXR logo. One size fits all.</p>
-								<a href="mailto:armeduofc@gmail.com" class="mt-4 w-full inline-block bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 text-center">Contact to Order</a>
+						<div class="product-card">
+							<img src="../../images/eyebrow.jpg" alt="UCXR Cap" class="product-image">
+							<div class="product-content">
+								<h3>UCXR Cap</h3>
+								<p class="price">$20.00</p>
+								<p class="description">Stylish cap with embroidered UCXR logo. One size fits all.</p>
+								<a href="mailto:ucalgarymixedreality@gmail.com" class="order-button">Contact to Order</a>
 							</div>
 						</div>
 					</div>
@@ -85,24 +79,24 @@
 					<div class="mt-12 text-center">
 						<h2 class="text-2xl font-semibold text-gray-800 mb-4">How to Order</h2>
 						<p class="text-gray-600 mb-6">Interested in our UCXR merch? Reach out to us to place your order or inquire about availability!</p>
-						<a href="mailto:armeduofc@gmail.com" class="inline-block bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700">Contact Us</a>
+						<a href="mailto:ucalgarymixedreality@gmail.com" class="inline-block bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700">Contact Us</a>
 					</div>
 				</main>
-
-				<!-- Footer -->
-				<footer id="footer">
-					<ul class="icons">
-						<li><a href="https://www.linkedin.com/company/armeduofc/posts/?feedView=all" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a href="https://www.instagram.com/uofc_xr" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="mailto:armeduofc@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-					</ul>
-					<ul class="copyright">
-						<li>© UCalgary Mixed Reality</li>
-					</ul>
-				</footer>
-
 			</div>
 
+			<!-- Footer -->
+                <footer id="footer">
+                    <ul class="icons">
+                        <li><a href="https://github.com/UCalgaryMixedReality" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						<li><a href="https://www.linkedin.com/company/ucxr/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						<li><a href="https://www.instagram.com/uofc_xr" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="mailto:ucalgarymixedreality@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                    </ul>
+                    <ul class="copyright">
+                        <li>&copy; UCalgary Mixed Reality</li>
+                    </ul>
+                </footer>
+				
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -120,5 +114,19 @@
 					document.getElementById('progressBar').style.width = scrolled + '%';
 				});
 			</script>
+
+			<script> // for the hamburger navbar functionality
+				document.addEventListener("DOMContentLoaded", function () {
+					const hamburger = document.getElementById("hamburger");
+					const leftMenu = document.querySelector(".left-menu");
+					const rightMenu = document.querySelector(".right-menu");
+
+					hamburger.addEventListener("click", function () {
+					leftMenu.classList.toggle("show");
+					rightMenu.classList.toggle("show");
+					});
+				});
+			</script>
+
 	</body>
 </html>
