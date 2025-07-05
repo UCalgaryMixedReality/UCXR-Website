@@ -125,7 +125,7 @@
 				event.preventDefault();
 				const password = document.getElementById('password').value;
 				const hashedPassword = sha256(password);
-				const correctHash = '127c116a9f4e2228d43f82bdb8534f237ddb91797a385d4a27cf941c5fb49d01'; // Hash for pwd
+				const correctHash = '5903a9ecf993d0c34829aec63c175782e64baf857602fd8173e8e1ea5e4622a9'; // Hash for pwd
 				if (hashedPassword === correctHash) {
 					sessionStorage.setItem('isLoggedIn', 'true');
 					window.location.href = 'team-portal.html';
