@@ -177,3 +177,7 @@
 #footer .icons a:hover {
   color: var(--highlight-color);
 }
+
+.req-text{
+  color:#eee6e698;
+}
