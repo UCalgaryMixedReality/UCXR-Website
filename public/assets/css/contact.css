@@ -188,7 +188,7 @@ input[type="email"]:hover,
 input[type="password"]:hover,
 
 textarea:hover {
-  background-color: #c26bfc; 
+  background-color: #9287e4; 
      
 }
 
@@ -201,3 +201,9 @@ textarea:hover {
 .Name .form-group {
   flex: 1;   
 }               
+
+
+.contacthead{
+  font-size: 90px;
+  font-family:Georgia, 'Times New Roman', Times, serif; /* Chnaged Font */
+}
