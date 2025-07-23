@@ -75,18 +75,19 @@
 }
 
 /* Submit button */
-#main button {
+ .button-Des button {
   background: linear-gradient(145deg, #a33bf8, #67c3fa); /* Picked shades 10% lighter than club colours to give a softer look */
   color: #ffffff;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   width: 100%;
   font-size: 16px;
 }
 
-#main button:hover {
-  background-color: white; /* this doesn't seem to be in effect */
+.button-Des button:hover {
+ background: linear-gradient(145deg, #f3f0f0, #e0d5d5); /* when linear gradient is used backgrou mehod is required to overide */
+ color: #333333;
 }
 
 /* Layout for form and icons side-by-side */
@@ -181,3 +182,15 @@
 .req-text{
   color:#eee6e698;
 }
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+
+textarea:hover {
+  background-color: #c26bfc; 
+     
+}
+
+
+
