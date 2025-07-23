@@ -192,5 +192,12 @@ textarea:hover {
      
 }
 
+.Name {
+  display: flex;            
+  gap: 20px;               
+  justify-content: space-between; 
+}
 
-
+.Name .form-group {
+  flex: 1;   
+}               
