@@ -2,7 +2,7 @@
 #main {
   position: relative;
   padding: 50px 0;
-  background-image: url("../../images/tools.jpg"); /* Replace with your image path */
+  background-color: black;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -10,7 +10,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   z-index: 1; /* Ensure content stacks above overlay */
   color: white; /* Optional: improve text contrast */
 }
@@ -27,15 +26,23 @@
 
 /* Form styles */
 #main form {
-  max-width: 600px;
-  width: 90%; /* Responsive width */
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 1200px;
+  width: 95%; /* Responsive width */
+  margin: 0 ;
+  padding: 40px;
+  padding-top: 90px;
+  
+ 
+  
   background-color: black; /* black grey box */
   border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   color: #333333; /* Dark text for visibility */
+  
+  
 }
+
+
 
 /* Heading */
 #main h2 {
@@ -47,6 +54,8 @@
 /* Form group for spacing and structure */
 .form-group {
   margin-bottom: 15px;
+  padding-bottom: 20px;
+
 }
 
 .form-group label {
@@ -59,13 +68,14 @@
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 10px;
+  
   border: 1px solid #cccccc;
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 16px;
   color: #333333;
   background-color: white; /* White input background */
+  padding: 70px;
 }
 
 /* Textarea specific styling */
@@ -181,6 +191,7 @@
 
 .req-text{
   color:#eee6e698;
+  
 }
 
 input[type="text"]:hover,
@@ -204,6 +215,17 @@ textarea:hover {
 
 
 .contacthead{
-  font-size: 90px;
+  font-size: 130px;
   font-family:Georgia, 'Times New Roman', Times, serif; /* Chnaged Font */
+  padding: 0;
+}
+
+.form-group label {
+  font-size: 28px;
+}
+
+
+
+.form-group input{
+  padding: 40px;
 }
