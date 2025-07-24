@@ -2,14 +2,15 @@
 #main {
   position: relative;
   padding: 50px 0;
-  background-color: black;
   background-size: cover;
+  background-color: black;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+ 
   z-index: 1; /* Ensure content stacks above overlay */
   color: white; /* Optional: improve text contrast */
 }
@@ -27,10 +28,13 @@
 /* Form styles */
 #main form {
   max-width: 1200px;
-  width: 95%; /* Responsive width */
+  width: 75%; /* Responsive width */
   margin: 0 ;
+  
   padding: 40px;
   padding-top: 90px;
+  background-color: black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   
  
   
@@ -217,7 +221,7 @@ textarea:hover {
 .contacthead{
   font-size: 130px;
   font-family:Georgia, 'Times New Roman', Times, serif; /* Chnaged Font */
-  padding: 0;
+
 }
 
 .form-group label {
@@ -228,4 +232,25 @@ textarea:hover {
 
 .form-group input{
   padding: 40px;
+}
+
+
+
+.contact-image{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;               /* half screen width */
+  height: 100%;  
+  
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  padding-top:460px;
+  padding-right:100px; 
+  padding-bottom: 50px;
+  border-radius: 10px; 
 }
